@@ -1,0 +1,25 @@
++ Co 2 nguon du lieu
+	Du lieu ve ca covid
+	Canada gom co Aberta, British Columnbia, Ontario, Quebec
+	1. Case report (chi lien quan den cac city, quan, dia chi trong tinh ontario) Ontario la 1 tinh lon cua Canada
+	2. Compiled_COVID19 (co tat ca cac tinh trong canada) !!chi lay du lieu cua ontario
+	3. vaccine by age
+		+ Date = ngay report
+		+ PHU ID la id dinh danh cua trung tam tiem
+		+ ...
+		+ ...
+		+ fully... co dong null phai xu ly
+		+ third_dose... co dong null phai xu ly
+	4. Public heathy unit group
+		+ xu ly du lieu cho hop ly de phan cap, dung phu region de map voi cac bang khac
+	5. Public health unit
+		+ PHU ID la ma dinh danh duy nhat
+		+ Reporting_PHU dung de map voi cac bang khac co thong tin lien quan
+
++ Thiet ke NDS DDS
+	Phai phan tich ky va doc yeu cau trong OLAP - Report truoc
+
+
++ Duplicate key note:
+	- Public health unit
+		1. PHU_ID has duplicate key: 2244
