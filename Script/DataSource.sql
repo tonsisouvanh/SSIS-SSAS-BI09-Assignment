@@ -2,7 +2,6 @@
 use master
 go
 
-
 create database SourceCOVID19
 go
 

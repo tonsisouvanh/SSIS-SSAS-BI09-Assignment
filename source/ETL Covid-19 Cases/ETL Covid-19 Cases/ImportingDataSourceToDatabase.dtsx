@@ -7,27 +7,15 @@
   DTS:CreatorName="DESKTOP-0HN7NPR\tonsi"
   DTS:DTSID="{274664E9-9B5D-4831-8D73-D823E5B96C2F}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LastModifiedProductVersion="16.0.845.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="166"
-  DTS:VersionGUID="{540891D4-47B8-463D-B7BF-30337EE3F8F0}">
+  DTS:VersionBuild="174"
+  DTS:VersionGUID="{C54B56F3-9694-4022-9526-263FAF54B10F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{8A0631F8-C3F2-4C9D-B39D-92D4C427C90B}"
-      DTS:ObjectName=".\DEVTONS.SourceCOVID19">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.\DEVTONS;Initial Catalog=SourceCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{8A0631F8-C3F2-4C9D-B39D-92D4C427C90B}.\DEVTONS.SourceCOVID19;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Compiled_COVID-19_Case_Details_(Canada)]"
       DTS:CreationName="FLATFILE"
@@ -42,7 +30,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\HTTT_PVu_TT_KINH-Doanh\2022-2023\DATH\Data\Datasource\Compiled_COVID-19_Case_Details_(Canada).csv">
+          DTS:ConnectionString="D:\Learning\FifthSemester\IS_For_Business_Intelligence\Labs\Project\SSIS-SSAS-BI09-Assignment\Data\Datasource\Compiled_COVID-19_Case_Details_(Canada).csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +38,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ObjectId"
-              DTS:DTSID="{21F7D742-94C2-4626-8F7B-50D3FE637428}"
+              DTS:DTSID="{2F4CF420-D884-477F-873B-75DCFDC4FBBE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +46,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="row_id"
-              DTS:DTSID="{60DEB50F-CC3D-45F7-AE23-ECA1D7B0C7B9}"
+              DTS:DTSID="{BF87E7FC-F689-4C38-81ED-15CDCE15902B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,7 +55,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="date_reported"
-              DTS:DTSID="{CA5FD2F4-D5EF-4CED-BB17-2D44C5734B3E}"
+              DTS:DTSID="{CE5DD76E-F5F0-4BE9-AF2C-CD7EE6B7E1E5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -76,7 +64,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="health_region"
-              DTS:DTSID="{04533F44-6246-4C5F-8D36-80324FA4DACC}"
+              DTS:DTSID="{E8CB8894-4441-41F6-923C-A6FFC571BA27}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -85,7 +73,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="age_group"
-              DTS:DTSID="{AF75B514-CFA6-4662-8359-61EBB817CCE8}"
+              DTS:DTSID="{36BB7B7C-9F63-4ABB-B2EB-94CD0122663C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -94,7 +82,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gender"
-              DTS:DTSID="{8A2888DE-358D-49F9-BAE4-67735CE82768}"
+              DTS:DTSID="{864017ED-53F2-45E2-B26F-6D42A77F1B73}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -103,7 +91,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="exposure"
-              DTS:DTSID="{57E33919-FB48-430F-9666-B69EAF80F76A}"
+              DTS:DTSID="{08B0962F-F842-4A63-831F-1C55B1780336}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -112,7 +100,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="case_status"
-              DTS:DTSID="{5E2AF310-8586-4994-B6B8-B447C3AAF7F1}"
+              DTS:DTSID="{1B08655C-BFB7-4F84-8855-F6BDA5BB7B7A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -121,7 +109,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="province"
-              DTS:DTSID="{95B8D88E-16AE-4C85-B9E5-AF241779B4EF}"
+              DTS:DTSID="{A5E30F4F-EB06-4998-8E53-B33BE14ED85F}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -130,37 +118,25 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{17ADDAC8-4CEA-4AF3-B959-28A504884748}"
+      DTS:DTSID="{A6F1360A-24A2-4FDD-9F5E-712328AD1C40}"
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\HTTT_PVu_TT_KINH-Doanh\2022-2023\DATH\Data\Datasource\vaccines_by_age_phu.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Learning\FifthSemester\IS_For_Business_Intelligence\Labs\Project\SSIS-SSAS-BI09-Assignment\Data\Datasource\Public health unit.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{BCA8D4AE-E875-409E-A2E1-F36BDE318250}"
+      DTS:DTSID="{4EFEDD38-7239-456D-BD73-6D2B0C61BCE8}"
       DTS:ObjectName="Excel Connection Manager 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\HTTT_PVu_TT_KINH-Doanh\2022-2023\DATH\Data\Datasource\Public health unit.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 2]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{636D3D8A-5D57-45F0-86CA-D55203AA7B0E}"
-      DTS:ObjectName="Excel Connection Manager 2">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\HTTT_PVu_TT_KINH-Doanh\2022-2023\DATH\Data\Datasource\Public Health Units GROUP.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Learning\FifthSemester\IS_For_Business_Intelligence\Labs\Project\SSIS-SSAS-BI09-Assignment\Data\Datasource\Public health unit.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -339,7 +315,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\HTTT_PVu_TT_KINH-Doanh\2022-2023\DATH\Data\Datasource\Cases Report.csv">
+          DTS:ConnectionString="D:\Learning\FifthSemester\IS_For_Business_Intelligence\Labs\Project\SSIS-SSAS-BI09-Assignment\Data\Datasource\Cases Report.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -348,7 +324,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Outcome"
-              DTS:DTSID="{586824FA-78A5-48AD-A420-68851F7DF947}"
+              DTS:DTSID="{2D10FE0E-E8D4-4406-BEE6-57C13CB20271}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -357,7 +333,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Age"
-              DTS:DTSID="{581E5A58-835D-405C-94B7-F25A6BCF8E94}"
+              DTS:DTSID="{4545628F-D09F-47C3-B0F3-758EB7516975}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -366,7 +342,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Gender"
-              DTS:DTSID="{82B6EEFA-B857-40F1-88BB-77CAAA629239}"
+              DTS:DTSID="{35BDFDA0-6C6A-465B-924D-421DD1B91B91}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -375,7 +351,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Reporting PHU"
-              DTS:DTSID="{01362477-11A9-4E34-8A8A-8CC2E5489A79}"
+              DTS:DTSID="{57A3FEC0-307F-469E-B129-CD60AC1C0FC1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -383,7 +359,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="SpecimenDate"
-              DTS:DTSID="{F07CDA05-9CB2-4467-8B59-58004CD785EB}"
+              DTS:DTSID="{375D9C7D-5474-47DE-9DFD-7C06FCEEED54}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -391,7 +367,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="CaseReported Date"
-              DTS:DTSID="{B576C3CA-02E2-4BDE-B870-01DA71776127}"
+              DTS:DTSID="{6B197724-3D4D-4895-9C74-BE0600EF7F74}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -400,7 +376,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHUCity"
-              DTS:DTSID="{B1E09C9B-D02B-48E6-8307-C1F240BE25AC}"
+              DTS:DTSID="{FAED064A-A815-4E8F-B6B5-EC4CC1FEB960}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -408,7 +384,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="TestReported Date"
-              DTS:DTSID="{D77EB33F-4169-4EA8-9DB5-C944413F711C}"
+              DTS:DTSID="{9D34C851-5F5D-42A2-9D87-DB4967C250A2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -417,7 +393,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CaseAcquisition info"
-              DTS:DTSID="{E5DD3269-3777-4C2A-8CAB-8DF92A7BD169}"
+              DTS:DTSID="{F050ED51-638C-40E9-801B-341E3C997EB7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -425,7 +401,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="AccurateEpisode Dt"
-              DTS:DTSID="{AD752677-170F-4EC5-A0D0-75C644B71B14}"
+              DTS:DTSID="{E2566F0B-51D0-459B-97D5-2C02850D4F3E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -434,7 +410,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Address"
-              DTS:DTSID="{533D0E1F-5BF7-47C3-8BAA-C89AC8023287}"
+              DTS:DTSID="{0600C818-91C3-41CA-AF5C-E704ED99381D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -443,7 +419,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Website"
-              DTS:DTSID="{D03D5023-BD06-44AE-934A-234D14D1688C}"
+              DTS:DTSID="{CD544C03-FCB7-4B12-8E22-1AEA9CE191A2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -452,7 +428,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OutbreakRelated"
-              DTS:DTSID="{AAF89D22-5062-49D0-AAD2-CE8A2253845E}"
+              DTS:DTSID="{D7CB5059-2A86-45AA-8787-05D326160862}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -460,7 +436,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Latitude"
-              DTS:DTSID="{4F6F7838-CA3D-4184-8F84-A89E9D1338DF}"
+              DTS:DTSID="{CD6BF253-3271-4C81-BB00-C6685A0C7963}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -468,7 +444,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Longitude"
-              DTS:DTSID="{223D416E-511A-421D-9F86-896CB765D486}"
+              DTS:DTSID="{6FE954BC-8210-41D4-BBE6-E04534A2D2B3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -477,10 +453,34 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Postal Code"
-              DTS:DTSID="{32E4E2D1-9BDB-4B36-9051-B5DF8B032C9E}"
+              DTS:DTSID="{4204D9E3-82AA-4491-AE3A-CB6432F7FBEF}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.SourceCOVID19]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{37C65681-8C90-4043-905D-1264BC06DFFA}"
+      DTS:ObjectName="LocalHost.SourceCOVID19">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=SourceCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{37C65681-8C90-4043-905D-1264BC06DFFA}LocalHost.SourceCOVID19;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.SourceCOVID19 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9DCD7A15-3F7E-4D56-9C4E-0D60A07281AC}"
+      DTS:ObjectName="LocalHost.SourceCOVID19 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=SourceCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{9DCD7A15-3F7E-4D56-9C4E-0D60A07281AC}LocalHost.SourceCOVID19 1;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -620,6 +620,7 @@
       DTS:refId="Package\Cases Report CANADA CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{7b5a649f-fd87-421e-afdd-c68cd9c7d968}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1281,8 +1282,8 @@
               <connections>
                 <connection
                   refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
-                  connectionManagerRefId="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.SourceCOVID19 1]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.SourceCOVID19 1]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1429,358 +1430,8 @@
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1"
-              componentClassID="Microsoft.RowSampling"
-              contactInfo="Row Sampling;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Randomly samples a specific number of rows from an input data flow. For example, use it randomly select products to feature on your Web site."
-              name="Row Sampling 1">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the number of rows in the sample."
-                  expressionType="Notify"
-                  name="SamplingValue">10</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the seed for the random number generator."
-                  name="SamplingSeed">0</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Inputs[Row Sampling Input 1]"
-                  name="Row Sampling Input 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Inputs[Row Sampling Input 1].Columns[health_region]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="150"
-                      cachedName="health_region"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]" />
-                    <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Inputs[Row Sampling Input 1].Columns[age_group]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="25"
-                      cachedName="age_group"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_group]" />
-                    <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Inputs[Row Sampling Input 1].Columns[gender]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="gender"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[gender]" />
-                    <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Inputs[Row Sampling Input 1].Columns[exposure]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="45"
-                      cachedName="exposure"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[exposure]" />
-                    <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Inputs[Row Sampling Input 1].Columns[case_status]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="case_status"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[case_status]" />
-                    <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Inputs[Row Sampling Input 1].Columns[province]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="35"
-                      cachedName="province"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]" />
-                    <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Inputs[Row Sampling Input 1].Columns[row_id]"
-                      cachedDataType="i4"
-                      cachedName="row_id"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[row_id]" />
-                    <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Inputs[Row Sampling Input 1].Columns[date_reported]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="date_reported"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[date_reported]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output]"
-                  name="Sampling Selected Output">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      description="Output for rows in the sample"
-                      name="Selected">true</property>
-                  </properties>
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[health_region]"
-                      codePage="1252"
-                      dataType="str"
-                      length="150"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[health_region]"
-                      name="health_region">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[age_group]"
-                      codePage="1252"
-                      dataType="str"
-                      length="25"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[age_group]"
-                      name="age_group">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_group]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[gender]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[gender]"
-                      name="gender">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[gender]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[exposure]"
-                      codePage="1252"
-                      dataType="str"
-                      length="45"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[exposure]"
-                      name="exposure">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[exposure]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[case_status]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[case_status]"
-                      name="case_status">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[case_status]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[province]"
-                      codePage="1252"
-                      dataType="str"
-                      length="35"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[province]"
-                      name="province">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[row_id]"
-                      dataType="i4"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[row_id]"
-                      name="row_id">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[row_id]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[date_reported]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Selected Output].Columns[date_reported]"
-                      name="date_reported">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[date_reported]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output]"
-                  name="Sampling Unselected Output">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      description="Output for rows in the sample"
-                      name="Selected">false</property>
-                  </properties>
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[health_region]"
-                      codePage="1252"
-                      dataType="str"
-                      length="150"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[health_region]"
-                      name="health_region">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[age_group]"
-                      codePage="1252"
-                      dataType="str"
-                      length="25"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[age_group]"
-                      name="age_group">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_group]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[gender]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[gender]"
-                      name="gender">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[gender]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[exposure]"
-                      codePage="1252"
-                      dataType="str"
-                      length="45"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[exposure]"
-                      name="exposure">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[exposure]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[case_status]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[case_status]"
-                      name="case_status">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[case_status]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[province]"
-                      codePage="1252"
-                      dataType="str"
-                      length="35"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[province]"
-                      name="province">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[row_id]"
-                      dataType="i4"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[row_id]"
-                      name="row_id">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[row_id]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[date_reported]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Outputs[Sampling Unselected Output].Columns[date_reported]"
-                      name="date_reported">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[date_reported]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
-            <path
-              refId="Package\Cases Report CANADA CSV to Database.Paths[Case is not]"
-              endId="Package\Cases Report CANADA CSV to Database\Row Sampling 1.Inputs[Row Sampling Input 1]"
-              name="Case is not"
-              startId="Package\Cases Report CANADA CSV to Database\Conditional Split.Outputs[Case is not]" />
             <path
               refId="Package\Cases Report CANADA CSV to Database.Paths[Case is Ontario]"
               endId="Package\Cases Report CANADA CSV to Database\Derived Column.Inputs[Derived Column Input]"
@@ -1809,6 +1460,7 @@
       DTS:refId="Package\Cases Report CSV to Database 1"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{e26ef0c1-0b1d-4fff-b407-c9a827a03d53}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2367,8 +2019,8 @@
               <connections>
                 <connection
                   refId="Package\Cases Report CSV to Database 1\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
-                  connectionManagerRefId="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
+                  connectionManagerID="{8A0631F8-C3F2-4C9D-B39D-92D4C427C90B}:invalid"
+                  connectionManagerRefId="{8A0631F8-C3F2-4C9D-B39D-92D4C427C90B}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2626,6 +2278,7 @@
       DTS:refId="Package\ongoing_outbreaks_phu CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{7a8d3be7-bbd2-42f6-a37b-3a8550531cd2}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2860,8 +2513,8 @@
               <connections>
                 <connection
                   refId="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
-                  connectionManagerRefId="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
+                  connectionManagerID="{8A0631F8-C3F2-4C9D-B39D-92D4C427C90B}:invalid"
+                  connectionManagerRefId="{8A0631F8-C3F2-4C9D-B39D-92D4C427C90B}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2963,6 +2616,7 @@
       DTS:refId="Package\PHU Group file to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{65d03f69-f7a3-4c8c-a5b4-542d20d5f786}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -3150,8 +2804,8 @@
               <connections>
                 <connection
                   refId="Package\PHU Group file to Database\Excel Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 2]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 2]"
+                  connectionManagerID="{636D3D8A-5D57-45F0-86CA-D55203AA7B0E}:invalid"
+                  connectionManagerRefId="{636D3D8A-5D57-45F0-86CA-D55203AA7B0E}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3309,8 +2963,8 @@
               <connections>
                 <connection
                   refId="Package\PHU Group file to Database\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
-                  connectionManagerRefId="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
+                  connectionManagerID="{8A0631F8-C3F2-4C9D-B39D-92D4C427C90B}:invalid"
+                  connectionManagerRefId="{8A0631F8-C3F2-4C9D-B39D-92D4C427C90B}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3733,8 +3387,8 @@
               <connections>
                 <connection
                   refId="Package\Public health unit file to Database\Excel Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager 1]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3988,8 +3642,8 @@
               <connections>
                 <connection
                   refId="Package\Public health unit file to Database\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
-                  connectionManagerRefId="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.SourceCOVID19]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.SourceCOVID19]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4152,6 +3806,7 @@
       DTS:refId="Package\vaccines_by_age_phu CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{347f82d2-d465-4a0f-b4d6-812ab3213359}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -4458,8 +4113,8 @@
               <connections>
                 <connection
                   refId="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
-                  connectionManagerRefId="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
+                  connectionManagerID="{8A0631F8-C3F2-4C9D-B39D-92D4C427C90B}:invalid"
+                  connectionManagerRefId="{8A0631F8-C3F2-4C9D-B39D-92D4C427C90B}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4647,7 +4302,7 @@
           Id="Package\Cases Report CANADA CSV to Database"
           TopLeft="431.428578775756,122.144538170574" />
         <NodeLayout
-          Size="222.4,41.6"
+          Size="231.2,41.6"
           Id="Package\Cases Report CSV to Database 1"
           TopLeft="447.375291065469,57.9483639759731" />
         <NodeLayout
@@ -4668,18 +4323,18 @@
           TopLeft="428.571435869957,198.932775899201" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="561.401934920612,99.548363975973">
+          TopLeft="563.601934920613,99.5483639759731">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,22.5961741946006"
+              EndConnector="0,22.5961741946009"
               Start="0,0"
-              End="0,15.0961741946006">
+              End="0,15.0961741946009">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.0961741946006" />
+                    End="0,15.0961741946009" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4734,18 +4389,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="244.742859137788,242.062187685357">
+          TopLeft="244.742859137789,242.062187685357">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.7529423454635"
+              EndConnector="0,41.752942345463"
               Start="0,0"
-              End="0,34.2529423454635">
+              End="0,34.252942345463">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.2529423454635" />
+                    End="0,34.252942345463" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4785,27 +4440,23 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Cases Report CANADA CSV to Database\OLE DB Destination"
           TopLeft="580,328.666666666667" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Cases Report CANADA CSV to Database\Derived Column"
           TopLeft="254.666666666667,223.6" />
         <NodeLayout
-          Size="154,42"
-          Id="Package\Cases Report CANADA CSV to Database\Row Sampling 1"
-          TopLeft="525.333333333333,232.133333333333" />
-        <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Cases Report CANADA CSV to Database\Flat File Source"
           TopLeft="340.666666666667,19.6666666666667" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Cases Report CANADA CSV to Database\Conditional Split"
           TopLeft="340.666666666667,110" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\Cases Report CANADA CSV to Database\Data Conversion"
           TopLeft="251.666666666667,313.333333333333" />
         <EdgeLayout
@@ -4922,42 +4573,6 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Cases Report CANADA CSV to Database.Paths[Case is not]"
-          TopLeft="442.266666666667,151.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="160.266666666667,80.5333333333333"
-              Start="0,0"
-              End="160.266666666667,73.0333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.7089230769231" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.7089230769231"
-                    Point2="0,32.7089230769231"
-                    Point3="4,32.7089230769231" />
-                  <mssgle:LineSegment
-                    End="156.266666666667,32.7089230769231" />
-                  <mssgle:CubicBezierSegment
-                    Point1="156.266666666667,32.7089230769231"
-                    Point2="160.266666666667,32.7089230769231"
-                    Point3="160.266666666667,36.7089230769231" />
-                  <mssgle:LineSegment
-                    End="160.266666666667,73.0333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="55.1294270833335,37.7089230769231,50.0078125,9.5537109375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -4980,11 +4595,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Cases Report CSV to Database 1\OLE DB Destination"
           TopLeft="350,160.909090909091" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Cases Report CSV to Database 1\Flat File Source"
           TopLeft="362.727272727273,52.7272727272727" />
         <EdgeLayout
@@ -5029,7 +4644,7 @@
     design-time-name="Package\ongoing_outbreaks_phu CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination"
@@ -5057,7 +4672,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5080,7 +4697,7 @@
     design-time-name="Package\PHU Group file to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="138,42"
           Id="Package\PHU Group file to Database\Excel Source"
@@ -5124,7 +4741,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5158,7 +4777,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5296,7 +4917,7 @@
     design-time-name="Package\vaccines_by_age_phu CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination"
@@ -5324,7 +4945,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
