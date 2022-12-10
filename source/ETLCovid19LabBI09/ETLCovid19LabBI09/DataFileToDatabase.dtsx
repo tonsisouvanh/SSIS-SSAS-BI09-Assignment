@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{DDACEBF7-94E8-40D3-AF74-E7CA648C840F}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{397F5F8A-693C-467D-A7A3-81163F2AA606}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -286,6 +286,30 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{A16F0030-BAB8-4CDC-BB97-8C6F4649FC18}"
+      DTS:ObjectName="Excel Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\DATH\Data\Datasource\Public Health Units GROUP.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.SourceCOVID19]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CE922558-4EC2-4F0C-A089-461DFE9A9DB5}"
+      DTS:ObjectName="LocalHost.SourceCOVID19">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=SourceCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CE922558-4EC2-4F0C-A089-461DFE9A9DB5}LocalHost.SourceCOVID19;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[ongoing_outbreaks_phu]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{1A2C4882-7847-4C19-9CB8-A1709A2C8B31}"
@@ -446,6 +470,7 @@
       DTS:refId="Package\Cases Report CANADA CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{21926eb7-1a98-44e8-a347-1e06821a06ba}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1285,6 +1310,7 @@
       DTS:refId="Package\Cases Report CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{e17d5930-bcfa-4215-bda5-80f8d2da29ce}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2102,6 +2128,7 @@
       DTS:refId="Package\ongoing_outbreaks_phu CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{0ecbc41f-9946-467c-ad02-16301bfa1919}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2626,8 +2653,8 @@
               <connections>
                 <connection
                   refId="Package\PHU Group file to Database\Excel Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Public health unit group]"
-                  connectionManagerRefId="Package.ConnectionManagers[Public health unit group]"
+                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2785,8 +2812,8 @@
               <connections>
                 <connection
                   refId="Package\PHU Group file to Database\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
-                  connectionManagerRefId="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.SourceCOVID19]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.SourceCOVID19]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2891,6 +2918,7 @@
       DTS:refId="Package\Public health unit file to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{fee9bef6-352a-44fb-a494-92eec50ff2a5}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -3628,6 +3656,7 @@
       DTS:refId="Package\vaccines_by_age_phu CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{56742d42-bbfe-4760-996e-90a0ccb67018}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -4119,13 +4148,29 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="222.4,41.6"
+          Size="265.333333333334,41.3333333333334"
+          Id="Package\Cases Report CANADA CSV to Database"
+          TopLeft="42.8571425652017,140.952940886903" />
+        <NodeLayout
+          Size="222.666666666667,41.3333333333334"
           Id="Package\Cases Report CSV to Database"
           TopLeft="60,60" />
         <NodeLayout
-          Size="265.6,41.6"
-          Id="Package\Cases Report CANADA CSV to Database"
-          TopLeft="42.8571425652017,140.952940886903" />
+          Size="273.333333333334,41.3333333333334"
+          Id="Package\ongoing_outbreaks_phu CSV to Database"
+          TopLeft="365.714290920569,58.917642768939" />
+        <NodeLayout
+          Size="207.333333333334,41.3333333333334"
+          Id="Package\PHU Group file to Database"
+          TopLeft="443.571435103611,266.152939792983" />
+        <NodeLayout
+          Size="236.666666666667,41.3333333333334"
+          Id="Package\Public health unit file to Database"
+          TopLeft="427.142863395263,147.623526365947" />
+        <NodeLayout
+          Size="263.333333333334,41.3333333333334"
+          Id="Package\vaccines_by_age_phu CSV to Database"
+          TopLeft="81.4285717934978,267.023529465388" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="173.428571282601,101.6">
@@ -4148,10 +4193,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="263.2,41.6"
-          Id="Package\vaccines_by_age_phu CSV to Database"
-          TopLeft="81.4285717934978,267.023529465388" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="173.076190512683,182.552940886903">
@@ -4174,10 +4215,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="273.6,41.6"
-          Id="Package\ongoing_outbreaks_phu CSV to Database"
-          TopLeft="365.714290920569,58.917642768939" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="255.561905126831,267.023529465388">
@@ -4212,14 +4249,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="236.8,41.6"
-          Id="Package\Public health unit file to Database"
-          TopLeft="427.142863395263,147.623526365947" />
-        <NodeLayout
-          Size="207.2,41.6"
-          Id="Package\PHU Group file to Database"
-          TopLeft="443.571435103611,266.152939792983" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="546.161910491249,100.517642768939">
@@ -4267,57 +4296,6 @@
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\Cases Report CSV to Database">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Cases Report CSV to Database\Flat File Source"
-          TopLeft="362.727272727273,52.7272727272727" />
-        <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Cases Report CSV to Database\OLE DB Destination"
-          TopLeft="350,160.909090909091" />
-        <EdgeLayout
-          Id="Package\Cases Report CSV to Database.Paths[Flat File Source Output]"
-          TopLeft="436.563636363636,94.3272727272727">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,66.5818181818182"
-              Start="0,0"
-              End="0,59.0818181818182">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.0818181818182" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cases Report CSV to Database\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Cases Report CANADA CSV to Database">
     <LayoutInfo>
@@ -4461,45 +4439,56 @@
     </LayoutInfo>
   </TaskHost>
   <TaskHost
-    design-time-name="Package\vaccines_by_age_phu CSV to Database">
+    design-time-name="Package\Cases Report CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150.4,41.6"
-          Id="Package\vaccines_by_age_phu CSV to Database\Flat File Source"
-          TopLeft="591.166666666667,135.666666666667" />
+          Id="Package\Cases Report CSV to Database\Flat File Source"
+          TopLeft="362.727272727273,52.7272727272727" />
         <NodeLayout
           Size="169.6,41.6"
-          Id="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination"
-          TopLeft="578,280" />
+          Id="Package\Cases Report CSV to Database\OLE DB Destination"
+          TopLeft="350,160.909090909091" />
         <EdgeLayout
-          Id="Package\vaccines_by_age_phu CSV to Database.Paths[Flat File Source Output]"
-          TopLeft="664.583333333333,177.266666666667">
+          Id="Package\Cases Report CSV to Database.Paths[Flat File Source Output]"
+          TopLeft="436.563636363636,94.3272727272727">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,102.733333333333"
+              EndConnector="0,66.5818181818182"
               Start="0,0"
-              End="0,95.233333333333">
+              End="0,59.0818181818182">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,95.233333333333" />
+                    End="0,59.0818181818182" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cases Report CSV to Database\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\ongoing_outbreaks_phu CSV to Database">
     <LayoutInfo>
@@ -4538,6 +4527,120 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <TaskHost
+    design-time-name="Package\PHU Group file to Database">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="139.333333333334,42.6666666666667"
+          Id="Package\PHU Group file to Database\Excel Source"
+          TopLeft="303.71429075027,91.7058825030873" />
+        <NodeLayout
+          Size="155.333333333334,41.3333333333334"
+          Id="Package\PHU Group file to Database\Data Conversion"
+          TopLeft="328.571434166967,172.517649332462" />
+        <NodeLayout
+          Size="169.333333333334,41.3333333333334"
+          Id="Package\PHU Group file to Database\OLE DB Destination"
+          TopLeft="277.857147589022,250.058827036392" />
+        <EdgeLayout
+          Id="Package\PHU Group file to Database.Paths[Excel Source Output]"
+          TopLeft="373.380957416937,134.372549169754">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="32.857143416697,38.145100162708"
+              Start="0,0"
+              End="32.857143416697,30.645100162708">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.072550081354" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.072550081354"
+                    Point2="0,19.072550081354"
+                    Point3="4,19.072550081354" />
+                  <mssgle:LineSegment
+                    End="28.857143416697,19.072550081354" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.857143416697,19.072550081354"
+                    Point2="32.857143416697,19.072550081354"
+                    Point3="32.857143416697,23.072550081354" />
+                  <mssgle:LineSegment
+                    End="32.857143416697,30.645100162708" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PHU Group file to Database.Paths[Data Conversion Output]"
+          TopLeft="406.171434166967,214.117649332462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-43.1142865779448,35.94117770393"
+              Start="0,0"
+              End="-43.1142865779448,28.44117770393">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.970588851965" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.970588851965"
+                    Point2="0,17.970588851965"
+                    Point3="-4,17.970588851965" />
+                  <mssgle:LineSegment
+                    End="-39.1142865779448,17.970588851965" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-39.1142865779448,17.970588851965"
+                    Point2="-43.1142865779448,17.970588851965"
+                    Point3="-43.1142865779448,21.970588851965" />
+                  <mssgle:LineSegment
+                    End="-43.1142865779448,28.44117770393" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\PHU Group file to Database\Excel Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\PHU Group file to Database\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Public health unit file to Database">
     <LayoutInfo>
@@ -4615,88 +4718,40 @@
     </LayoutInfo>
   </TaskHost>
   <TaskHost
-    design-time-name="Package\PHU Group file to Database">
+    design-time-name="Package\vaccines_by_age_phu CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="137.6,41.6"
-          Id="Package\PHU Group file to Database\Excel Source"
-          TopLeft="303.71429075027,91.7058825030873" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\PHU Group file to Database\Data Conversion"
-          TopLeft="328.571434166967,172.517649332462" />
+          Size="150.4,41.6"
+          Id="Package\vaccines_by_age_phu CSV to Database\Flat File Source"
+          TopLeft="591.166666666667,135.666666666667" />
         <NodeLayout
           Size="169.6,41.6"
-          Id="Package\PHU Group file to Database\OLE DB Destination"
-          TopLeft="277.857147589022,250.058827036392" />
+          Id="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination"
+          TopLeft="578,280" />
         <EdgeLayout
-          Id="Package\PHU Group file to Database.Paths[Data Conversion Output]"
-          TopLeft="406.171434166967,214.117649332462">
+          Id="Package\vaccines_by_age_phu CSV to Database.Paths[Flat File Source Output]"
+          TopLeft="664.583333333333,177.266666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-43.1142865779448,35.94117770393"
+              EndConnector="0,102.733333333333"
               Start="0,0"
-              End="-43.1142865779448,28.44117770393">
+              End="0,95.233333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.970588851965" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.970588851965"
-                    Point2="0,17.970588851965"
-                    Point3="-4,17.970588851965" />
-                  <mssgle:LineSegment
-                    End="-39.1142865779448,17.970588851965" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-39.1142865779448,17.970588851965"
-                    Point2="-43.1142865779448,17.970588851965"
-                    Point3="-43.1142865779448,21.970588851965" />
-                  <mssgle:LineSegment
-                    End="-43.1142865779448,28.44117770393" />
+                    End="0,95.233333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\PHU Group file to Database.Paths[Excel Source Output]"
-          TopLeft="372.51429075027,133.305882503087">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="33.6571434166964,39.211766829375"
-              Start="0,0"
-              End="33.6571434166964,31.711766829375">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.6058834146875" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.6058834146875"
-                    Point2="0,19.6058834146875"
-                    Point3="4,19.6058834146875" />
-                  <mssgle:LineSegment
-                    End="29.6571434166964,19.6058834146875" />
-                  <mssgle:CubicBezierSegment
-                    Point1="29.6571434166964,19.6058834146875"
-                    Point2="33.6571434166964,19.6058834146875"
-                    Point3="33.6571434166964,23.6058834146875" />
-                  <mssgle:LineSegment
-                    End="33.6571434166964,31.711766829375" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
