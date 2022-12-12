@@ -11,23 +11,11 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{4BA929ED-22FF-4416-83B7-96EBB1975977}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{0A48ACEA-1202-4F28-B24F-ECB5D1DC359D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[.\DEVTONS.SourceCOVID19]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{8A0631F8-C3F2-4C9D-B39D-92D4C427C90B}"
-      DTS:ObjectName=".\DEVTONS.SourceCOVID19">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.\DEVTONS;Initial Catalog=SourceCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{8A0631F8-C3F2-4C9D-B39D-92D4C427C90B}.\DEVTONS.SourceCOVID19;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Case Report]"
       DTS:CreationName="FLATFILE"
@@ -295,30 +283,6 @@
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
           DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\DATH\Data\Datasource\Public Health Units GROUP.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 1]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{101BC302-610D-48FF-A4B0-C46693B12F04}"
-      DTS:ObjectName="Excel Connection Manager 1">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\DATH\Data\Datasource\Public health unit.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Excel Connection Manager 2]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{38B2C1AD-C8BB-4CD0-8039-8CAF042870B1}"
-      DTS:ObjectName="Excel Connection Manager 2">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\DATH\Data\Datasource\Public Health Units GROUP.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -595,7 +559,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;Initial Catalog=SourceCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{CE922558-4EC2-4F0C-A089-461DFE9A9DB5}LocalHost.SourceCOVID19;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=SourceCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{CE922558-4EC2-4F0C-A089-461DFE9A9DB5}LocalHost.SourceCOVID19;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -759,7 +723,6 @@
       DTS:refId="Package\Cases Report CANADA CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{21926eb7-1a98-44e8-a347-1e06821a06ba}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1603,7 +1566,6 @@
       DTS:refId="Package\Cases Report CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{e17d5930-bcfa-4215-bda5-80f8d2da29ce}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2433,7 +2395,6 @@
       DTS:refId="Package\ongoing_outbreaks_phu CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{0ecbc41f-9946-467c-ad02-16301bfa1919}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -3223,7 +3184,6 @@
       DTS:refId="Package\Public health unit file to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{fee9bef6-352a-44fb-a494-92eec50ff2a5}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -3911,7 +3871,6 @@
       DTS:refId="Package\vaccines_by_age_phu CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{56742d42-bbfe-4760-996e-90a0ccb67018}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -4403,27 +4362,27 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="266.666666666667,42.6666666666667"
+          Size="266,42"
           Id="Package\Cases Report CANADA CSV to Database"
           TopLeft="42.8571425652017,140.952940886903" />
         <NodeLayout
-          Size="222.666666666667,41.3333333333334"
+          Size="222,42"
           Id="Package\Cases Report CSV to Database"
           TopLeft="60,60" />
         <NodeLayout
-          Size="273.333333333334,41.3333333333334"
+          Size="274,42"
           Id="Package\ongoing_outbreaks_phu CSV to Database"
           TopLeft="365.714290920569,58.917642768939" />
         <NodeLayout
-          Size="207.333333333334,41.3333333333334"
+          Size="207,42"
           Id="Package\PHU Group file to Database"
           TopLeft="443.571435103611,266.152939792983" />
         <NodeLayout
-          Size="236.666666666667,41.3333333333334"
+          Size="237,42"
           Id="Package\Public health unit file to Database"
           TopLeft="427.142863395263,147.623526365947" />
         <NodeLayout
-          Size="263.333333333334,41.3333333333334"
+          Size="263,42"
           Id="Package\vaccines_by_age_phu CSV to Database"
           TopLeft="81.4285717934978,267.023529465388" />
         <EdgeLayout
@@ -4557,23 +4516,23 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="169.333333333334,41.3333333333334"
+          Size="170,42"
           Id="Package\Cases Report CANADA CSV to Database\OLE DB Destination"
           TopLeft="580,328.666666666667" />
         <NodeLayout
-          Size="152.666666666667,41.3333333333334"
+          Size="153,42"
           Id="Package\Cases Report CANADA CSV to Database\Derived Column"
           TopLeft="254.666666666667,223.6" />
         <NodeLayout
-          Size="151.333333333334,41.3333333333334"
+          Size="151,42"
           Id="Package\Cases Report CANADA CSV to Database\Flat File Source"
           TopLeft="340.666666666667,19.6666666666667" />
         <NodeLayout
-          Size="153.333333333334,41.3333333333334"
+          Size="154,42"
           Id="Package\Cases Report CANADA CSV to Database\Conditional Split"
           TopLeft="340.666666666667,110" />
         <NodeLayout
-          Size="155.333333333334,41.3333333333334"
+          Size="155,42"
           Id="Package\Cases Report CANADA CSV to Database\Data Conversion"
           TopLeft="251.666666666667,313.333333333333" />
         <EdgeLayout
@@ -4712,11 +4671,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="169.333333333334,41.3333333333334"
+          Size="170,42"
           Id="Package\Cases Report CSV to Database\OLE DB Destination"
           TopLeft="350,160.909090909091" />
         <NodeLayout
-          Size="150.666666666667,41.3333333333334"
+          Size="150,42"
           Id="Package\Cases Report CSV to Database\Flat File Source"
           TopLeft="362.727272727273,52.7272727272727" />
         <EdgeLayout
@@ -4763,16 +4722,16 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="169.333333333334,41.3333333333334"
+          Size="171,42"
           Id="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination"
           TopLeft="326,189" />
         <NodeLayout
-          Size="151.333333333334,41.3333333333334"
+          Size="151,42"
           Id="Package\ongoing_outbreaks_phu CSV to Database\Flat File Source"
           TopLeft="340.666666666667,19.6666666666667" />
         <EdgeLayout
           Id="Package\ongoing_outbreaks_phu CSV to Database.Paths[Flat File Source Output]"
-          TopLeft="413.583333333333,61.6666666666667">
+          TopLeft="413.833333333333,61.6666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -4814,15 +4773,15 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="139.333333333334,42.6666666666667"
+          Size="139,42"
           Id="Package\PHU Group file to Database\Excel Source"
           TopLeft="303.71429075027,91.7058825030873" />
         <NodeLayout
-          Size="155.333333333334,41.3333333333334"
+          Size="155,42"
           Id="Package\PHU Group file to Database\Data Conversion"
           TopLeft="328.571434166967,172.517649332462" />
         <NodeLayout
-          Size="169.333333333334,41.3333333333334"
+          Size="170,42"
           Id="Package\PHU Group file to Database\OLE DB Destination"
           TopLeft="277.857147589022,250.058827036392" />
         <EdgeLayout
@@ -4928,15 +4887,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="137.333333333334,41.3333333333334"
+
+          Size="138,42"
           Id="Package\Public health unit file to Database\Excel Source"
           TopLeft="613.571439020488,46.6470594777368" />
         <NodeLayout
-          Size="155.333333333334,41.3333333333334"
+          Size="155,42"
           Id="Package\Public health unit file to Database\Data Conversion"
           TopLeft="629.714285215553,153.235294289242" />
         <NodeLayout
-          Size="169.333333333334,41.3333333333334"
+          Size="170,42"
+
           Id="Package\Public health unit file to Database\OLE DB Destination"
           TopLeft="620.714296284987,260.000003646402" />
         <EdgeLayout
@@ -5030,11 +4991,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="169.333333333334,41.3333333333334"
+          Size="170,42"
           Id="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination"
           TopLeft="578,280" />
         <NodeLayout
-          Size="150.666666666667,41.3333333333334"
+          Size="150,42"
           Id="Package\vaccines_by_age_phu CSV to Database\Flat File Source"
           TopLeft="591.166666666667,135.666666666667" />
         <EdgeLayout
