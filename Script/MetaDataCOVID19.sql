@@ -23,22 +23,33 @@ CREATE TABLE [dbo].[DataFlow](
 )
 
 insert into DataFlow(Name,LSET,CET)
-values('CasesReport',null,null)
+values('CasesReport_Ontario',null,null)
 insert into DataFlow(Name,LSET,CET)
 values('Compiled_COVID19_Case_Details_Canada',null,null)
 insert into DataFlow(Name,LSET,CET)
-values('ongoing_outbreaks_phu',null,null)
+values('ongoing_outbreaks_phu_Ontario',null,null)
 insert into DataFlow(Name,LSET,CET)
-values('public_health_unit',null,null)
+values('public_health_unit_Ontario',null,null)
 insert into DataFlow(Name,LSET,CET)
-values('Public_Health_Units_GROUP',null,null)
+values('Public_Health_Units_GROUP_Ontario',null,null)
 insert into DataFlow(Name,LSET,CET)
-values('vaccines_by_age_phu',null,null)
+values('vaccines_by_age_phu_Ontario',null,null)
+
+--update DataFlow
+--set Name = '' where ID = 1
+--update DataFlow
+--set Name = '' where ID = 2
+--update DataFlow
+--set Name = '' where ID = 3
+--update DataFlow
+--set Name = '' where ID = 4
+--update DataFlow
+--set Name = '' where ID = 5
+--update DataFlow
+--set Name = '' where ID = 6
 
 
 select * from DataFlow
 
 use master
 go
-
-

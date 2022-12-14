@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{0A48ACEA-1202-4F28-B24F-ECB5D1DC359D}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{0B1BBA95-6DF1-47FB-9900-5AAD9BBF8D5A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -743,6 +743,50 @@
                           name="FriendlyExpression">TOKEN(date_reported,"+",1)</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1076,7 +1120,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Compiled_COVID-19_Case_Details_Canada]</property>
+                  name="OpenRowset">[dbo].[Compiled_COVID_19_Case_Details_Canada]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -1192,6 +1236,18 @@
                       cachedName="ConvertedFixed_date_report"
                       externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_reported]"
                       lineageId="Package\Cases Report CANADA CSV to Database\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedFixed_date_report]" />
+                    <inputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1239,6 +1295,14 @@
                       dataType="str"
                       length="35"
                       name="province" />
+                    <externalMetadataColumn
+                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1307,6 +1371,101 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\Cases Report CSV to Database\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Cases Report CSV to Database\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cases Report CSV to Database\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Cases Report CSV to Database\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cases Report CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cases Report CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cases Report CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Cases Report CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Cases Report CSV to Database\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Cases Report CSV to Database\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cases Report CSV to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cases Report CSV to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cases Report CSV to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cases Report CSV to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\Cases Report CSV to Database\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
@@ -1984,6 +2143,18 @@
                       cachedName="PHU Postal Code"
                       externalMetadataColumnId="Package\Cases Report CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_Postal_Code]"
                       lineageId="Package\Cases Report CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[PHU Postal Code]" />
+                    <inputColumn
+                      refId="Package\Cases Report CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Cases Report CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Cases Report CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Cases Report CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Cases Report CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Cases Report CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2071,6 +2242,14 @@
                       dataType="str"
                       length="7"
                       name="PHU_Postal_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Cases Report CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Cases Report CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2102,8 +2281,13 @@
           </components>
           <paths>
             <path
-              refId="Package\Cases Report CSV to Database.Paths[Flat File Source Output]"
+              refId="Package\Cases Report CSV to Database.Paths[Derived Column Output]"
               endId="Package\Cases Report CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Cases Report CSV to Database\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Cases Report CSV to Database.Paths[Flat File Source Output]"
+              endId="Package\Cases Report CSV to Database\Derived Column.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\Cases Report CSV to Database\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -2124,6 +2308,101 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\ongoing_outbreaks_phu CSV to Database\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
@@ -2335,7 +2614,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
+                  name="FastLoadKeepNulls">true</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
@@ -2387,6 +2666,18 @@
                       cachedName="number_ongoing_outbreaks"
                       externalMetadataColumnId="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[number_ongoing_outbreaks]"
                       lineageId="Package\ongoing_outbreaks_phu CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[number_ongoing_outbreaks]" />
+                    <inputColumn
+                      refId="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2408,6 +2699,14 @@
                       refId="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[number_ongoing_outbreaks]"
                       dataType="i4"
                       name="number_ongoing_outbreaks" />
+                    <externalMetadataColumn
+                      refId="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2439,8 +2738,13 @@
           </components>
           <paths>
             <path
-              refId="Package\ongoing_outbreaks_phu CSV to Database.Paths[Flat File Source Output]"
+              refId="Package\ongoing_outbreaks_phu CSV to Database.Paths[Derived Column Output]"
               endId="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\ongoing_outbreaks_phu CSV to Database.Paths[Flat File Source Output]"
+              endId="Package\ongoing_outbreaks_phu CSV to Database\Derived Column.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\ongoing_outbreaks_phu CSV to Database\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -2588,6 +2892,101 @@
                       refId="Package\PHU Group file to Database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\PHU Group file to Database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\PHU Group file to Database\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\PHU Group file to Database\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\PHU Group file to Database\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\PHU Group file to Database\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU Group file to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PHU Group file to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\PHU Group file to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\PHU Group file to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\PHU Group file to Database\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\PHU Group file to Database\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\PHU Group file to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\PHU Group file to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\PHU Group file to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\PHU Group file to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -2834,6 +3233,18 @@
                       cachedName="Copy of PHU_City"
                       externalMetadataColumnId="Package\PHU Group file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_City]"
                       lineageId="Package\PHU Group file to Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PHU_City]" />
+                    <inputColumn
+                      refId="Package\PHU Group file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\PHU Group file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\PHU Group file to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\PHU Group file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\PHU Group file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\PHU Group file to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2855,6 +3266,14 @@
                       dataType="str"
                       length="250"
                       name="PHU_region" />
+                    <externalMetadataColumn
+                      refId="Package\PHU Group file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\PHU Group file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2887,9 +3306,14 @@
           <paths>
             <path
               refId="Package\PHU Group file to Database.Paths[Data Conversion Output]"
-              endId="Package\PHU Group file to Database\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\PHU Group file to Database\Derived Column.Inputs[Derived Column Input]"
               name="Data Conversion Output"
               startId="Package\PHU Group file to Database\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\PHU Group file to Database.Paths[Derived Column Output]"
+              endId="Package\PHU Group file to Database\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\PHU Group file to Database\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\PHU Group file to Database.Paths[Excel Source Output]"
               endId="Package\PHU Group file to Database\Data Conversion.Inputs[Data Conversion Input]"
@@ -3171,6 +3595,101 @@
                       refId="Package\Public health unit file to Database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Public health unit file to Database\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Public health unit file to Database\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Public health unit file to Database\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Public health unit file to Database\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Public health unit file to Database\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Public health unit file to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Public health unit file to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Public health unit file to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Public health unit file to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Public health unit file to Database\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Public health unit file to Database\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Public health unit file to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Public health unit file to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Public health unit file to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Public health unit file to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -3547,6 +4066,18 @@
                       cachedName="Copy of Reporting_PHU"
                       externalMetadataColumnId="Package\Public health unit file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Reporting_PHU]"
                       lineageId="Package\Public health unit file to Database\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Reporting_PHU]" />
+                    <inputColumn
+                      refId="Package\Public health unit file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\Public health unit file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\Public health unit file to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\Public health unit file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\Public health unit file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\Public health unit file to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3592,6 +4123,14 @@
                       dataType="str"
                       length="255"
                       name="Reporting_PHU_Postal_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Public health unit file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Public health unit file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3624,9 +4163,14 @@
           <paths>
             <path
               refId="Package\Public health unit file to Database.Paths[Data Conversion Output]"
-              endId="Package\Public health unit file to Database\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Public health unit file to Database\Derived Column.Inputs[Derived Column Input]"
               name="Data Conversion Output"
               startId="Package\Public health unit file to Database\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Public health unit file to Database.Paths[Derived Column Output]"
+              endId="Package\Public health unit file to Database\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Public health unit file to Database\Derived Column.Outputs[Derived Column Output]" />
             <path
               refId="Package\Public health unit file to Database.Paths[Excel Source Output]"
               endId="Package\Public health unit file to Database\Data Conversion.Inputs[Data Conversion Input]"
@@ -3650,6 +4194,101 @@
         <pipeline
           version="1">
           <components>
+            <component
+              refId="Package\vaccines_by_age_phu CSV to Database\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]"
+                      name="CreatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]"
+                      name="UpdatedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
             <component
               refId="Package\vaccines_by_age_phu CSV to Database\Flat File Source"
               componentClassID="Microsoft.FlatFileSource"
@@ -4003,6 +4642,18 @@
                       cachedName="At least one dose_cumulative"
                       externalMetadataColumnId="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[At_least_one_dose_cumulative]"
                       lineageId="Package\vaccines_by_age_phu CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[At least one dose_cumulative]" />
+                    <inputColumn
+                      refId="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreatedDate"
+                      externalMetadataColumnId="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      lineageId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[CreatedDate]" />
+                    <inputColumn
+                      refId="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UpdatedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UpdatedDate"
+                      externalMetadataColumnId="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      lineageId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4036,6 +4687,14 @@
                       refId="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[third_dose_cumulative]"
                       dataType="i4"
                       name="third_dose_cumulative" />
+                    <externalMetadataColumn
+                      refId="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4067,8 +4726,13 @@
           </components>
           <paths>
             <path
-              refId="Package\vaccines_by_age_phu CSV to Database.Paths[Flat File Source Output]"
+              refId="Package\vaccines_by_age_phu CSV to Database.Paths[Derived Column Output]"
               endId="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\vaccines_by_age_phu CSV to Database.Paths[Flat File Source Output]"
+              endId="Package\vaccines_by_age_phu CSV to Database\Derived Column.Inputs[Derived Column Input]"
               name="Flat File Source Output"
               startId="Package\vaccines_by_age_phu CSV to Database\Flat File Source.Outputs[Flat File Source Output]" />
           </paths>
@@ -4131,43 +4795,43 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="266,42"
+          Size="265.6,41.6"
           Id="Package\Cases Report CANADA CSV to Database"
-          TopLeft="42.8571425652017,140.952940886903" />
+          TopLeft="43.5714282916516,140.952940886903" />
         <NodeLayout
-          Size="222,42"
+          Size="222.4,41.6"
           Id="Package\Cases Report CSV to Database"
           TopLeft="60,60" />
         <NodeLayout
-          Size="274,42"
+          Size="273.6,41.6"
           Id="Package\ongoing_outbreaks_phu CSV to Database"
           TopLeft="365.714290920569,58.917642768939" />
         <NodeLayout
-          Size="207,42"
+          Size="207.2,41.6"
           Id="Package\PHU Group file to Database"
           TopLeft="443.571435103611,266.152939792983" />
         <NodeLayout
-          Size="237,42"
+          Size="236.8,41.6"
           Id="Package\Public health unit file to Database"
           TopLeft="427.142863395263,147.623526365947" />
         <NodeLayout
-          Size="263,42"
+          Size="263.2,41.6"
           Id="Package\vaccines_by_age_phu CSV to Database"
           TopLeft="81.4285717934978,267.023529465388" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="173.428571282601,101.6">
+          TopLeft="173.785714145826,101.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.3529408869034"
+              EndConnector="0,39.352940886903"
               Start="0,0"
-              End="0,31.8529408869034">
+              End="0,31.852940886903">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.8529408869034" />
+                    End="0,31.852940886903" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4178,18 +4842,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="173.076190512683,182.552940886903">
+          TopLeft="173.433333375908,182.552940886903">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,84.4705885784849"
+              EndConnector="0,84.470588578485"
               Start="0,0"
-              End="0,76.9705885784849">
+              End="0,76.970588578485">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,76.9705885784849" />
+                    End="0,76.970588578485" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4285,23 +4949,23 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Cases Report CANADA CSV to Database\OLE DB Destination"
           TopLeft="580,328.666666666667" />
         <NodeLayout
-          Size="153,42"
+          Size="152.8,41.6"
           Id="Package\Cases Report CANADA CSV to Database\Derived Column"
           TopLeft="254.666666666667,223.6" />
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Cases Report CANADA CSV to Database\Flat File Source"
           TopLeft="340.666666666667,19.6666666666667" />
         <NodeLayout
-          Size="154,42"
+          Size="153.6,41.6"
           Id="Package\Cases Report CANADA CSV to Database\Conditional Split"
           TopLeft="340.666666666667,110" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\Cases Report CANADA CSV to Database\Data Conversion"
           TopLeft="251.666666666667,313.333333333333" />
         <EdgeLayout
@@ -4438,29 +5102,55 @@
     design-time-name="Package\Cases Report CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Cases Report CSV to Database\OLE DB Destination"
-          TopLeft="350,160.909090909091" />
+          TopLeft="345.7142856413,245.026739147633" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Cases Report CSV to Database\Flat File Source"
-          TopLeft="362.727272727273,52.7272727272727" />
+          TopLeft="352.727272556974,35.9037430795643" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Cases Report CSV to Database\Derived Column"
+          TopLeft="353.571434592714,142.235296112443" />
         <EdgeLayout
           Id="Package\Cases Report CSV to Database.Paths[Flat File Source Output]"
-          TopLeft="436.563636363636,94.3272727272727">
+          TopLeft="428.949353574844,77.5037430795643">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,66.5818181818182"
+              EndConnector="0,64.7315530328791"
               Start="0,0"
-              End="0,59.0818181818182">
+              End="0,57.2315530328791">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,59.0818181818182" />
+                    End="0,57.2315530328791" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cases Report CSV to Database.Paths[Derived Column Output]"
+          TopLeft="430.242860117007,183.835296112443">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.1914430351894"
+              Start="0,0"
+              End="0,53.6914430351894">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.6914430351894" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4489,29 +5179,55 @@
     design-time-name="Package\ongoing_outbreaks_phu CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination"
-          TopLeft="326,189" />
+          TopLeft="316.5,269" />
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\ongoing_outbreaks_phu CSV to Database\Flat File Source"
-          TopLeft="340.666666666667,19.6666666666667" />
+          TopLeft="340.666666666667,20.1666666666667" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\ongoing_outbreaks_phu CSV to Database\Derived Column"
+          TopLeft="333,128.1" />
         <EdgeLayout
           Id="Package\ongoing_outbreaks_phu CSV to Database.Paths[Flat File Source Output]"
-          TopLeft="413.833333333333,61.6666666666667">
+          TopLeft="412.833333333334,61.7666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,127.333333333333"
+              EndConnector="0,66.3333333333334"
               Start="0,0"
-              End="0,119.833333333333">
+              End="0,58.8333333333334">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,119.833333333333" />
+                    End="0,58.8333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ongoing_outbreaks_phu CSV to Database.Paths[Derived Column Output]"
+          TopLeft="405.75,169.7">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99.2999999999999"
+              Start="0,0"
+              End="0,91.7999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,91.7999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4542,43 +5258,69 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="139,42"
+          Size="139.2,41.6"
           Id="Package\PHU Group file to Database\Excel Source"
           TopLeft="303.71429075027,91.7058825030873" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\PHU Group file to Database\Data Conversion"
-          TopLeft="328.571434166967,172.517649332462" />
+          TopLeft="306.571434166967,172.517649332462" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\PHU Group file to Database\OLE DB Destination"
-          TopLeft="277.857147589022,250.058827036392" />
+          TopLeft="287.857147589022,357.392160369725" />
         <EdgeLayout
           Id="Package\PHU Group file to Database.Paths[Excel Source Output]"
-          TopLeft="373.380957416937,134.372549169754">
+          TopLeft="373.31429075027,133.305882503087">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="32.857143416697,38.145100162708"
+              EndConnector="10.8571434166969,39.2117668293747"
               Start="0,0"
-              End="32.857143416697,30.645100162708">
+              End="10.8571434166969,31.7117668293747">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.072550081354" />
+                    End="0,15.6058834146874" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.072550081354"
-                    Point2="0,19.072550081354"
-                    Point3="4,19.072550081354" />
+                    Point1="0,15.6058834146874"
+                    Point2="0,19.6058834146874"
+                    Point3="4,19.6058834146874" />
                   <mssgle:LineSegment
-                    End="28.857143416697,19.072550081354" />
+                    End="6.85714341669689,19.6058834146874" />
                   <mssgle:CubicBezierSegment
-                    Point1="28.857143416697,19.072550081354"
-                    Point2="32.857143416697,19.072550081354"
-                    Point3="32.857143416697,23.072550081354" />
+                    Point1="6.85714341669689,19.6058834146874"
+                    Point2="10.8571434166969,19.6058834146874"
+                    Point3="10.8571434166969,23.6058834146874" />
                   <mssgle:LineSegment
-                    End="32.857143416697,30.645100162708" />
+                    End="10.8571434166969,31.7117668293747" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\PHU Group file to Database\Derived Column"
+          TopLeft="303.857147589022,252.325493703059" />
+        <EdgeLayout
+          Id="Package\PHU Group file to Database.Paths[Data Conversion Output]"
+          TopLeft="382.214290877994,214.117649332462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.2078443705966"
+              Start="0,0"
+              End="0,30.7078443705966">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.7078443705966" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4588,31 +5330,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\PHU Group file to Database.Paths[Data Conversion Output]"
-          TopLeft="406.171434166967,214.117649332462">
+          Id="Package\PHU Group file to Database.Paths[Derived Column Output]"
+          TopLeft="376.457147589022,293.925493703059">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-43.1142865779448,35.94117770393"
+              EndConnector="0,63.4666666666666"
               Start="0,0"
-              End="-43.1142865779448,28.44117770393">
+              End="0,55.9666666666666">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.970588851965" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,13.970588851965"
-                    Point2="0,17.970588851965"
-                    Point3="-4,17.970588851965" />
-                  <mssgle:LineSegment
-                    End="-39.1142865779448,17.970588851965" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-39.1142865779448,17.970588851965"
-                    Point2="-43.1142865779448,17.970588851965"
-                    Point3="-43.1142865779448,21.970588851965" />
-                  <mssgle:LineSegment
-                    End="-43.1142865779448,28.44117770393" />
+                    End="0,55.9666666666666" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4656,43 +5386,69 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="138,42"
+          Size="137.6,41.6"
           Id="Package\Public health unit file to Database\Excel Source"
           TopLeft="613.571439020488,46.6470594777368" />
         <NodeLayout
-          Size="155,42"
+          Size="155.2,41.6"
           Id="Package\Public health unit file to Database\Data Conversion"
-          TopLeft="629.714285215553,153.235294289242" />
+          TopLeft="631.142856644125,153.235294289242" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Public health unit file to Database\OLE DB Destination"
-          TopLeft="620.714296284987,260.000003646402" />
+          TopLeft="614.285724856415,325.000003646402" />
         <EdgeLayout
           Id="Package\Public health unit file to Database.Paths[Excel Source Output]"
-          TopLeft="682.771439020488,88.2470594777368">
+          TopLeft="682.371439020488,88.2470594777368">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="24.5428461950648,64.9882348115057"
+              EndConnector="26.3714176236366,64.9882348115052"
               Start="0,0"
-              End="24.5428461950648,57.4882348115057">
+              End="26.3714176236366,57.4882348115052">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.4941174057528" />
+                    End="0,28.4941174057526" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.4941174057528"
-                    Point2="0,32.4941174057528"
-                    Point3="4,32.4941174057528" />
+                    Point1="0,28.4941174057526"
+                    Point2="0,32.4941174057526"
+                    Point3="4,32.4941174057526" />
                   <mssgle:LineSegment
-                    End="20.5428461950648,32.4941174057528" />
+                    End="22.3714176236366,32.4941174057526" />
                   <mssgle:CubicBezierSegment
-                    Point1="20.5428461950648,32.4941174057528"
-                    Point2="24.5428461950648,32.4941174057528"
-                    Point3="24.5428461950648,36.4941174057528" />
+                    Point1="22.3714176236366,32.4941174057526"
+                    Point2="26.3714176236366,32.4941174057526"
+                    Point3="26.3714176236366,36.4941174057526" />
                   <mssgle:LineSegment
-                    End="24.5428461950648,57.4882348115057" />
+                    End="26.3714176236366,57.4882348115052" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Public health unit file to Database\Derived Column"
+          TopLeft="634.285724734774,235.885717932116" />
+        <EdgeLayout
+          Id="Package\Public health unit file to Database.Paths[Data Conversion Output]"
+          TopLeft="709.714290689449,194.835294289242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.0504236428742"
+              Start="0,0"
+              End="0,33.5504236428742">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5504236428742" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4702,19 +5458,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Public health unit file to Database.Paths[Data Conversion Output]"
-          TopLeft="706.61429075027,194.835294289242">
+          Id="Package\Public health unit file to Database.Paths[Derived Column Output]"
+          TopLeft="710.685724734774,277.485717932116">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65.1647093571594"
+              EndConnector="-11.5999998783583,47.5142857142857"
               Start="0,0"
-              End="0,57.6647093571594">
+              End="-11.5999998783583,40.0142857142857">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.6647093571594" />
+                    End="0,19.7571428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.7571428571429"
+                    Point2="0,23.7571428571429"
+                    Point3="-4,23.7571428571429" />
+                  <mssgle:LineSegment
+                    End="-7.59999987835829,23.7571428571429" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.59999987835829,23.7571428571429"
+                    Point2="-11.5999998783583,23.7571428571429"
+                    Point3="-11.5999998783583,27.7571428571429" />
+                  <mssgle:LineSegment
+                    End="-11.5999998783583,40.0142857142857" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4743,29 +5511,55 @@
     design-time-name="Package\vaccines_by_age_phu CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination"
-          TopLeft="578,280" />
+          TopLeft="578,382.307692307692" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\vaccines_by_age_phu CSV to Database\Flat File Source"
           TopLeft="591.166666666667,135.666666666667" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\vaccines_by_age_phu CSV to Database\Derived Column"
+          TopLeft="592.615384615385,233.138461538462" />
         <EdgeLayout
           Id="Package\vaccines_by_age_phu CSV to Database.Paths[Flat File Source Output]"
-          TopLeft="664.583333333333,177.266666666667">
+          TopLeft="667.691025641026,177.266666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,102.733333333333"
+              EndConnector="0,55.8717948717946"
               Start="0,0"
-              End="0,95.233333333333">
+              End="0,48.3717948717946">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,95.233333333333" />
+                    End="0,48.3717948717946" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\vaccines_by_age_phu CSV to Database.Paths[Derived Column Output]"
+          TopLeft="665.907692307692,274.738461538462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,107.569230769231"
+              Start="0,0"
+              End="0,100.069230769231">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,100.069230769231" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
