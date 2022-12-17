@@ -39,12 +39,29 @@ set CreatedDate = GETDATE(), UpdatedDate = GETDATE()
 -- SELECT STAGE
 use StageCOVID19
 go
-select * from CASESREPORT_STAGE
-select * from COMPILED_COVID19_CASE_DETAILS_CANADA_STAGE
-select * from PUBLIC_HEALTH_UNIT_STAGE
+select * from CASESREPORT_STAGE --age
+select * from COMPILED_COVID19_CASE_DETAILS_CANADA_STAGE --age
+select * from PUBLIC_HEALTH_UNIT_STAGE 
 select * from PUBLIC_HEALTH_UNITS_GROUP_STAGE
-select * from VACCINES_BY_AGE_PHU_STAGE
+select * from VACCINES_BY_AGE_PHU_STAGE --age
 select * from ONGOING_OUTBREAKS_PHU_STAGE
+
+
+select distinct AGE from CASESREPORT_STAGE --age
+select distinct AGE_GROUP from COMPILED_COVID19_CASE_DETAILS_CANADA_STAGE --age
+select distinct AGE_GROUP from VACCINES_BY_AGE_PHU_STAGE
+
+select sum(cast(AT_LEAST_ONE_DOSE_CUMULATIVE as bigint)), AGE_GROUP from VACCINES_BY_AGE_PHU_STAGE
+group by AGE_GROUP
+
+select * from VACCINES_BY_AGE_PHU_STAGE where AGE_GROUP = 'Ontario_5plus'
+
+
+--age
+
+
+
+
 
 
 
@@ -112,15 +129,6 @@ delete PHU_CITY
 delete PHU_GROUP
 delete OUTBREAK_GROUP
 
-
---delete CuaHang
---delete Nuoc
---delete LoaiCuaHang
---delete SanPham
---delete LoaiSanPham
---delete KhachHang
-----delete NguonDuLieu
-----delete TrangThai
 
 DBCC CHECKIDENT ('PUBLIC_HEALTH_UNIT', RESEED, 0);
 GO
