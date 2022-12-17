@@ -58,19 +58,6 @@ select * from OUTBREAK_GROUP
 
 
 
-
-
-
--- SELECT NDS
-use NDSCovid19
-go
-
-select * from PHU_GROUP
-select * from PHU_CITY
-select * from PUBLIC_HEALTH_UNIT
-
-
-
 --use DDS
 --go
 --select * from Dim_ThanhPho 
@@ -123,6 +110,8 @@ use NDSCovid19
 delete PUBLIC_HEALTH_UNIT
 delete PHU_CITY
 delete PHU_GROUP
+delete OUTBREAK_GROUP
+
 
 --delete CuaHang
 --delete Nuoc
@@ -138,4 +127,7 @@ GO
 DBCC CHECKIDENT ('PHU_CITY', RESEED, 0);
 GO
 DBCC CHECKIDENT ('PHU_GROUP', RESEED, 0);
+GO
+
+DBCC CHECKIDENT ('OUTBREAK_GROUP', RESEED, 0);
 GO
