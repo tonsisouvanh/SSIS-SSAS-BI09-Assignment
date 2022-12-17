@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{0B1BBA95-6DF1-47FB-9900-5AAD9BBF8D5A}">
+  DTS:VersionBuild="10"
+  DTS:VersionGUID="{AF8D345D-4B65-4550-BFA3-DDC79E9E8F5D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\HTTT_PVu_TT_KINH-Doanh\2022-2023\DATH\Data\Datasource\Cases Report.csv">
+          DTS:ConnectionString="D:\DATH\Data\Datasource\Cases Report.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Outcome"
-              DTS:DTSID="{65C83AAA-5B72-48A2-9727-8410D2F197BB}"
+              DTS:DTSID="{0F4F0680-A19C-4915-BFD1-7092FBB20F53}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Age"
-              DTS:DTSID="{4288B70F-325E-4C42-8188-992307396405}"
+              DTS:DTSID="{C071DA28-88F8-490C-BF7D-211DC3768ECA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Gender"
-              DTS:DTSID="{523502E0-9274-4A7D-948C-9374AF3D4B71}"
+              DTS:DTSID="{9747B13F-DD89-4EB8-8E89-905EE2FE5125}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Reporting PHU"
-              DTS:DTSID="{C3A16E3A-D77D-44ED-A72B-8AE3DE659E87}"
+              DTS:DTSID="{765A7B5C-2580-4992-8460-8CE7FAF1CCAB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -74,7 +74,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="SpecimenDate"
-              DTS:DTSID="{CE5FD2C2-A7C0-4669-9BD4-B380FFD8E65F}"
+              DTS:DTSID="{DCF8DC87-6D0A-47DA-AC1C-6E5D29688DDC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -82,7 +82,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="CaseReported Date"
-              DTS:DTSID="{D5865B4E-4821-48EC-A87A-4AC11AF937DB}"
+              DTS:DTSID="{A93C2AEE-B27D-491B-8F6C-9DEFFB85E8B8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -91,7 +91,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHUCity"
-              DTS:DTSID="{CC7D014B-76BD-4F63-83E4-C27B19AE9BA4}"
+              DTS:DTSID="{CE635FD6-D196-4FF9-966B-05035BD0F9B7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -99,7 +99,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="TestReported Date"
-              DTS:DTSID="{187BB160-467A-428A-B288-8DEBC63B581C}"
+              DTS:DTSID="{16BF8AAA-5CF3-4942-8D28-44F2E68FFBAC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -108,7 +108,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CaseAcquisition info"
-              DTS:DTSID="{897413F9-C08F-4C40-93DE-508FAC109B29}"
+              DTS:DTSID="{615EDCF6-F445-4695-BA9B-1AD2C51FD629}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -116,7 +116,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="AccurateEpisode Dt"
-              DTS:DTSID="{E91BFF92-520E-4BEA-A08D-130EEF6680D3}"
+              DTS:DTSID="{BFB1CA66-8FB6-46FD-BA43-C6135A68194C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -125,7 +125,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Address"
-              DTS:DTSID="{C56278F0-A68B-466A-A70E-521B6EF00ED2}"
+              DTS:DTSID="{934B77B2-1A50-47C5-A413-EA623840B92C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -134,7 +134,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Website"
-              DTS:DTSID="{A68526D0-D759-406C-8630-0C81532C4EC9}"
+              DTS:DTSID="{D7CB318F-82D2-4B2F-AE1A-5A045AC2BC91}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -143,7 +143,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OutbreakRelated"
-              DTS:DTSID="{E13D5ACA-07CC-4FB8-B5AC-F339832DD477}"
+              DTS:DTSID="{B49398AE-1DF7-4CAE-AC45-B3411BEA081B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -151,7 +151,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Latitude"
-              DTS:DTSID="{D896FB9F-6CCB-4328-BDCB-9891140F260D}"
+              DTS:DTSID="{C8ED56F8-CCC1-4C1F-B628-976F5E3A4738}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -159,7 +159,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Longitude"
-              DTS:DTSID="{35DC5EDF-6966-4685-B64E-A2C3967692B0}"
+              DTS:DTSID="{2D33595D-6674-45CD-9832-450B3CD754F5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -168,7 +168,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Postal Code"
-              DTS:DTSID="{7501604B-51D2-4ABE-B0F0-54C356F7573A}"
+              DTS:DTSID="{2CC0BFA2-89E4-43CA-8905-543613B08BCD}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -188,7 +188,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\HTTT_PVu_TT_KINH-Doanh\2022-2023\DATH\Data\Datasource\Compiled_COVID-19_Case_Details_(Canada).csv">
+          DTS:ConnectionString="D:\DATH\Data\Datasource\Compiled_COVID-19_Case_Details_(Canada).csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -196,7 +196,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ObjectId"
-              DTS:DTSID="{21F7D742-94C2-4626-8F7B-50D3FE637428}"
+              DTS:DTSID="{48F2A8BA-33E5-4C79-AB50-12C872ECBD84}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -204,7 +204,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="row_id"
-              DTS:DTSID="{60DEB50F-CC3D-45F7-AE23-ECA1D7B0C7B9}"
+              DTS:DTSID="{4F7C6BEC-D9C8-4924-BE7D-3E10385F7893}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -213,7 +213,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="date_reported"
-              DTS:DTSID="{CA5FD2F4-D5EF-4CED-BB17-2D44C5734B3E}"
+              DTS:DTSID="{E1510F98-9880-4538-B2CC-F7FEF6F1FD02}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -222,7 +222,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="health_region"
-              DTS:DTSID="{04533F44-6246-4C5F-8D36-80324FA4DACC}"
+              DTS:DTSID="{12333DAD-B095-4AAC-9E16-FD01FF563C54}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -231,7 +231,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="age_group"
-              DTS:DTSID="{AF75B514-CFA6-4662-8359-61EBB817CCE8}"
+              DTS:DTSID="{275089F2-F845-4F17-A257-2B10A3D969BC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -240,7 +240,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gender"
-              DTS:DTSID="{8A2888DE-358D-49F9-BAE4-67735CE82768}"
+              DTS:DTSID="{5F347150-5E64-4E06-9A97-8DB76CDF7A29}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -249,7 +249,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="exposure"
-              DTS:DTSID="{57E33919-FB48-430F-9666-B69EAF80F76A}"
+              DTS:DTSID="{801CEFF9-E5D8-4B82-9506-E4D5E84981D2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -258,7 +258,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="case_status"
-              DTS:DTSID="{5E2AF310-8586-4994-B6B8-B447C3AAF7F1}"
+              DTS:DTSID="{304E2C6E-F5D0-47E0-9151-7DFF08D080CC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -267,22 +267,10 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="province"
-              DTS:DTSID="{95B8D88E-16AE-4C85-B9E5-AF241779B4EF}"
+              DTS:DTSID="{C0BEDE98-7DA1-4BAE-A816-7BD309C3B15D}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{A16F0030-BAB8-4CDC-BB97-8C6F4649FC18}"
-      DTS:ObjectName="Excel Connection Manager">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\DATH\Data\Datasource\Public Health Units GROUP.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -311,7 +299,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\HTTT_PVu_TT_KINH-Doanh\2022-2023\DATH\Data\Datasource\ongoing_outbreaks_phu.csv">
+          DTS:ConnectionString="D:\DATH\Data\Datasource\ongoing_outbreaks_phu.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -319,7 +307,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="date"
-              DTS:DTSID="{31752274-0198-4902-84F6-AAED9D57E787}"
+              DTS:DTSID="{03EAB6EC-6585-45DD-AD69-2E7B58A5D4C2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -327,7 +315,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="phu_num"
-              DTS:DTSID="{5C607ED9-C937-41F2-A99F-33D0314CA82E}"
+              DTS:DTSID="{F7413999-4581-4900-A6BA-3347C78870B0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -336,7 +324,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="outbreak_group"
-              DTS:DTSID="{881A477B-2DE0-45DF-8C97-22D94F54F7DD}"
+              DTS:DTSID="{88FF2C6F-23D8-4181-8431-640754F37A96}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -344,10 +332,22 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="number_ongoing_outbreaks"
-              DTS:DTSID="{67A270D7-C478-44BC-A85B-237A34AB1EA1}"
+              DTS:DTSID="{54322F91-C487-4A36-96A5-4029FEF6B8FD}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[PHU Group]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{15A8C735-0845-4443-9ACA-DF01DE34D00F}"
+      DTS:ObjectName="PHU Group">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\DATH\Data\Datasource\Public Health Units GROUP.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -359,19 +359,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\HTTT_PVu_TT_KINH-Doanh\2022-2023\DATH\Data\Datasource\Public health unit.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Public health unit group]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{636D3D8A-5D57-45F0-86CA-D55203AA7B0E}"
-      DTS:ObjectName="Public health unit group">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\HTTT_PVu_TT_KINH-Doanh\2022-2023\DATH\Data\Datasource\Public Health Units GROUP.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\DATH\Data\Datasource\Public health unit.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -388,7 +376,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\HTTT_PVu_TT_KINH-Doanh\2022-2023\DATH\Data\Datasource\vaccines_by_age_phu.csv">
+          DTS:ConnectionString="D:\DATH\Data\Datasource\vaccines_by_age_phu.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -396,7 +384,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{5D729EDA-4486-40CC-B650-C6AE7FE17BD2}"
+              DTS:DTSID="{B41880C1-66AD-4253-9E20-4D610A8862E0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -404,7 +392,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU ID"
-              DTS:DTSID="{F5716189-AA05-497C-A84C-F546F55097E0}"
+              DTS:DTSID="{80F7F4C0-25E7-47CD-BB7F-B3979C3BD217}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -413,7 +401,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Agegroup"
-              DTS:DTSID="{5988B24A-93B7-4AFF-AA6D-50D92C0DAB3E}"
+              DTS:DTSID="{BB213BF7-C065-4082-9F02-3BA6493C6D28}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -421,7 +409,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="At least one dose_cumulative"
-              DTS:DTSID="{0DB19F20-C603-435A-A44A-B2BB2B16B4EC}"
+              DTS:DTSID="{6E18778F-57AF-4E60-936C-E8674B05F52D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -429,7 +417,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="Second_dose_cumulative"
-              DTS:DTSID="{709185E3-3D9D-42F9-910F-9D302BEF2CD7}"
+              DTS:DTSID="{26F7CC2B-E69E-42F4-9222-5EC19352A827}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -437,7 +425,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="fully_vaccinated_cumulative"
-              DTS:DTSID="{19FCDDD3-2703-4E3D-B9C9-9AFBB9596463}"
+              DTS:DTSID="{418C7927-7B21-459B-8AB2-A015E60DC8FC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -445,7 +433,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="third_dose_cumulative"
-              DTS:DTSID="{14E680E9-F4AC-4723-AE4C-4C95961AF150}"
+              DTS:DTSID="{86318889-A57A-4A07-AC19-12E857FF568F}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -610,6 +598,13 @@
                       cachedDataType="i4"
                       cachedName="row_id"
                       lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[row_id]" />
+                    <inputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\Data Conversion.Inputs[Data Conversion Input].Columns[health_region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="health_region"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -655,6 +650,28 @@
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
                           name="SourceInputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[row_id]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\Data Conversion.Outputs[Data Conversion Output].Columns[Convertedhealth_region]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="150"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Data Conversion.Outputs[Data Conversion Output].Columns[Convertedhealth_region]"
+                      name="Convertedhealth_region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -1177,14 +1194,6 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[health_region]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="150"
-                      cachedName="health_region"
-                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[health_region]"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]" />
-                    <inputColumn
                       refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[age_group]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -1225,17 +1234,19 @@
                       externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[province]"
                       lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]" />
                     <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Converted_row_id]"
+                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[row_id]"
                       cachedDataType="i4"
-                      cachedName="Converted_row_id"
+                      cachedName="row_id"
                       externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[row_id]"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Data Conversion.Outputs[Data Conversion Output].Columns[Converted_row_id]" />
+                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[row_id]" />
                     <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConvertedFixed_date_report]"
-                      cachedDataType="date"
-                      cachedName="ConvertedFixed_date_report"
+                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[date_reported]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="date_reported"
                       externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_reported]"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedFixed_date_report]" />
+                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[date_reported]" />
                     <inputColumn
                       refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
@@ -1248,6 +1259,14 @@
                       cachedName="UpdatedDate"
                       externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       lineageId="Package\Cases Report CANADA CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]" />
+                    <inputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[health_region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="150"
+                      cachedName="health_region"
+                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[health_region]"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1259,13 +1278,13 @@
                       refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[health_region]"
                       codePage="1252"
                       dataType="str"
-                      length="150"
+                      length="65"
                       name="health_region" />
                     <externalMetadataColumn
                       refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[age_group]"
                       codePage="1252"
                       dataType="str"
-                      length="25"
+                      length="35"
                       name="age_group" />
                     <externalMetadataColumn
                       refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
@@ -2172,7 +2191,7 @@
                       refId="Package\Cases Report CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Age]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="35"
                       name="Age" />
                     <externalMetadataColumn
                       refId="Package\Cases Report CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
@@ -2240,7 +2259,7 @@
                       refId="Package\Cases Report CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_Postal_Code]"
                       codePage="1252"
                       dataType="str"
-                      length="7"
+                      length="10"
                       name="PHU_Postal_Code" />
                     <externalMetadataColumn
                       refId="Package\Cases Report CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
@@ -3037,8 +3056,8 @@
               <connections>
                 <connection
                   refId="Package\PHU Group file to Database\Excel Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Excel Connection Manager]"
-                  connectionManagerRefId="Package.ConnectionManagers[Excel Connection Manager]"
+                  connectionManagerID="Package.ConnectionManagers[PHU Group]"
+                  connectionManagerRefId="Package.ConnectionManagers[PHU Group]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3264,7 +3283,7 @@
                       refId="Package\PHU Group file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_region]"
                       codePage="1252"
                       dataType="str"
-                      length="250"
+                      length="65"
                       name="PHU_region" />
                     <externalMetadataColumn
                       refId="Package\PHU Group file to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreatedDate]"
@@ -4949,10 +4968,6 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Cases Report CANADA CSV to Database\OLE DB Destination"
-          TopLeft="580,328.666666666667" />
-        <NodeLayout
           Size="152.8,41.6"
           Id="Package\Cases Report CANADA CSV to Database\Derived Column"
           TopLeft="254.666666666667,223.6" />
@@ -4968,76 +4983,6 @@
           Size="155.2,41.6"
           Id="Package\Cases Report CANADA CSV to Database\Data Conversion"
           TopLeft="251.666666666667,313.333333333333" />
-        <EdgeLayout
-          Id="Package\Cases Report CANADA CSV to Database.Paths[Data Conversion Output]"
-          TopLeft="406.866666666667,334.133333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="173.133333333333,15.3333333333337"
-              Start="0,0"
-              End="165.633333333333,15.3333333333337">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="82.5666666666665,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="82.5666666666665,0"
-                    Point2="86.5666666666665,0"
-                    Point3="86.5666666666665,4" />
-                  <mssgle:LineSegment
-                    End="86.5666666666665,11.3333333333337" />
-                  <mssgle:CubicBezierSegment
-                    Point1="86.5666666666665,11.3333333333337"
-                    Point2="86.5666666666665,15.3333333333337"
-                    Point3="90.5666666666665,15.3333333333337" />
-                  <mssgle:LineSegment
-                    End="165.633333333333,15.3333333333337" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Cases Report CANADA CSV to Database.Paths[Case is Ontario]"
-          TopLeft="393.466666666667,151.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-62.3999999999999,72"
-              Start="0,0"
-              End="-62.3999999999999,64.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.2430769230769" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.2430769230769"
-                    Point2="0,29.2430769230769"
-                    Point3="-4,29.2430769230769" />
-                  <mssgle:LineSegment
-                    End="-58.3999999999999,29.2430769230769" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-58.3999999999999,29.2430769230769"
-                    Point2="-62.3999999999999,29.2430769230769"
-                    Point3="-62.3999999999999,33.2430769230769" />
-                  <mssgle:LineSegment
-                    End="-62.3999999999999,64.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-65.1795507812499,34.2430769230769,67.9591015625,9.5732421875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Cases Report CANADA CSV to Database.Paths[Flat File Source Output]"
           TopLeft="417.066666666667,61.2666666666667">
@@ -5082,22 +5027,83 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cases Report CANADA CSV to Database.Paths[Case is Ontario]"
+          TopLeft="393.466666666667,151.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-62.3999999999999,72"
+              Start="0,0"
+              End="-62.3999999999999,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.2430769230769" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.2430769230769"
+                    Point2="0,29.2430769230769"
+                    Point3="-4,29.2430769230769" />
+                  <mssgle:LineSegment
+                    End="-58.3999999999999,29.2430769230769" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-58.3999999999999,29.2430769230769"
+                    Point2="-62.3999999999999,29.2430769230769"
+                    Point3="-62.3999999999999,33.2430769230769" />
+                  <mssgle:LineSegment
+                    End="-62.3999999999999,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-65.1795507812499,34.2430769230769,67.9591015625,9.5732421875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Cases Report CANADA CSV to Database\OLE DB Destination"
+          TopLeft="545,371" />
+        <EdgeLayout
+          Id="Package\Cases Report CANADA CSV to Database.Paths[Data Conversion Output]"
+          TopLeft="406.866666666667,334.133333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="138.133333333333,57.666666666667"
+              Start="0,0"
+              End="130.633333333333,57.666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="65.0666666666666,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="65.0666666666666,0"
+                    Point2="69.0666666666666,0"
+                    Point3="69.0666666666666,4" />
+                  <mssgle:LineSegment
+                    End="69.0666666666666,53.666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.0666666666666,53.666666666667"
+                    Point2="69.0666666666666,57.666666666667"
+                    Point3="73.0666666666666,57.666666666667" />
+                  <mssgle:LineSegment
+                    End="130.633333333333,57.666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cases Report CANADA CSV to Database\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Cases Report CSV to Database">
     <LayoutInfo>
@@ -5108,13 +5114,13 @@
           Id="Package\Cases Report CSV to Database\OLE DB Destination"
           TopLeft="345.7142856413,245.026739147633" />
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Cases Report CSV to Database\Flat File Source"
-          TopLeft="352.727272556974,35.9037430795643" />
-        <NodeLayout
           Size="152.8,41.6"
           Id="Package\Cases Report CSV to Database\Derived Column"
           TopLeft="353.571434592714,142.235296112443" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Cases Report CSV to Database\Flat File Source"
+          TopLeft="352.727272556974,35.9037430795643" />
         <EdgeLayout
           Id="Package\Cases Report CSV to Database.Paths[Flat File Source Output]"
           TopLeft="428.949353574844,77.5037430795643">
@@ -5179,19 +5185,19 @@
     design-time-name="Package\ongoing_outbreaks_phu CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination"
           TopLeft="316.5,269" />
         <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\ongoing_outbreaks_phu CSV to Database\Flat File Source"
-          TopLeft="340.666666666667,20.1666666666667" />
-        <NodeLayout
           Size="152.8,41.6"
           Id="Package\ongoing_outbreaks_phu CSV to Database\Derived Column"
           TopLeft="333,128.1" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\ongoing_outbreaks_phu CSV to Database\Flat File Source"
+          TopLeft="340.666666666667,20.1666666666667" />
         <EdgeLayout
           Id="Package\ongoing_outbreaks_phu CSV to Database.Paths[Flat File Source Output]"
           TopLeft="412.833333333334,61.7666666666667">
@@ -5211,7 +5217,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5233,7 +5241,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5258,6 +5268,14 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\PHU Group file to Database\Derived Column"
+          TopLeft="303.857147589022,252.325493703059" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\PHU Group file to Database\OLE DB Destination"
+          TopLeft="287.857147589022,357.392160369725" />
+        <NodeLayout
           Size="139.2,41.6"
           Id="Package\PHU Group file to Database\Excel Source"
           TopLeft="303.71429075027,91.7058825030873" />
@@ -5265,10 +5283,6 @@
           Size="155.2,41.6"
           Id="Package\PHU Group file to Database\Data Conversion"
           TopLeft="306.571434166967,172.517649332462" />
-        <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\PHU Group file to Database\OLE DB Destination"
-          TopLeft="287.857147589022,357.392160369725" />
         <EdgeLayout
           Id="Package\PHU Group file to Database.Paths[Excel Source Output]"
           TopLeft="373.31429075027,133.305882503087">
@@ -5303,32 +5317,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\PHU Group file to Database\Derived Column"
-          TopLeft="303.857147589022,252.325493703059" />
-        <EdgeLayout
-          Id="Package\PHU Group file to Database.Paths[Data Conversion Output]"
-          TopLeft="382.214290877994,214.117649332462">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.2078443705966"
-              Start="0,0"
-              End="0,30.7078443705966">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.7078443705966" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\PHU Group file to Database.Paths[Derived Column Output]"
           TopLeft="376.457147589022,293.925493703059">
@@ -5351,11 +5339,33 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\PHU Group file to Database.Paths[Data Conversion Output]"
+          TopLeft="382.214290877994,214.117649332462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.2078443705966"
+              Start="0,0"
+              End="0,30.7078443705966">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.7078443705966" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\PHU Group file to Database\Excel Source">
+    design-time-name="Package\PHU Group file to Database\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5368,7 +5378,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\PHU Group file to Database\OLE DB Destination">
+    design-time-name="Package\PHU Group file to Database\Excel Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -5384,7 +5394,11 @@
     design-time-name="Package\Public health unit file to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Public health unit file to Database\Derived Column"
+          TopLeft="634.285724734774,235.885717932116" />
         <NodeLayout
           Size="137.6,41.6"
           Id="Package\Public health unit file to Database\Excel Source"
@@ -5428,33 +5442,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Public health unit file to Database\Derived Column"
-          TopLeft="634.285724734774,235.885717932116" />
-        <EdgeLayout
-          Id="Package\Public health unit file to Database.Paths[Data Conversion Output]"
-          TopLeft="709.714290689449,194.835294289242">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.0504236428742"
-              Start="0,0"
-              End="0,33.5504236428742">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.5504236428742" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5488,7 +5478,33 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Public health unit file to Database.Paths[Data Conversion Output]"
+          TopLeft="709.714290689449,194.835294289242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.0504236428742"
+              Start="0,0"
+              End="0,33.5504236428742">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5504236428742" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5511,19 +5527,19 @@
     design-time-name="Package\vaccines_by_age_phu CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination"
           TopLeft="578,382.307692307692" />
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\vaccines_by_age_phu CSV to Database\Flat File Source"
-          TopLeft="591.166666666667,135.666666666667" />
-        <NodeLayout
           Size="152.8,41.6"
           Id="Package\vaccines_by_age_phu CSV to Database\Derived Column"
           TopLeft="592.615384615385,233.138461538462" />
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\vaccines_by_age_phu CSV to Database\Flat File Source"
+          TopLeft="591.166666666667,135.666666666667" />
         <EdgeLayout
           Id="Package\vaccines_by_age_phu CSV to Database.Paths[Flat File Source Output]"
           TopLeft="667.691025641026,177.266666666667">
@@ -5543,7 +5559,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5565,7 +5583,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5573,6 +5593,19 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cases Report CANADA CSV to Database\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
