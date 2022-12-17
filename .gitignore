@@ -3,6 +3,7 @@
 *.csv
 *.DS_Store
 /Data
+DataFileToDatabase.dtsx
 
 ### VisualStudio ###
 ## Ignore Visual Studio temporary files, build results, and
