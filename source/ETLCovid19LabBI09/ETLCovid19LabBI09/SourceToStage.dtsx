@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SourceToStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{D9491ACE-C5C5-4038-A978-8C13F512C508}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{42CA67B6-ABDE-49F0-87B5-657364D47C34}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;Initial Catalog=SourceCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-SourceToStage-{E91F8144-A30D-44E2-AFB7-06445C589CA6}LocalHost.SourceCOVID19;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=SourceCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SourceToStage-{E91F8144-A30D-44E2-AFB7-06445C589CA6}LocalHost.SourceCOVID19;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -824,7 +824,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Case Report\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_WEBSITE]"
                           codePage="1252"
                           dataType="str"
-                          length="250"
+                          length="75"
                           name="PHU_WEBSITE" />
                         <externalMetadataColumn
                           refId="Package\Case Report\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OUTBREAKRELATED]"
@@ -2291,7 +2291,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Public Health Unit\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Reporting_PHU_Postal_Code]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="255"
+                          cachedLength="10"
                           cachedName="Reporting_PHU_Postal_Code"
                           externalMetadataColumnId="Package\Public Health Unit\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REPORTING_PHU_POSTAL_CODE]"
                           lineageId="Package\Public Health Unit\Data Flow Task\PHU.Outputs[OLE DB Source Output].Columns[Reporting_PHU_Postal_Code]" />
@@ -2300,11 +2300,11 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                         isUsed="True">
                         <externalMetadataColumn
                           refId="Package\Public Health Unit\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REPORTING_PHU_LATITUDE]"
-                          dataType="r8"
+                          dataType="r4"
                           name="REPORTING_PHU_LATITUDE" />
                         <externalMetadataColumn
                           refId="Package\Public Health Unit\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REPORTING_PHU_LONGITUDE]"
-                          dataType="r8"
+                          dataType="r4"
                           name="REPORTING_PHU_LONGITUDE" />
                         <externalMetadataColumn
                           refId="Package\Public Health Unit\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_ID]"
@@ -2314,31 +2314,31 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Public Health Unit\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REPORTING_PHU_ADDRESS]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="40"
                           name="REPORTING_PHU_ADDRESS" />
                         <externalMetadataColumn
                           refId="Package\Public Health Unit\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REPORTING_PHU]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="65"
                           name="REPORTING_PHU" />
                         <externalMetadataColumn
                           refId="Package\Public Health Unit\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REPORTING_PHU_CITY]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="25"
                           name="REPORTING_PHU_CITY" />
                         <externalMetadataColumn
                           refId="Package\Public Health Unit\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REPORTING_PHU_WEBSITE]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="75"
                           name="REPORTING_PHU_WEBSITE" />
                         <externalMetadataColumn
                           refId="Package\Public Health Unit\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REPORTING_PHU_POSTAL_CODE]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="10"
                           name="REPORTING_PHU_POSTAL_CODE" />
                       </externalMetadataColumns>
                     </input>
@@ -2526,7 +2526,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Public Health Unit\Data Flow Task\PHU.Outputs[OLE DB Source Output].ExternalColumns[Reporting_PHU_Postal_Code]"
-                          length="255"
+                          length="10"
                           lineageId="Package\Public Health Unit\Data Flow Task\PHU.Outputs[OLE DB Source Output].Columns[Reporting_PHU_Postal_Code]"
                           name="Reporting_PHU_Postal_Code"
                           truncationRowDisposition="FailComponent" />
@@ -2581,7 +2581,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Public Health Unit\Data Flow Task\PHU.Outputs[OLE DB Source Output].ExternalColumns[Reporting_PHU_Postal_Code]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="10"
                           name="Reporting_PHU_Postal_Code" />
                       </externalMetadataColumns>
                     </output>
@@ -2637,7 +2637,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Public Health Unit\Data Flow Task\PHU.Outputs[OLE DB Source Error Output].Columns[Reporting_PHU_Postal_Code]"
                           codePage="1252"
                           dataType="str"
-                          length="255"
+                          length="10"
                           lineageId="Package\Public Health Unit\Data Flow Task\PHU.Outputs[OLE DB Source Error Output].Columns[Reporting_PHU_Postal_Code]"
                           name="Reporting_PHU_Postal_Code" />
                         <outputColumn
@@ -2913,19 +2913,19 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Public Health Unit Group\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_GROUP]"
                           codePage="1252"
                           dataType="str"
-                          length="250"
+                          length="50"
                           name="PHU_GROUP" />
                         <externalMetadataColumn
                           refId="Package\Public Health Unit Group\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_CITY]"
                           codePage="1252"
                           dataType="str"
-                          length="250"
+                          length="25"
                           name="PHU_CITY" />
                         <externalMetadataColumn
                           refId="Package\Public Health Unit Group\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_REGION]"
                           codePage="1252"
                           dataType="str"
-                          length="250"
+                          length="65"
                           name="PHU_REGION" />
                       </externalMetadataColumns>
                     </input>
@@ -3380,14 +3380,6 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           externalMetadataColumnId="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_ID]"
                           lineageId="Package\Vaccine by age phu\Data Flow Task\Vaccine by age phu.Outputs[OLE DB Source Output].Columns[PHU_ID]" />
                         <inputColumn
-                          refId="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Agegroup]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="150"
-                          cachedName="Agegroup"
-                          externalMetadataColumnId="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGEGROUP]"
-                          lineageId="Package\Vaccine by age phu\Data Flow Task\Vaccine by age phu.Outputs[OLE DB Source Output].Columns[Agegroup]" />
-                        <inputColumn
                           refId="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[At_least_one_dose_cumulative]"
                           cachedDataType="i4"
                           cachedName="At_least_one_dose_cumulative"
@@ -3411,6 +3403,14 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           cachedName="third_dose_cumulative"
                           externalMetadataColumnId="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[THIRD_DOSE_CUMULATIVE]"
                           lineageId="Package\Vaccine by age phu\Data Flow Task\Vaccine by age phu.Outputs[OLE DB Source Output].Columns[third_dose_cumulative]" />
+                        <inputColumn
+                          refId="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Agegroup]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="150"
+                          cachedName="Agegroup"
+                          externalMetadataColumnId="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGE_GROUP]"
+                          lineageId="Package\Vaccine by age phu\Data Flow Task\Vaccine by age phu.Outputs[OLE DB Source Output].Columns[Agegroup]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -3422,12 +3422,6 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_ID]"
                           dataType="i4"
                           name="PHU_ID" />
-                        <externalMetadataColumn
-                          refId="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGEGROUP]"
-                          codePage="1252"
-                          dataType="str"
-                          length="150"
-                          name="AGEGROUP" />
                         <externalMetadataColumn
                           refId="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AT_LEAST_ONE_DOSE_CUMULATIVE]"
                           dataType="i4"
@@ -3444,6 +3438,12 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[THIRD_DOSE_CUMULATIVE]"
                           dataType="i4"
                           name="THIRD_DOSE_CUMULATIVE" />
+                        <externalMetadataColumn
+                          refId="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGE_GROUP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="35"
+                          name="AGE_GROUP" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3904,11 +3904,23 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
       <GraphLayout
         Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="175.2,41.6"
+          Size="150,42"
+          Id="Package\Case Report\Data Flow Task"
+          TopLeft="58.9650822493496,249.267978305773" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Case Report\Execute SQL Task"
+          TopLeft="51.7428599041336,334.235299758845" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Case Report\GET LSET"
+          TopLeft="67.4571458860321,172.117650426383" />
+        <NodeLayout
+          Size="175,42"
           Id="Package\Case Report\Set CET in MetaData"
           TopLeft="14.6000021287375,12.1647068046781" />
         <NodeLayout
-          Size="120,41.6"
+          Size="120,42"
           Id="Package\Case Report\Truncate"
           TopLeft="73.1714316976315,92.588237546307" />
         <EdgeLayout
@@ -3945,10 +3957,6 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="124.8,41.6"
-          Id="Package\Case Report\GET LSET"
-          TopLeft="67.4571458860321,172.117650426383" />
         <EdgeLayout
           Id="Package\Case Report.PrecedenceConstraints[Constraint 1]"
           TopLeft="131.514288791832,134.188237546307">
@@ -3971,10 +3979,6 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Case Report\Data Flow Task"
-          TopLeft="58.9650822493496,249.267978305773" />
         <EdgeLayout
           Id="Package\Case Report.PrecedenceConstraints[Constraint 2]"
           TopLeft="132.011114067691,213.717650426383">
@@ -3997,10 +4001,6 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Case Report\Execute SQL Task"
-          TopLeft="51.7428599041336,334.235299758845" />
         <EdgeLayout
           Id="Package\Case Report.PrecedenceConstraints[Constraint 3]"
           TopLeft="133.553971076742,290.867978305773">
@@ -4026,28 +4026,28 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="261.6,431.2"
-          Size="261.6,474.4"
+          PanelSize="262,431"
+          Size="262,474"
           Id="Package\Case Report"
           TopLeft="117.551022410045,26.0000003646402" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Case Report Canada\Data Flow Task"
           TopLeft="58.1714314421829,250.117651520303" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Case Report Canada\Execute SQL Task"
           TopLeft="51.7428599041336,334.235299758845" />
         <NodeLayout
-          Size="124.8,41.6"
+          Size="125,42"
           Id="Package\Case Report Canada\GET LSET"
           TopLeft="68.1714316124819,171.352944533305" />
         <NodeLayout
-          Size="175.2,41.6"
+          Size="175,42"
           Id="Package\Case Report Canada\Set CET in MetaData"
           TopLeft="14.6000021287375,12.1647068046781" />
         <NodeLayout
-          Size="120,41.6"
+          Size="120,42"
           Id="Package\Case Report Canada\Truncate"
           TopLeft="73.1714316976315,91.8235316532293" />
         <EdgeLayout
@@ -4153,211 +4153,28 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="291.2,431.2"
-          Size="291.2,474.4"
+          PanelSize="291,431"
+          Size="291,474"
           Id="Package\Case Report Canada"
           TopLeft="440.341498620795,26.0000003646402" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="379.151022410045,263.20000036464">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="61.1904762107499,0"
-              Start="0,0"
-              End="53.6904762107499,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="53.6904762107499,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Vaccine by age phu\Data Flow Task"
-          TopLeft="58.1714314421829,250.117651520303" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Vaccine by age phu\Execute SQL Task"
-          TopLeft="51.7428599041336,334.235299758845" />
-        <NodeLayout
-          Size="124.8,41.6"
-          Id="Package\Vaccine by age phu\GET LSET"
-          TopLeft="68.1714316124819,171.352944533305" />
-        <NodeLayout
-          Size="175.2,41.6"
-          Id="Package\Vaccine by age phu\Set CET in MetaData"
-          TopLeft="41.0285740073849,13.6941185908334" />
-        <NodeLayout
-          Size="120,41.6"
-          Id="Package\Vaccine by age phu\Truncate"
-          TopLeft="89.6000034059799,91.7385643317762" />
-        <EdgeLayout
-          Id="Package\Vaccine by age phu.PrecedenceConstraints[Constraint]"
-          TopLeft="128.628574007385,55.2941185908334">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.971429398595,36.4444457409428"
-              Start="0,0"
-              End="20.971429398595,28.9444457409428">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.2222228704714" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.2222228704714"
-                    Point2="0,18.2222228704714"
-                    Point3="4,18.2222228704714" />
-                  <mssgle:LineSegment
-                    End="16.971429398595,18.2222228704714" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.971429398595,18.2222228704714"
-                    Point2="20.971429398595,18.2222228704714"
-                    Point3="20.971429398595,22.2222228704714" />
-                  <mssgle:LineSegment
-                    End="20.971429398595,28.9444457409428" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Vaccine by age phu.PrecedenceConstraints[Constraint 1]"
-          TopLeft="149.60000340598,133.338564331776">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-19.028571793498,38.0143802015288"
-              Start="0,0"
-              End="-19.028571793498,30.5143802015288">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.0071901007644" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.0071901007644"
-                    Point2="0,19.0071901007644"
-                    Point3="-4,19.0071901007644" />
-                  <mssgle:LineSegment
-                    End="-15.028571793498,19.0071901007644" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-15.028571793498,19.0071901007644"
-                    Point2="-19.028571793498,19.0071901007644"
-                    Point3="-19.028571793498,23.0071901007644" />
-                  <mssgle:LineSegment
-                    End="-19.028571793498,30.5143802015288" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Vaccine by age phu.PrecedenceConstraints[Constraint 2]"
-          TopLeft="131.971431527332,212.952944533305">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.1647069869977"
-              Start="0,0"
-              End="0,29.6647069869977">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.6647069869977" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Vaccine by age phu.PrecedenceConstraints[Constraint 3]"
-          TopLeft="133.157145673158,291.717651520303">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42.5176482385418"
-              Start="0,0"
-              End="0,35.0176482385418">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.0176482385418" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="355.2,431.2"
-          Size="355.2,474.4"
-          Id="Package\Vaccine by age phu"
-          TopLeft="808.265319887126,23.7058826854073" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="731.541498620795,262.052941525024">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="76.7238212663303,0"
-              Start="0,0"
-              End="69.2238212663303,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="69.2238212663303,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Ongoing out break\Data Flow Task"
           TopLeft="58.1714314421829,250.117651520303" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Ongoing out break\Execute SQL Task"
           TopLeft="51.7428599041336,334.235299758845" />
         <NodeLayout
-          Size="124.8,41.6"
+          Size="125,42"
           Id="Package\Ongoing out break\GET LSET"
           TopLeft="68.1714316124819,171.352944533305" />
         <NodeLayout
-          Size="175.2,41.6"
+          Size="175,42"
           Id="Package\Ongoing out break\Set CET in MetaData"
           TopLeft="42.6952407024347,14.6287591268172" />
         <NodeLayout
-          Size="120,41.6"
+          Size="120,42"
           Id="Package\Ongoing out break\Truncate"
           TopLeft="89.6000034059799,92.5882375463069" />
         <EdgeLayout
@@ -4475,62 +4292,28 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="260,431.2"
-          Size="260,474.4"
+          PanelSize="260,431"
+          Size="260,474"
           Id="Package\Ongoing out break"
           TopLeft="100.986396277612,587.112053051952" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="985.865319887126,498.105882685407">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-754.878923609514,89.0061703665445"
-              Start="0,0"
-              End="-754.878923609514,81.5061703665445">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.5030851832722" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,40.5030851832722"
-                    Point2="0,44.5030851832722"
-                    Point3="-4,44.5030851832722" />
-                  <mssgle:LineSegment
-                    End="-750.878923609514,44.5030851832722" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-750.878923609514,44.5030851832722"
-                    Point2="-754.878923609514,44.5030851832722"
-                    Point3="-754.878923609514,48.5030851832722" />
-                  <mssgle:LineSegment
-                    End="-754.878923609514,81.5061703665445" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Public Health Unit\Data Flow Task"
           TopLeft="58.1714314421829,250.117651520303" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Public Health Unit\Execute SQL Task"
           TopLeft="52.9333361148835,336.147064491539" />
         <NodeLayout
-          Size="124.8,41.6"
+          Size="125,42"
           Id="Package\Public Health Unit\GET LSET"
           TopLeft="68.1714316124819,171.352944533305" />
         <NodeLayout
-          Size="175.2,41.6"
+          Size="175,42"
           Id="Package\Public Health Unit\Set CET in MetaData"
           TopLeft="42.1000025970598,14.6287591268172" />
         <NodeLayout
-          Size="120,41.6"
+          Size="120,42"
           Id="Package\Public Health Unit\Truncate"
           TopLeft="89.6000034059799,92.5882375463069" />
         <EdgeLayout
@@ -4648,50 +4431,28 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="260,431.2"
-          Size="260,474.4"
+          PanelSize="260,431"
+          Size="260,474"
           Id="Package\Public Health Unit"
           TopLeft="435.200000340598,587.686282719826" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="360.986396277612,824.599167885889">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="74.2136040629868,0"
-              Start="0,0"
-              End="66.7136040629868,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="66.7136040629868,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Public Health Unit Group\Data Flow Task"
           TopLeft="58.1714314421829,250.882357413381" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Public Health Unit Group\Execute SQL Task"
           TopLeft="52.9333361148835,336.147064491539" />
         <NodeLayout
-          Size="124.8,41.6"
+          Size="125,42"
           Id="Package\Public Health Unit Group\GET LSET"
           TopLeft="68.1714316124819,171.352944533305" />
         <NodeLayout
-          Size="175.2,41.6"
+          Size="175,42"
           Id="Package\Public Health Unit Group\Set CET in MetaData"
           TopLeft="42.1000025970598,14.6287591268172" />
         <NodeLayout
-          Size="120,41.6"
+          Size="120,42"
           Id="Package\Public Health Unit Group\Truncate"
           TopLeft="89.6000034059799,92.5882375463069" />
         <EdgeLayout
@@ -4809,10 +4570,249 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="260,431.2"
-          Size="260,474.4"
+          PanelSize="260,431"
+          Size="260,474"
           Id="Package\Public Health Unit Group"
           TopLeft="800.16599295049,586.007477873062" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Vaccine by age phu\Data Flow Task"
+          TopLeft="58.1714314421829,250.117651520303" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Vaccine by age phu\Execute SQL Task"
+          TopLeft="51.7428599041336,334.235299758845" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Vaccine by age phu\GET LSET"
+          TopLeft="68.1714316124819,171.352944533305" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Vaccine by age phu\Set CET in MetaData"
+          TopLeft="41.0285740073849,13.6941185908334" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Vaccine by age phu\Truncate"
+          TopLeft="89.6000034059799,91.7385643317762" />
+        <EdgeLayout
+          Id="Package\Vaccine by age phu.PrecedenceConstraints[Constraint]"
+          TopLeft="128.628574007385,55.2941185908334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.971429398595,36.4444457409428"
+              Start="0,0"
+              End="20.971429398595,28.9444457409428">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.2222228704714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.2222228704714"
+                    Point2="0,18.2222228704714"
+                    Point3="4,18.2222228704714" />
+                  <mssgle:LineSegment
+                    End="16.971429398595,18.2222228704714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.971429398595,18.2222228704714"
+                    Point2="20.971429398595,18.2222228704714"
+                    Point3="20.971429398595,22.2222228704714" />
+                  <mssgle:LineSegment
+                    End="20.971429398595,28.9444457409428" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vaccine by age phu.PrecedenceConstraints[Constraint 1]"
+          TopLeft="149.60000340598,133.338564331776">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.028571793498,38.0143802015288"
+              Start="0,0"
+              End="-19.028571793498,30.5143802015288">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0071901007644" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.0071901007644"
+                    Point2="0,19.0071901007644"
+                    Point3="-4,19.0071901007644" />
+                  <mssgle:LineSegment
+                    End="-15.028571793498,19.0071901007644" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.028571793498,19.0071901007644"
+                    Point2="-19.028571793498,19.0071901007644"
+                    Point3="-19.028571793498,23.0071901007644" />
+                  <mssgle:LineSegment
+                    End="-19.028571793498,30.5143802015288" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vaccine by age phu.PrecedenceConstraints[Constraint 2]"
+          TopLeft="131.971431527332,212.952944533305">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.1647069869977"
+              Start="0,0"
+              End="0,29.6647069869977">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.6647069869977" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Vaccine by age phu.PrecedenceConstraints[Constraint 3]"
+          TopLeft="133.157145673158,291.717651520303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5176482385418"
+              Start="0,0"
+              End="0,35.0176482385418">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0176482385418" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="253,431"
+          Size="253,474"
+          Id="Package\Vaccine by age phu"
+          TopLeft="808.265319887126,23.7058826854073" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="379.151022410045,263.20000036464">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61.1904762107499,0"
+              Start="0,0"
+              End="53.6904762107499,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="53.6904762107499,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="731.541498620795,262.052941525024">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="76.723821266331,0"
+              Start="0,0"
+              End="69.223821266331,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="69.223821266331,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="934.665319887126,498.105882685407">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-703.678923609514,89.0061703665447"
+              Start="0,0"
+              End="-703.678923609514,81.5061703665447">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5030851832724" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.5030851832724"
+                    Point2="0,44.5030851832724"
+                    Point3="-4,44.5030851832724" />
+                  <mssgle:LineSegment
+                    End="-699.678923609514,44.5030851832724" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-699.678923609514,44.5030851832724"
+                    Point2="-703.678923609514,44.5030851832724"
+                    Point3="-703.678923609514,48.5030851832724" />
+                  <mssgle:LineSegment
+                    End="-703.678923609514,81.5061703665447" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="360.986396277612,824.599167885889">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.2136040629868,0"
+              Start="0,0"
+              End="66.7136040629868,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="66.7136040629868,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="695.200000340598,824.046880296444">
@@ -4844,11 +4844,11 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="132.8,41.6"
+          Size="133,42"
           Id="Package\Case Report\Data Flow Task\Case report"
           TopLeft="312.142862458618,182.000002552481" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Case Report\Data Flow Task\OLE DB Destination"
           TopLeft="303.571433741219,289.82353347643" />
         <EdgeLayout
@@ -4915,11 +4915,11 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Case Report Canada\Data Flow Task\OLE DB Destination"
           TopLeft="303.571433741219,289.82353347643" />
         <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\Case Report Canada\Data Flow Task\Case report Canada"
           TopLeft="312.142862458618,182.000002552481" />
         <EdgeLayout
@@ -4960,6 +4960,14 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Case Report Canada\Data Flow Task\Case report Canada">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Case Report Canada\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
@@ -4972,98 +4980,19 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Case Report Canada\Data Flow Task\Case report Canada">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Vaccine by age phu\Data Flow Task">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination"
-          TopLeft="302.904767074552,289.156866809763" />
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Vaccine by age phu\Data Flow Task\Vaccine by age phu"
-          TopLeft="312.142862458618,182.000002552481" />
-        <EdgeLayout
-          Id="Package\Vaccine by age phu\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="397.342862458618,223.600002552481">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-9.23809538406567,65.5568642572823"
-              Start="0,0"
-              End="-9.23809538406567,58.0568642572823">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.7784321286412" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,28.7784321286412"
-                    Point2="0,32.7784321286412"
-                    Point3="-4,32.7784321286412" />
-                  <mssgle:LineSegment
-                    End="-5.23809538406567,32.7784321286412" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-5.23809538406567,32.7784321286412"
-                    Point2="-9.23809538406567,32.7784321286412"
-                    Point3="-9.23809538406567,36.7784321286412" />
-                  <mssgle:LineSegment
-                    End="-9.23809538406567,58.0568642572823" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Vaccine by age phu\Data Flow Task\Vaccine by age phu">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Ongoing out break\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Ongoing out break\Data Flow Task\OLE DB Destination"
-          TopLeft="302.904767074552,289.156866809763" />
-        <NodeLayout
-          Size="166.4,41.6"
+          Size="166,42"
           Id="Package\Ongoing out break\Data Flow Task\Ongoing out break"
           TopLeft="312.142862458618,182.000002552481" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Ongoing out break\Data Flow Task\OLE DB Destination"
+          TopLeft="302.904767074552,289.156866809763" />
         <EdgeLayout
           Id="Package\Ongoing out break\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="391.723814766585,223.600002552481">
@@ -5116,39 +5045,39 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Public Health Unit\Data Flow Task\OLE DB Destination"
-          TopLeft="302.904767074552,289.156866809763" />
+          TopLeft="289.904767074552,387.156866809763" />
         <NodeLayout
-          Size="98.4,41.6"
+          Size="100,42"
           Id="Package\Public Health Unit\Data Flow Task\PHU"
           TopLeft="312.142862458618,182.000002552481" />
         <EdgeLayout
           Id="Package\Public Health Unit\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="361.342862458618,223.600002552481">
+          TopLeft="362.142862458618,224.000002552481">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="26.761904615934,65.556864257282"
+              EndConnector="12.761904615934,163.156864257282"
               Start="0,0"
-              End="26.761904615934,58.056864257282">
+              End="12.761904615934,155.656864257282">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.778432128641" />
+                    End="0,77.578432128641" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,28.778432128641"
-                    Point2="0,32.778432128641"
-                    Point3="4,32.778432128641" />
+                    Point1="0,77.578432128641"
+                    Point2="0,81.578432128641"
+                    Point3="4,81.578432128641" />
                   <mssgle:LineSegment
-                    End="22.761904615934,32.778432128641" />
+                    End="8.76190461593399,81.578432128641" />
                   <mssgle:CubicBezierSegment
-                    Point1="22.761904615934,32.778432128641"
-                    Point2="26.761904615934,32.778432128641"
-                    Point3="26.761904615934,36.778432128641" />
+                    Point1="8.76190461593399,81.578432128641"
+                    Point2="12.761904615934,81.578432128641"
+                    Point3="12.761904615934,85.578432128641" />
                   <mssgle:LineSegment
-                    End="26.761904615934,58.056864257282" />
+                    End="12.761904615934,155.656864257282" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5187,13 +5116,13 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Public Health Unit Group\Data Flow Task\OLE DB Destination"
-          TopLeft="302.904767074552,291.156866809763" />
-        <NodeLayout
-          Size="130.4,41.6"
+          Size="130,42"
           Id="Package\Public Health Unit Group\Data Flow Task\PHU Group"
           TopLeft="312.142862458618,182.000002552481" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Public Health Unit Group\Data Flow Task\OLE DB Destination"
+          TopLeft="302.904767074552,291.156866809763" />
         <EdgeLayout
           Id="Package\Public Health Unit Group\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="377.342862458618,223.600002552481">
@@ -5246,6 +5175,77 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Public Health Unit Group\Data Flow Task\PHU Group">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Vaccine by age phu\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Vaccine by age phu\Data Flow Task\Vaccine by age phu"
+          TopLeft="312.142862458618,182.000002552481" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination"
+          TopLeft="302.904767074552,289.156866809763" />
+        <EdgeLayout
+          Id="Package\Vaccine by age phu\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="397.342862458618,223.600002552481">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.23809538406567,65.5568642572823"
+              Start="0,0"
+              End="-9.23809538406567,58.0568642572823">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.7784321286412" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.7784321286412"
+                    Point2="0,32.7784321286412"
+                    Point3="-4,32.7784321286412" />
+                  <mssgle:LineSegment
+                    End="-5.23809538406567,32.7784321286412" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.23809538406567,32.7784321286412"
+                    Point2="-9.23809538406567,32.7784321286412"
+                    Point3="-9.23809538406567,36.7784321286412" />
+                  <mssgle:LineSegment
+                    End="-9.23809538406567,58.0568642572823" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Vaccine by age phu\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Vaccine by age phu\Data Flow Task\Vaccine by age phu">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

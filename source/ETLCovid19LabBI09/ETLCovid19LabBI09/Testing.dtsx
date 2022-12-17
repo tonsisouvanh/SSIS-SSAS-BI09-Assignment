@@ -1,0 +1,974 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/16/2022 7:37:40 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-3NFQDKO"
+  DTS:CreatorName="DESKTOP-3NFQDKO\tonsi"
+  DTS:DTSID="{DF1E66D5-258C-485C-9DBB-238B71AC6A31}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{7887BD89-F877-49F8-83F6-6C70C3405E64}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.SourceCOVID19]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F17CD530-6A4E-40B8-B317-9F61B3F9886C}"
+      DTS:ObjectName="LocalHost.SourceCOVID19">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=SourceCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{F17CD530-6A4E-40B8-B317-9F61B3F9886C}LocalHost.SourceCOVID19;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Testing]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D3D01708-55DF-4CDE-9381-88C12BA066A5}"
+      DTS:ObjectName="LocalHost.Testing">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Testing;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{D3D01708-55DF-4CDE-9381-88C12BA066A5}LocalHost.Testing;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{22708952-5103-4648-9B8E-449ED2C62B97}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Fuzzy Lookup"
+              componentClassID="Microsoft.FuzzyLookup"
+              contactInfo="Fuzzy Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="Performs data cleaning tasks such as standardizing data, correcting data, and providing missing values.  Uses fuzzy matching to return one or more close matches from a reference table. For example, lookup customer data by address, even if your input address data does not exactly match your reference address data."
+              name="Fuzzy Lookup"
+              version="5">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates whether to reuse an existing fuzzy-match index table or build a new one. The new index table can be temporary, persisted, or persisted and maintained."
+                  name="MatchIndexOptions"
+                  typeConverter="tcMatchIndexOptions">1</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the maximum amount of memory (MB) that this instance of the Fuzzy Lookup transformation can use.  If 0 is given, then the transform will dynamically adjust it's memory usage based upon it's requirements and available system memory."
+                  expressionType="Notify"
+                  name="MaxMemoryUsage" />
+                <property
+                  dataType="System.Null"
+                  description="Specifies the name of the fuzzy-match index table to be reused or the table name in which a newly generated fuzzy-match index table will be written."
+                  name="MatchIndexName"
+                  state="escaped" />
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the reference table or view against which to match incoming records."
+                  name="ReferenceTableName"
+                  state="escaped">_x005B_dbo_x005D_._x005B_Public_Health_Units_GROUP_x005D_</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates whether to drop an existing fuzzy-match index table if transformation is configured to generate a new table and a table with the same name already exists."
+                  name="DropExistingMatchIndex">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Whether a copy of the reference table should be made for fuzzy match index construction and subsequent matching.  It is strongly recommended that a copy always be made, otherwise unpredictable output may result if the contents of the reference table change during package execution (or between executions if reusing a fuzzy match index).  If this property is set to false, the reference table must additionally have a clustered index built upon an integer identity column."
+                  name="CopyReferenceTable">1</property>
+                <property
+                  dataType="System.UInt32"
+                  description="Specifies the maximum number of fuzzy matches to return for an input record."
+                  name="MaxOutputMatchesPerInput">1</property>
+                <property
+                  dataType="System.Single"
+                  description="Specifies the minimum similarity score required for the match results that the transformation returns."
+                  name="MinSimilarity">0.3</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the set of white-space and punctuation characters used to separate fuzzy match fields into the words used for matching and scoring a fuzzy lookup."
+                  name="Delimiters"
+                  state="escaped">_x0020__x0009__x000D__x000A_</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the metadata of the reference table in XML format."
+                  name="ReferenceMetadataXml"
+                  state="escaped">_x003C_referenceMetadata_x003E__x003C_referenceColumns_x003E__x003C_referenceColumn_x0020_name_x003D__x0022_PHU_Group_x0022__x0020_dataType_x003D__x0022_DT_STR_x0022__x0020_length_x003D__x0022_250_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_1252_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_PHU_City_x0022__x0020_dataType_x003D__x0022_DT_STR_x0022__x0020_length_x003D__x0022_250_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_1252_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_PHU_region_x0022__x0020_dataType_x003D__x0022_DT_STR_x0022__x0020_length_x003D__x0022_250_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_1252_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_CreatedDate_x0022__x0020_dataType_x003D__x0022_DT_DBTIMESTAMP_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C_referenceColumn_x0020_name_x003D__x0022_UpdatedDate_x0022__x0020_dataType_x003D__x0022_DT_DBTIMESTAMP_x0022__x0020_length_x003D__x0022_0_x0022__x0020_precision_x003D__x0022_0_x0022__x0020_scale_x003D__x0022_0_x0022__x0020_codePage_x003D__x0022_0_x0022__x002F__x003E__x003C__x002F_referenceColumns_x003E__x003C__x002F_referenceMetadata_x003E__x000D__x000A_</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If true, each input record will be directly compared against EVERY record in the reference table.  This may produce slightly better results, but will be extremely slow unless the number of records in the reference table is very small.  Note that the entire reference table will be loaded into main memory if this option is enabled.  This option is primarily intended for debugging purposes and should be used with care."
+                  name="Exhaustive">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="If true, Fuzzy Lookup will partially load the error-tolerant index and the reference table into main memory before execution begins.  This can greatly enhance performance if many input rows are to be processed."
+                  name="WarmCaches">true</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Fuzzy Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.SourceCOVID19]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.SourceCOVID19]"
+                  description="Microsoft SQL Server connection and database in which the fuzzy lookup reference table is located and where the fuzzy match index table will be stored and accessed."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Fuzzy Lookup.Inputs[Fuzzy Lookup Input]"
+                  name="Fuzzy Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fuzzy Lookup.Inputs[Fuzzy Lookup Input].Columns[Reporting_PHU]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Reporting_PHU"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Reporting_PHU]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped">PHU_region</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fuzzy Lookup.Inputs[Fuzzy Lookup Input].Columns[PHU_ID]"
+                      cachedDataType="i4"
+                      cachedName="PHU_ID"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_ID]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fuzzy Lookup.Inputs[Fuzzy Lookup Input].Columns[Reporting_PHU_Address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Reporting_PHU_Address"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Reporting_PHU_Address]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fuzzy Lookup.Inputs[Fuzzy Lookup Input].Columns[Reporting_PHU_City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Reporting_PHU_City"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Reporting_PHU_City]">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Name of the reference table column with which the input column should be matched."
+                          name="JoinToReferenceColumn"
+                          state="escaped" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the match is a fuzzy or an exact match."
+                          name="JoinType"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Single"
+                          description="Specifies the minimum textual similarity required between input and fuzzy matched records on values in this particular join column.  Must be a floating point value between 0.0 and 1.0."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Specifies the comparison options for character data. The options are those supported by the FoldString function."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">1</property>
+                        <property
+                          dataType="System.UInt32"
+                          description="Flags to FoldString that should be used when comparing whether two strings are equivalent."
+                          name="FuzzyComparisonFlagsEx"
+                          typeConverter="tcComparisonFlagsEx">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output]"
+                  name="Fuzzy Lookup Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_ID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_ID]"
+                      name="PHU_ID">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_ID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Reporting_PHU_Address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Reporting_PHU_Address]"
+                      name="Reporting_PHU_Address">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Reporting_PHU_Address]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Similarity_Reporting_PHU]"
+                      dataType="r4"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Similarity_Reporting_PHU]"
+                      name="_Similarity_Reporting_PHU">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Reporting_PHU]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">3</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Reporting_PHU_City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Reporting_PHU_City]"
+                      name="Reporting_PHU_City">
+                      <properties>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped" />
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Reporting_PHU_City]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[CorrectPHU_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[CorrectPHU_region]"
+                      name="CorrectPHU_region">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the reference table column that is copied to the output for each match result."
+                          name="CopyFromReferenceColumn"
+                          state="escaped">PHU_region</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Null"
+                          description="Specifies the lineage identifier of the input column from which to copy to this output column for each match."
+                          name="SourceInputColumnLineageID" />
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Similarity]"
+                      dataType="r4"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Similarity]"
+                      name="_Similarity">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Confidence]"
+                      dataType="r4"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Confidence]"
+                      name="_Confidence">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies whether the column is used to indicate confidence or similarity."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">2</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FuzzyLookup]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Testing]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Testing]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHU_ID]"
+                      cachedDataType="i4"
+                      cachedName="PHU_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_ID]"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[PHU_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Reporting_PHU_Address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Reporting_PHU_Address"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Reporting_PHU_Address]"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Reporting_PHU_Address]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[_Similarity_Reporting_PHU]"
+                      cachedDataType="r4"
+                      cachedName="_Similarity_Reporting_PHU"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[_Similarity_Reporting_PHU]"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Similarity_Reporting_PHU]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Reporting_PHU_City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Reporting_PHU_City"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Reporting_PHU_City]"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[Reporting_PHU_City]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[_Similarity]"
+                      cachedDataType="r4"
+                      cachedName="_Similarity"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[_Similarity]"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Similarity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[_Confidence]"
+                      cachedDataType="r4"
+                      cachedName="_Confidence"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[_Confidence]"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[_Confidence]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CorrectPHU_region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="250"
+                      cachedName="CorrectPHU_region"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_region]"
+                      lineageId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output].Columns[CorrectPHU_region]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_ID]"
+                      dataType="i4"
+                      name="PHU_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Reporting_PHU_Address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Reporting_PHU_Address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[_Similarity_Reporting_PHU]"
+                      dataType="r4"
+                      name="_Similarity_Reporting_PHU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Reporting_PHU_City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Reporting_PHU_City" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="250"
+                      name="PHU_region" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[_Similarity]"
+                      dataType="r4"
+                      name="_Similarity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[_Confidence]"
+                      dataType="r4"
+                      name="_Confidence" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[public_health_unit]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.SourceCOVID19]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.SourceCOVID19]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PHU_ID]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_ID]"
+                      name="PHU_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Reporting_PHU_Address]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Reporting_PHU_Address]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Reporting_PHU_Address]"
+                      name="Reporting_PHU_Address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Reporting_PHU]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Reporting_PHU]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Reporting_PHU]"
+                      name="Reporting_PHU"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Reporting_PHU_City]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Reporting_PHU_City]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Reporting_PHU_City]"
+                      name="Reporting_PHU_City"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Reporting_PHU_Latitude]"
+                      dataType="r8"
+                      name="Reporting_PHU_Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Reporting_PHU_Longitude]"
+                      dataType="r8"
+                      name="Reporting_PHU_Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PHU_ID]"
+                      dataType="i4"
+                      name="PHU_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Reporting_PHU_Address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Reporting_PHU_Address" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Reporting_PHU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Reporting_PHU" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Reporting_PHU_City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Reporting_PHU_City" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Reporting_PHU_Website]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Reporting_PHU_Website" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Reporting_PHU_Postal_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Reporting_PHU_Postal_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
+                      dataType="dbTimeStamp"
+                      name="CreatedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UpdatedDate]"
+                      dataType="dbTimeStamp"
+                      name="UpdatedDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PHU_ID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PHU_ID]"
+                      name="PHU_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Reporting_PHU_Address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Reporting_PHU_Address]"
+                      name="Reporting_PHU_Address" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Reporting_PHU]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Reporting_PHU]"
+                      name="Reporting_PHU" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Reporting_PHU_City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Reporting_PHU_City]"
+                      name="Reporting_PHU_City" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Fuzzy Lookup Output]"
+              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Fuzzy Lookup Output"
+              startId="Package\Data Flow Task\Fuzzy Lookup.Outputs[Fuzzy Lookup Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Fuzzy Lookup.Inputs[Fuzzy Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="385,93" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="371,133" />
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Data Flow Task\Fuzzy Lookup"
+          TopLeft="376,261" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="446.75,175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86"
+              Start="0,0"
+              End="0,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Data Flow Task\OLE DB Destination"
+          TopLeft="372,386" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Fuzzy Lookup Output]"
+          TopLeft="447.5,303">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10,83"
+              Start="0,0"
+              End="10,75.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.5"
+                    Point2="0,41.5"
+                    Point3="4,41.5" />
+                  <mssgle:LineSegment
+                    End="6,41.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6,41.5"
+                    Point2="10,41.5"
+                    Point3="10,45.5" />
+                  <mssgle:LineSegment
+                    End="10,75.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Fuzzy Lookup">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

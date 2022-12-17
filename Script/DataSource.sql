@@ -13,7 +13,7 @@ go
 
 CREATE TABLE CasesReport (
     Outcome varchar(25),
-    Age varchar(50),
+    Age varchar(35),
     Gender varchar(15),
     Reporting_PHU varchar(250),
     SpecimenDate date,
@@ -27,7 +27,7 @@ CREATE TABLE CasesReport (
     OutbreakRelated varchar(3),
     PHU_Latitude real,
     PHU_Longitude real,
-    PHU_Postal_Code varchar(7),
+    PHU_Postal_Code varchar(10),
 	CreatedDate datetime,
 	UpdatedDate datetime
 )
@@ -35,8 +35,8 @@ CREATE TABLE CasesReport (
 
 CREATE TABLE Compiled_COVID_19_Case_Details_Canada (
     row_id int,
-    health_region varchar(150),
-    age_group varchar(25),
+    health_region varchar(65),
+    age_group varchar(35),
     gender varchar(15),
     exposure varchar(45),
     case_status varchar(15),
@@ -59,7 +59,7 @@ CREATE TABLE ongoing_outbreaks_phu (
 CREATE TABLE vaccines_by_age_phu (
     Date date,
     PHU_ID int,
-    Agegroup varchar(150),
+    Agegroup varchar(35),
     At_least_one_dose_cumulative int,
     Second_dose_cumulative int,
     fully_vaccinated_cumulative int,
@@ -77,7 +77,7 @@ CREATE TABLE public_health_unit (
     Reporting_PHU varchar(255),
     Reporting_PHU_City varchar(255),
     Reporting_PHU_Website varchar(255),
-    Reporting_PHU_Postal_Code varchar(255),
+    Reporting_PHU_Postal_Code varchar(10),
 	CreatedDate datetime,
 	UpdatedDate datetime
 )
@@ -85,7 +85,7 @@ CREATE TABLE public_health_unit (
 CREATE TABLE Public_Health_Units_GROUP (
     PHU_Group varchar(250),
     PHU_City varchar(250),
-    PHU_region varchar(250),
+    PHU_region varchar(65),
 	CreatedDate datetime,
 	UpdatedDate datetime
 )
