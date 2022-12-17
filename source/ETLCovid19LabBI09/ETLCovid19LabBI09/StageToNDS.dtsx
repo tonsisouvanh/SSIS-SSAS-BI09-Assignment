@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{468286FC-1F75-430E-89D0-597B08C5B5BD}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{3CE18A5B-B51C-422B-8E7B-EF84B1370B17}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
