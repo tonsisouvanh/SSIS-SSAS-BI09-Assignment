@@ -48,21 +48,27 @@ select * from ONGOING_OUTBREAKS_PHU_STAGE
 
 
 
----- SELECT NDS
---use NDS
---go
+-- SELECT NDS
+use NDSCovid19
+go
+select * from PHU_GROUP
+select * from PHU_CITY
+select * from PUBLIC_HEALTH_UNIT
+select * from OUTBREAK_GROUP
 
---select * from ChiTietHoaDon where NguonDuLieu = 2
---select * from ChiTietHoaDon where NguonDuLieu = 1
---select * from CuaHang
---select * from HoaDon
---select * from KhachHang
---select * from LoaiCuaHang
---select * from LoaiSanPham
---select * from NguonDuLieu
---select * from Nuoc
---select * from SanPham
---select * from TrangThai
+
+
+
+
+
+-- SELECT NDS
+use NDSCovid19
+go
+
+select * from PHU_GROUP
+select * from PHU_CITY
+select * from PUBLIC_HEALTH_UNIT
+
 
 
 --use DDS
@@ -78,9 +84,6 @@ select * from ONGOING_OUTBREAKS_PHU_STAGE
 --select * from Dim_NgayTrongThang
 --select * from Dim_ThangTrongNam
 
---use Jade
-----select *  from KhachHang_Jade where MaKH = '008V'
---update KhachHang_Jade set NgayCapNhat = getdate(),SoThich = 'Badminton', NgheNghiep = 'Power' where MaKH = '008V'
 
 
 ----Drop
@@ -116,9 +119,11 @@ select * from ONGOING_OUTBREAKS_PHU_STAGE
 
 
 
---use NDS
---delete ChiTietHoaDon
---delete HoaDon
+use NDSCovid19
+delete PUBLIC_HEALTH_UNIT
+delete PHU_CITY
+delete PHU_GROUP
+
 --delete CuaHang
 --delete Nuoc
 --delete LoaiCuaHang
@@ -127,19 +132,10 @@ select * from ONGOING_OUTBREAKS_PHU_STAGE
 --delete KhachHang
 ----delete NguonDuLieu
 ----delete TrangThai
---DBCC CHECKIDENT ('[HoaDon]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[CuaHang]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[Nuoc]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[LoaiCuaHang]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[SanPham]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[LoaiSanPham]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[KhachHang]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[ChiTietHoaDon]', RESEED, 0);
---GO
+
+DBCC CHECKIDENT ('PUBLIC_HEALTH_UNIT', RESEED, 0);
+GO
+DBCC CHECKIDENT ('PHU_CITY', RESEED, 0);
+GO
+DBCC CHECKIDENT ('PHU_GROUP', RESEED, 0);
+GO

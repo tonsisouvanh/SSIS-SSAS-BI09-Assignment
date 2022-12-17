@@ -11,19 +11,19 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{5F4121C9-EC98-43BA-80F7-1BBBB75E882E}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{154FB458-5F84-4069-AD14-F7AC81879A46}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DataProfiling.xlsx]"
+      DTS:refId="Package.ConnectionManagers[DataProfiling-SouceCovid19.xlsx]"
       DTS:CreationName="FILE"
-      DTS:DTSID="{1039228E-6109-47C2-A880-409040EA1D36}"
-      DTS:ObjectName="DataProfiling.xlsx">
+      DTS:DTSID="{D6112D4D-DE5B-4BEF-92F6-0D64B1BCC907}"
+      DTS:ObjectName="DataProfiling-SouceCovid19.xlsx">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="D:\HTTT_PVu_TT_KINH-Doanh\2022-2023\DATH\Data profiling\DataProfiling.xlsx" />
+          DTS:ConnectionString="D:\DATH\Data profiling\DataProfiling-SouceCovid19.xlsx" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -40,18 +40,18 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Profiling Task"
+      DTS:refId="Package\Data Profiling Task SourceCovid19"
       DTS:CreationName="Microsoft.DataProfilingTask"
       DTS:Description="Data Profiling Task"
-      DTS:DTSID="{117DC13B-130A-4171-BAC0-C1BA6FB6B52B}"
+      DTS:DTSID="{7F289C46-B2D8-4219-8331-F20A0AA15831}"
       DTS:ExecutableType="Microsoft.DataProfilingTask"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Profiling Task"
+      DTS:ObjectName="Data Profiling Task SourceCovid19"
       DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <DataProfilingTaskData
-          Destination="DataProfiling.xlsx"
+          Destination="DataProfiling-SouceCovid19.xlsx"
           OverwriteDestination="True">
           <ProfileInput><![CDATA[<?xml version="1.0" encoding="utf-16"?>
 <DataProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/sqlserver/2008/DataDebugger/">
@@ -98,31 +98,31 @@
       </CandidateKeyProfileRequest>
       <ColumnNullRatioProfileRequest ID="NullRatioReq1">
         <DataSourceID>{52D94B82-06F0-4256-9D66-CE83A0F44AD6}</DataSourceID>
-        <Table Schema="dbo" Table="Compiled_COVID-19_Case_Details_Canada" />
+        <Table Schema="dbo" Table="Compiled_COVID_19_Case_Details_Canada" />
         <Column IsWildCard="true" />
       </ColumnNullRatioProfileRequest>
       <ColumnStatisticsProfileRequest ID="StatisticsReq1">
         <DataSourceID>{52D94B82-06F0-4256-9D66-CE83A0F44AD6}</DataSourceID>
-        <Table Schema="dbo" Table="Compiled_COVID-19_Case_Details_Canada" />
+        <Table Schema="dbo" Table="Compiled_COVID_19_Case_Details_Canada" />
         <Column IsWildCard="true" />
       </ColumnStatisticsProfileRequest>
       <ColumnLengthDistributionProfileRequest ID="LengthDistReq1">
         <DataSourceID>{52D94B82-06F0-4256-9D66-CE83A0F44AD6}</DataSourceID>
-        <Table Schema="dbo" Table="Compiled_COVID-19_Case_Details_Canada" />
+        <Table Schema="dbo" Table="Compiled_COVID_19_Case_Details_Canada" />
         <Column IsWildCard="true" />
         <IgnoreLeadingSpace>false</IgnoreLeadingSpace>
         <IgnoreTrailingSpace>true</IgnoreTrailingSpace>
       </ColumnLengthDistributionProfileRequest>
       <ColumnValueDistributionProfileRequest ID="ValueDistReq1">
         <DataSourceID>{52D94B82-06F0-4256-9D66-CE83A0F44AD6}</DataSourceID>
-        <Table Schema="dbo" Table="Compiled_COVID-19_Case_Details_Canada" />
+        <Table Schema="dbo" Table="Compiled_COVID_19_Case_Details_Canada" />
         <Column IsWildCard="true" />
         <Option>FrequentValues</Option>
         <FrequentValueThreshold>0.001</FrequentValueThreshold>
       </ColumnValueDistributionProfileRequest>
       <CandidateKeyProfileRequest ID="KeyReq1">
         <DataSourceID>{52D94B82-06F0-4256-9D66-CE83A0F44AD6}</DataSourceID>
-        <Table Schema="dbo" Table="Compiled_COVID-19_Case_Details_Canada" />
+        <Table Schema="dbo" Table="Compiled_COVID_19_Case_Details_Canada" />
         <KeyColumns>
           <Column IsWildCard="true" />
         </KeyColumns>
@@ -294,9 +294,9 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="168,42"
-          Id="Package\Data Profiling Task"
-          TopLeft="236,167" />
+          Size="240,42"
+          Id="Package\Data Profiling Task SourceCovid19"
+          TopLeft="245.000004172325,159.823531653229" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
