@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{AF8D345D-4B65-4550-BFA3-DDC79E9E8F5D}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{D88C33C1-393D-47B8-B912-79C123552E95}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Outcome"
-              DTS:DTSID="{0F4F0680-A19C-4915-BFD1-7092FBB20F53}"
+              DTS:DTSID="{0BA75660-3E85-4A29-A12D-655A06402F8B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Age"
-              DTS:DTSID="{C071DA28-88F8-490C-BF7D-211DC3768ECA}"
+              DTS:DTSID="{05A9C076-4EC7-4AFA-8EE6-5B195F3CAF3B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Gender"
-              DTS:DTSID="{9747B13F-DD89-4EB8-8E89-905EE2FE5125}"
+              DTS:DTSID="{BC8B4A30-81BC-453A-B477-08D0FFA11A52}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -66,7 +66,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Reporting PHU"
-              DTS:DTSID="{765A7B5C-2580-4992-8460-8CE7FAF1CCAB}"
+              DTS:DTSID="{99D8228D-A350-47C6-8502-8081306F0BC3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -74,7 +74,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="SpecimenDate"
-              DTS:DTSID="{DCF8DC87-6D0A-47DA-AC1C-6E5D29688DDC}"
+              DTS:DTSID="{9AE9B65B-FB7A-43D5-82FC-628AF0ED9E19}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -82,7 +82,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="CaseReported Date"
-              DTS:DTSID="{A93C2AEE-B27D-491B-8F6C-9DEFFB85E8B8}"
+              DTS:DTSID="{0A25F7B8-BD0A-4668-8BA9-316C0EB0D831}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -91,7 +91,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHUCity"
-              DTS:DTSID="{CE635FD6-D196-4FF9-966B-05035BD0F9B7}"
+              DTS:DTSID="{D40924D3-0FF8-46AA-A01A-CD4A1B3A8E71}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -99,7 +99,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="TestReported Date"
-              DTS:DTSID="{16BF8AAA-5CF3-4942-8D28-44F2E68FFBAC}"
+              DTS:DTSID="{2BB0F202-E418-4024-BFBB-D0FBDEE60482}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -108,7 +108,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CaseAcquisition info"
-              DTS:DTSID="{615EDCF6-F445-4695-BA9B-1AD2C51FD629}"
+              DTS:DTSID="{865A3244-6168-4762-B248-2E5EF168932D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -116,7 +116,7 @@
               DTS:DataType="7"
               DTS:TextQualified="True"
               DTS:ObjectName="AccurateEpisode Dt"
-              DTS:DTSID="{BFB1CA66-8FB6-46FD-BA43-C6135A68194C}"
+              DTS:DTSID="{BD2EFC49-39ED-49BB-82D8-3BC19880175A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -125,7 +125,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Address"
-              DTS:DTSID="{934B77B2-1A50-47C5-A413-EA623840B92C}"
+              DTS:DTSID="{B17E2C93-AD01-402F-A711-5CBBA0C32EF6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -134,7 +134,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Website"
-              DTS:DTSID="{D7CB318F-82D2-4B2F-AE1A-5A045AC2BC91}"
+              DTS:DTSID="{652A9510-4F77-4E01-AD64-B9DED534C319}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -143,7 +143,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="OutbreakRelated"
-              DTS:DTSID="{B49398AE-1DF7-4CAE-AC45-B3411BEA081B}"
+              DTS:DTSID="{A116E562-D2AA-4FC6-9B88-5B5A090C1A80}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -151,7 +151,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Latitude"
-              DTS:DTSID="{C8ED56F8-CCC1-4C1F-B628-976F5E3A4738}"
+              DTS:DTSID="{B5D65766-58A4-4D33-A857-4B074D93E588}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -159,7 +159,7 @@
               DTS:DataType="4"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Longitude"
-              DTS:DTSID="{2D33595D-6674-45CD-9832-450B3CD754F5}"
+              DTS:DTSID="{95D3DB82-6539-4253-B376-170A2742D741}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -168,7 +168,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="PHU Postal Code"
-              DTS:DTSID="{2CC0BFA2-89E4-43CA-8905-543613B08BCD}"
+              DTS:DTSID="{C45C5172-4053-42F6-A815-ABBE8AEE0F1C}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -177,7 +177,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Compiled_COVID-19_Case_Details_(Canada)]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{CFBA7AA4-9FA8-44B9-ABCD-3C5AB752279F}"
+      DTS:DTSID="{F2C6FB28-84BF-4ED6-BCF5-500DCC0872EE}"
       DTS:ObjectName="Compiled_COVID-19_Case_Details_(Canada)">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -186,25 +186,27 @@
           DTS:HeaderRowDelimiter="_x000D__x000A_"
           DTS:ColumnNamesInFirstDataRow="True"
           DTS:RowDelimiter=""
-          DTS:TextQualifier="_x0022_"
+          DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
           DTS:ConnectionString="D:\DATH\Data\Datasource\Compiled_COVID-19_Case_Details_(Canada).csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ObjectId"
-              DTS:DTSID="{48F2A8BA-33E5-4C79-AB50-12C872ECBD84}"
+              DTS:DTSID="{5F28CC4B-2E05-477A-A22A-47522EE6F18C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="row_id"
-              DTS:DTSID="{4F7C6BEC-D9C8-4924-BE7D-3E10385F7893}"
+              DTS:DTSID="{20F9F91D-9CB6-4F86-BE40-1EF310BA00F1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -213,61 +215,61 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="date_reported"
-              DTS:DTSID="{E1510F98-9880-4538-B2CC-F7FEF6F1FD02}"
+              DTS:DTSID="{6E4F0780-A098-4F39-AAF5-1F20563D56A2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="150"
+              DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="health_region"
-              DTS:DTSID="{12333DAD-B095-4AAC-9E16-FD01FF563C54}"
+              DTS:DTSID="{A1C32814-6D0F-4FA2-92FA-EC8D0A008B69}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="25"
+              DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="age_group"
-              DTS:DTSID="{275089F2-F845-4F17-A257-2B10A3D969BC}"
+              DTS:DTSID="{3CDADF06-82EF-4AEC-A89B-83930919B0F8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="15"
+              DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gender"
-              DTS:DTSID="{5F347150-5E64-4E06-9A97-8DB76CDF7A29}"
+              DTS:DTSID="{E77E7DC6-75A1-4AE5-8695-762F801E1A7E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="45"
+              DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="exposure"
-              DTS:DTSID="{801CEFF9-E5D8-4B82-9506-E4D5E84981D2}"
+              DTS:DTSID="{90C42F77-8B80-4437-8631-E1219D5E92D8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x002C_"
-              DTS:MaximumWidth="15"
+              DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="case_status"
-              DTS:DTSID="{304E2C6E-F5D0-47E0-9151-7DFF08D080CC}"
+              DTS:DTSID="{BD2A3AFD-6874-4056-9C21-3F4047406BC6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000D__x000A_"
-              DTS:MaximumWidth="35"
+              DTS:MaximumWidth="50"
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="province"
-              DTS:DTSID="{C0BEDE98-7DA1-4BAE-A816-7BD309C3B15D}"
+              DTS:DTSID="{EA4EFBF7-8F82-4A53-A5D7-2077C70095D9}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -347,7 +349,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\DATH\Data\Datasource\Public Health Units GROUP.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\DATH\Data\Datasource\Public Health Units GROUP.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -473,7 +475,7 @@
                       refId="Package\Cases Report CANADA CSV to Database\Conditional Split.Inputs[Conditional Split Input].Columns[province]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="35"
+                      cachedLength="50"
                       cachedName="province"
                       lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]" />
                   </inputColumns>
@@ -595,16 +597,11 @@
                       lineageId="Package\Cases Report CANADA CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[fixed_date_report]" />
                     <inputColumn
                       refId="Package\Cases Report CANADA CSV to Database\Data Conversion.Inputs[Data Conversion Input].Columns[row_id]"
-                      cachedDataType="i4"
-                      cachedName="row_id"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[row_id]" />
-                    <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Data Conversion.Inputs[Data Conversion Input].Columns[health_region]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="150"
-                      cachedName="health_region"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]" />
+                      cachedLength="50"
+                      cachedName="row_id"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[row_id]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -650,28 +647,6 @@
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
                           name="SourceInputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[row_id]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Data Conversion.Outputs[Data Conversion Output].Columns[Convertedhealth_region]"
-                      codePage="65001"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="150"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Data Conversion.Outputs[Data Conversion Output].Columns[Convertedhealth_region]"
-                      name="Convertedhealth_region"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -864,125 +839,15 @@
                   name="Flat File Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]"
+                      refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[ObjectId]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[health_region]"
-                      length="150"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]"
-                      name="health_region"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_group]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age_group]"
-                      length="25"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_group]"
-                      name="age_group"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender]"
-                      length="15"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
-                      name="gender"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[exposure]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[exposure]"
-                      length="45"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[exposure]"
-                      name="exposure"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[case_status]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[case_status]"
-                      length="15"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[case_status]"
-                      name="case_status"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[province]"
-                      length="35"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
-                      name="province"
+                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ObjectId]"
+                      length="50"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[ObjectId]"
+                      name="ObjectId"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -997,10 +862,12 @@
                     </outputColumn>
                     <outputColumn
                       refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[row_id]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[row_id]"
+                      length="50"
                       lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[row_id]"
                       name="row_id"
                       truncationRowDisposition="FailComponent">
@@ -1037,16 +904,152 @@
                           name="UseBinaryFormat">false</property>
                       </properties>
                     </outputColumn>
+                    <outputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[health_region]"
+                      length="50"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]"
+                      name="health_region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_group]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age_group]"
+                      length="50"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_group]"
+                      name="age_group"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender]"
+                      length="50"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[exposure]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[exposure]"
+                      length="50"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[exposure]"
+                      name="exposure"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[case_status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[case_status]"
+                      length="50"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[case_status]"
+                      name="case_status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[province]"
+                      length="50"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]"
+                      name="province"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ObjectId]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="ObjectId" />
                     <externalMetadataColumn
                       refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[row_id]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
                       name="row_id" />
                     <externalMetadataColumn
                       refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[date_reported]"
@@ -1058,37 +1061,37 @@
                       refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[health_region]"
                       codePage="1252"
                       dataType="str"
-                      length="150"
+                      length="50"
                       name="health_region" />
                     <externalMetadataColumn
                       refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[age_group]"
                       codePage="1252"
                       dataType="str"
-                      length="25"
+                      length="50"
                       name="age_group" />
                     <externalMetadataColumn
                       refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender]"
                       codePage="1252"
                       dataType="str"
-                      length="15"
+                      length="50"
                       name="gender" />
                     <externalMetadataColumn
                       refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[exposure]"
                       codePage="1252"
                       dataType="str"
-                      length="45"
+                      length="50"
                       name="exposure" />
                     <externalMetadataColumn
                       refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[case_status]"
                       codePage="1252"
                       dataType="str"
-                      length="15"
+                      length="50"
                       name="case_status" />
                     <externalMetadataColumn
                       refId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[province]"
                       codePage="1252"
                       dataType="str"
-                      length="35"
+                      length="50"
                       name="province" />
                   </externalMetadataColumns>
                 </output>
@@ -1194,10 +1197,18 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[health_region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="health_region"
+                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[health_region]"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]" />
+                    <inputColumn
                       refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[age_group]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="25"
+                      cachedLength="50"
                       cachedName="age_group"
                       externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[age_group]"
                       lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[age_group]" />
@@ -1205,7 +1216,7 @@
                       refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gender]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="15"
+                      cachedLength="50"
                       cachedName="gender"
                       externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
                       lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[gender]" />
@@ -1213,7 +1224,7 @@
                       refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[exposure]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="45"
+                      cachedLength="50"
                       cachedName="exposure"
                       externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[exposure]"
                       lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[exposure]" />
@@ -1221,7 +1232,7 @@
                       refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[case_status]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="15"
+                      cachedLength="50"
                       cachedName="case_status"
                       externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[case_status]"
                       lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[case_status]" />
@@ -1229,24 +1240,10 @@
                       refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[province]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="35"
+                      cachedLength="50"
                       cachedName="province"
                       externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[province]"
                       lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[province]" />
-                    <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[row_id]"
-                      cachedDataType="i4"
-                      cachedName="row_id"
-                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[row_id]"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[row_id]" />
-                    <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[date_reported]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="date_reported"
-                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_reported]"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[date_reported]" />
                     <inputColumn
                       refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreatedDate]"
                       cachedDataType="dbTimeStamp"
@@ -1260,13 +1257,17 @@
                       externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UpdatedDate]"
                       lineageId="Package\Cases Report CANADA CSV to Database\Derived Column.Outputs[Derived Column Output].Columns[UpdatedDate]" />
                     <inputColumn
-                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[health_region]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="150"
-                      cachedName="health_region"
-                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[health_region]"
-                      lineageId="Package\Cases Report CANADA CSV to Database\Flat File Source.Outputs[Flat File Source Output].Columns[health_region]" />
+                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConvertedFixed_date_report]"
+                      cachedDataType="date"
+                      cachedName="ConvertedFixed_date_report"
+                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[date_reported]"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedFixed_date_report]" />
+                    <inputColumn
+                      refId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Converted_row_id]"
+                      cachedDataType="i4"
+                      cachedName="Converted_row_id"
+                      externalMetadataColumnId="Package\Cases Report CANADA CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[row_id]"
+                      lineageId="Package\Cases Report CANADA CSV to Database\Data Conversion.Outputs[Data Conversion Output].Columns[Converted_row_id]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4976,6 +4977,10 @@
           Id="Package\Cases Report CANADA CSV to Database\Flat File Source"
           TopLeft="340.666666666667,19.6666666666667" />
         <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Cases Report CANADA CSV to Database\OLE DB Destination"
+          TopLeft="527,363.764705893078" />
+        <NodeLayout
           Size="153.6,41.6"
           Id="Package\Cases Report CANADA CSV to Database\Conditional Split"
           TopLeft="340.666666666667,110" />
@@ -4983,28 +4988,6 @@
           Size="155.2,41.6"
           Id="Package\Cases Report CANADA CSV to Database\Data Conversion"
           TopLeft="251.666666666667,313.333333333333" />
-        <EdgeLayout
-          Id="Package\Cases Report CANADA CSV to Database.Paths[Flat File Source Output]"
-          TopLeft="417.066666666667,61.2666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48.7333333333333"
-              Start="0,0"
-              End="0,41.2333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.2333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\Cases Report CANADA CSV to Database.Paths[Derived Column Output]"
           TopLeft="330.166666666667,265.2">
@@ -5019,6 +5002,40 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,40.6333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cases Report CANADA CSV to Database.Paths[Data Conversion Output]"
+          TopLeft="406.866666666667,334.133333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120.133333333333,50.4313725597446"
+              Start="0,0"
+              End="112.633333333333,50.4313725597446">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.0666666666665,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.0666666666665,0"
+                    Point2="60.0666666666665,0"
+                    Point3="60.0666666666665,4" />
+                  <mssgle:LineSegment
+                    End="60.0666666666665,46.4313725597446" />
+                  <mssgle:CubicBezierSegment
+                    Point1="60.0666666666665,46.4313725597446"
+                    Point2="60.0666666666665,50.4313725597446"
+                    Point3="64.0666666666665,50.4313725597446" />
+                  <mssgle:LineSegment
+                    End="112.633333333333,50.4313725597446" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5063,36 +5080,20 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Cases Report CANADA CSV to Database\OLE DB Destination"
-          TopLeft="545,371" />
         <EdgeLayout
-          Id="Package\Cases Report CANADA CSV to Database.Paths[Data Conversion Output]"
-          TopLeft="406.866666666667,334.133333333333">
+          Id="Package\Cases Report CANADA CSV to Database.Paths[Flat File Source Output]"
+          TopLeft="417.066666666667,61.2666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="138.133333333333,57.666666666667"
+              EndConnector="0,48.7333333333333"
               Start="0,0"
-              End="130.633333333333,57.666666666667">
+              End="0,41.2333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="65.0666666666666,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="65.0666666666666,0"
-                    Point2="69.0666666666666,0"
-                    Point3="69.0666666666666,4" />
-                  <mssgle:LineSegment
-                    End="69.0666666666666,53.666666666667" />
-                  <mssgle:CubicBezierSegment
-                    Point1="69.0666666666666,53.666666666667"
-                    Point2="69.0666666666666,57.666666666667"
-                    Point3="73.0666666666666,57.666666666667" />
-                  <mssgle:LineSegment
-                    End="130.633333333333,57.666666666667" />
+                    End="0,41.2333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5104,11 +5105,24 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cases Report CANADA CSV to Database\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Cases Report CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\Cases Report CSV to Database\OLE DB Destination"
@@ -5140,7 +5154,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5162,7 +5178,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5266,7 +5284,7 @@
     design-time-name="Package\PHU Group file to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\PHU Group file to Database\Derived Column"
@@ -5314,7 +5332,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5336,7 +5356,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5358,7 +5380,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5527,7 +5551,7 @@
     design-time-name="Package\vaccines_by_age_phu CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination"
@@ -5559,9 +5583,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5583,9 +5605,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5593,19 +5613,6 @@
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cases Report CANADA CSV to Database\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
