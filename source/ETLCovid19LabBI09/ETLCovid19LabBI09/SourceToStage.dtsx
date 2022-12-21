@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SourceToStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{42CA67B6-ABDE-49F0-87B5-657364D47C34}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{D5C0DA5C-A5C5-4F35-9DCE-B7048212EB30}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -178,7 +178,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Output].ExternalColumns[Age]"
-                          length="50"
+                          length="35"
                           lineageId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Output].Columns[Age]"
                           name="Age"
                           truncationRowDisposition="FailComponent" />
@@ -320,7 +320,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
                           externalMetadataColumnId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Output].ExternalColumns[PHU_Postal_Code]"
-                          length="7"
+                          length="10"
                           lineageId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Output].Columns[PHU_Postal_Code]"
                           name="PHU_Postal_Code"
                           truncationRowDisposition="FailComponent" />
@@ -355,7 +355,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Output].ExternalColumns[Age]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="35"
                           name="Age" />
                         <externalMetadataColumn
                           refId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
@@ -427,7 +427,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Output].ExternalColumns[PHU_Postal_Code]"
                           codePage="1252"
                           dataType="str"
-                          length="7"
+                          length="10"
                           name="PHU_Postal_Code" />
                         <externalMetadataColumn
                           refId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Output].ExternalColumns[CreatedDate]"
@@ -455,7 +455,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Error Output].Columns[Age]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="35"
                           lineageId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Error Output].Columns[Age]"
                           name="Age" />
                         <outputColumn
@@ -541,7 +541,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Error Output].Columns[PHU_Postal_Code]"
                           codePage="1252"
                           dataType="str"
-                          length="7"
+                          length="10"
                           lineageId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Error Output].Columns[PHU_Postal_Code]"
                           name="PHU_Postal_Code" />
                         <outputColumn
@@ -655,7 +655,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Case Report\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Age]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="50"
+                          cachedLength="35"
                           cachedName="Age"
                           externalMetadataColumnId="Package\Case Report\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
                           lineageId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Output].Columns[Age]" />
@@ -755,7 +755,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Case Report\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PHU_Postal_Code]"
                           cachedCodepage="1252"
                           cachedDataType="str"
-                          cachedLength="7"
+                          cachedLength="10"
                           cachedName="PHU_Postal_Code"
                           externalMetadataColumnId="Package\Case Report\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHU_POSTAL_CODE]"
                           lineageId="Package\Case Report\Data Flow Task\Case report.Outputs[OLE DB Source Output].Columns[PHU_Postal_Code]" />
@@ -772,7 +772,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Case Report\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGE]"
                           codePage="1252"
                           dataType="str"
-                          length="50"
+                          length="35"
                           name="AGE" />
                         <externalMetadataColumn
                           refId="Package\Case Report\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[GENDER]"
@@ -784,7 +784,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Case Report\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[REPORTING_PHU]"
                           codePage="1252"
                           dataType="str"
-                          length="250"
+                          length="65"
                           name="REPORTING_PHU" />
                         <externalMetadataColumn
                           refId="Package\Case Report\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SPECIMENDATE]"
@@ -798,7 +798,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
                           refId="Package\Case Report\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PHUCITY]"
                           codePage="1252"
                           dataType="str"
-                          length="55"
+                          length="25"
                           name="PHUCITY" />
                         <externalMetadataColumn
                           refId="Package\Case Report\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TESTREPORTED_DATE]"
@@ -3904,23 +3904,23 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
       <GraphLayout
         Capacity="128" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Case Report\Data Flow Task"
           TopLeft="58.9650822493496,249.267978305773" />
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\Case Report\Execute SQL Task"
           TopLeft="51.7428599041336,334.235299758845" />
         <NodeLayout
-          Size="125,42"
+          Size="124.8,41.6"
           Id="Package\Case Report\GET LSET"
           TopLeft="67.4571458860321,172.117650426383" />
         <NodeLayout
-          Size="175,42"
+          Size="175.2,41.6"
           Id="Package\Case Report\Set CET in MetaData"
           TopLeft="14.6000021287375,12.1647068046781" />
         <NodeLayout
-          Size="120,42"
+          Size="120,41.6"
           Id="Package\Case Report\Truncate"
           TopLeft="73.1714316976315,92.588237546307" />
         <EdgeLayout
@@ -3985,14 +3985,14 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.5503278793898"
+              EndConnector="0,35.55032787939"
               Start="0,0"
-              End="0,28.0503278793898">
+              End="0,28.05032787939">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.0503278793898" />
+                    End="0,28.05032787939" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4003,18 +4003,18 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Case Report.PrecedenceConstraints[Constraint 3]"
-          TopLeft="133.553971076742,290.867978305773">
+          TopLeft="133.353971076742,290.867978305773">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.3673214530726"
+              EndConnector="0,43.367321453072"
               Start="0,0"
-              End="0,35.8673214530726">
+              End="0,35.867321453072">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.8673214530726" />
+                    End="0,35.867321453072" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4026,28 +4026,28 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="262,431"
-          Size="262,474"
+          PanelSize="262.4,431.2"
+          Size="262.4,474.4"
           Id="Package\Case Report"
           TopLeft="117.551022410045,26.0000003646402" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Case Report Canada\Data Flow Task"
           TopLeft="58.1714314421829,250.117651520303" />
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\Case Report Canada\Execute SQL Task"
           TopLeft="51.7428599041336,334.235299758845" />
         <NodeLayout
-          Size="125,42"
+          Size="124.8,41.6"
           Id="Package\Case Report Canada\GET LSET"
           TopLeft="68.1714316124819,171.352944533305" />
         <NodeLayout
-          Size="175,42"
+          Size="175.2,41.6"
           Id="Package\Case Report Canada\Set CET in MetaData"
           TopLeft="14.6000021287375,12.1647068046781" />
         <NodeLayout
-          Size="120,42"
+          Size="120,41.6"
           Id="Package\Case Report Canada\Truncate"
           TopLeft="73.1714316976315,91.8235316532293" />
         <EdgeLayout
@@ -4153,28 +4153,28 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="291,431"
-          Size="291,474"
+          PanelSize="291.2,431.2"
+          Size="291.2,473.6"
           Id="Package\Case Report Canada"
           TopLeft="440.341498620795,26.0000003646402" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Ongoing out break\Data Flow Task"
           TopLeft="58.1714314421829,250.117651520303" />
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\Ongoing out break\Execute SQL Task"
           TopLeft="51.7428599041336,334.235299758845" />
         <NodeLayout
-          Size="125,42"
+          Size="124.8,41.6"
           Id="Package\Ongoing out break\GET LSET"
           TopLeft="68.1714316124819,171.352944533305" />
         <NodeLayout
-          Size="175,42"
+          Size="175.2,41.6"
           Id="Package\Ongoing out break\Set CET in MetaData"
           TopLeft="42.6952407024347,14.6287591268172" />
         <NodeLayout
-          Size="120,42"
+          Size="120,41.6"
           Id="Package\Ongoing out break\Truncate"
           TopLeft="89.6000034059799,92.5882375463069" />
         <EdgeLayout
@@ -4292,28 +4292,28 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="260,431"
-          Size="260,474"
+          PanelSize="260,431.2"
+          Size="260,473.6"
           Id="Package\Ongoing out break"
           TopLeft="100.986396277612,587.112053051952" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Public Health Unit\Data Flow Task"
           TopLeft="58.1714314421829,250.117651520303" />
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\Public Health Unit\Execute SQL Task"
           TopLeft="52.9333361148835,336.147064491539" />
         <NodeLayout
-          Size="125,42"
+          Size="124.8,41.6"
           Id="Package\Public Health Unit\GET LSET"
           TopLeft="68.1714316124819,171.352944533305" />
         <NodeLayout
-          Size="175,42"
+          Size="175.2,41.6"
           Id="Package\Public Health Unit\Set CET in MetaData"
           TopLeft="42.1000025970598,14.6287591268172" />
         <NodeLayout
-          Size="120,42"
+          Size="120,41.6"
           Id="Package\Public Health Unit\Truncate"
           TopLeft="89.6000034059799,92.5882375463069" />
         <EdgeLayout
@@ -4431,28 +4431,28 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="260,431"
-          Size="260,474"
+          PanelSize="260,431.2"
+          Size="260,473.6"
           Id="Package\Public Health Unit"
           TopLeft="435.200000340598,587.686282719826" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Public Health Unit Group\Data Flow Task"
           TopLeft="58.1714314421829,250.882357413381" />
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\Public Health Unit Group\Execute SQL Task"
           TopLeft="52.9333361148835,336.147064491539" />
         <NodeLayout
-          Size="125,42"
+          Size="124.8,41.6"
           Id="Package\Public Health Unit Group\GET LSET"
           TopLeft="68.1714316124819,171.352944533305" />
         <NodeLayout
-          Size="175,42"
+          Size="175.2,41.6"
           Id="Package\Public Health Unit Group\Set CET in MetaData"
           TopLeft="42.1000025970598,14.6287591268172" />
         <NodeLayout
-          Size="120,42"
+          Size="120,41.6"
           Id="Package\Public Health Unit Group\Truncate"
           TopLeft="89.6000034059799,92.5882375463069" />
         <EdgeLayout
@@ -4570,28 +4570,28 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="260,431"
-          Size="260,474"
+          PanelSize="260,431.2"
+          Size="260,473.6"
           Id="Package\Public Health Unit Group"
           TopLeft="800.16599295049,586.007477873062" />
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Vaccine by age phu\Data Flow Task"
           TopLeft="58.1714314421829,250.117651520303" />
         <NodeLayout
-          Size="162,42"
+          Size="161.6,41.6"
           Id="Package\Vaccine by age phu\Execute SQL Task"
           TopLeft="51.7428599041336,334.235299758845" />
         <NodeLayout
-          Size="125,42"
+          Size="124.8,41.6"
           Id="Package\Vaccine by age phu\GET LSET"
           TopLeft="68.1714316124819,171.352944533305" />
         <NodeLayout
-          Size="175,42"
+          Size="175.2,41.6"
           Id="Package\Vaccine by age phu\Set CET in MetaData"
           TopLeft="41.0285740073849,13.6941185908334" />
         <NodeLayout
-          Size="120,42"
+          Size="120,41.6"
           Id="Package\Vaccine by age phu\Truncate"
           TopLeft="89.6000034059799,91.7385643317762" />
         <EdgeLayout
@@ -4709,8 +4709,8 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="253,431"
-          Size="253,474"
+          PanelSize="252.8,431.2"
+          Size="252.8,473.6"
           Id="Package\Vaccine by age phu"
           TopLeft="808.265319887126,23.7058826854073" />
         <EdgeLayout
@@ -4844,39 +4844,27 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="133,42"
+          Size="132.8,41.6"
           Id="Package\Case Report\Data Flow Task\Case report"
-          TopLeft="312.142862458618,182.000002552481" />
+          TopLeft="320.714291176017,156.000002187841" />
         <NodeLayout
-          Size="170,42"
+          Size="169.6,41.6"
           Id="Package\Case Report\Data Flow Task\OLE DB Destination"
           TopLeft="303.571433741219,289.82353347643" />
         <EdgeLayout
           Id="Package\Case Report\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="378.542862458618,223.600002552481">
+          TopLeft="387.742862458618,197.600002187841">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.228571282601,66.2235309239491"
+              EndConnector="0,92.2235312885892"
               Start="0,0"
-              End="10.228571282601,58.7235309239491">
+              End="0,84.7235312885892">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.1117654619745" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.1117654619745"
-                    Point2="0,33.1117654619745"
-                    Point3="4,33.1117654619745" />
-                  <mssgle:LineSegment
-                    End="6.22857128260102,33.1117654619745" />
-                  <mssgle:CubicBezierSegment
-                    Point1="6.22857128260102,33.1117654619745"
-                    Point2="10.228571282601,33.1117654619745"
-                    Point3="10.228571282601,37.1117654619745" />
-                  <mssgle:LineSegment
-                    End="10.228571282601,58.7235309239491" />
+                    End="0,84.7235312885892" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4913,7 +4901,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
     design-time-name="Package\Case Report Canada\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170,42"
           Id="Package\Case Report Canada\Data Flow Task\OLE DB Destination"
@@ -4953,7 +4941,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -4984,7 +4974,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
     design-time-name="Package\Ongoing out break\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="166,42"
           Id="Package\Ongoing out break\Data Flow Task\Ongoing out break"
@@ -5012,7 +5002,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5043,7 +5035,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
     design-time-name="Package\Public Health Unit\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170,42"
           Id="Package\Public Health Unit\Data Flow Task\OLE DB Destination"
@@ -5083,7 +5075,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5114,7 +5108,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
     design-time-name="Package\Public Health Unit Group\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="130,42"
           Id="Package\Public Health Unit Group\Data Flow Task\PHU Group"
@@ -5154,7 +5148,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5185,7 +5181,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
     design-time-name="Package\Vaccine by age phu\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="170,42"
           Id="Package\Vaccine by age phu\Data Flow Task\Vaccine by age phu"
@@ -5225,7 +5221,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

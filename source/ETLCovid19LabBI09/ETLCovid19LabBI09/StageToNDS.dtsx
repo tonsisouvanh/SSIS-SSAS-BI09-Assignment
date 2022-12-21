@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{3DC4217B-C8CB-46CB-889C-F9EB56DFFB9B}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{02604A0C-3E2E-4782-9F23-96C00C34D142}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -5876,27 +5876,27 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="192,41.6"
+          Size="192,42"
           Id="Package\Age group stage to NDS"
           TopLeft="466.428579371803,114.529412697756" />
         <NodeLayout
-          Size="187.2,41.6"
-          Id="Package\Outbreak stage to NDS"
-          TopLeft="424.999993667007,312.083331066867" />
-        <NodeLayout
-          Size="220,41.6"
+          Size="220,42"
           Id="Package\Outbreak Group Stage to NDS"
           TopLeft="43.4126983856667,384.098039287184" />
         <NodeLayout
-          Size="228.8,41.6"
+          Size="187,42"
+          Id="Package\Outbreak stage to NDS"
+          TopLeft="424.999993667007,312.083331066867" />
+        <NodeLayout
+          Size="229,42"
           Id="Package\PHU City stage to PHU City NDS"
           TopLeft="36.428577498514,182.117646779981" />
         <NodeLayout
-          Size="251.2,41.6"
+          Size="251,42"
           Id="Package\PHU Group stage to PHU Group NDS"
           TopLeft="26.8571433315473,96.8823543139395" />
         <NodeLayout
-          Size="188,41.6"
+          Size="188,42"
           Id="Package\PHU stage to PHU NDS"
           TopLeft="64.8571433315473,286.411772298978" />
         <EdgeLayout
@@ -5969,7 +5969,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
           Text=""
           ParentId="Package"
           FontInfo="{assembly:Null}"
-          Size="28.8,40"
+          Size="29,40"
           Id="7bc099ef-fc1b-4e7a-944f-c37597b68962"
           TopLeft="382.142863650711,541.411772298978" />
       </GraphLayout>
@@ -6116,99 +6116,36 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Outbreak stage to NDS">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.4,42.4"
-          Id="Package\Outbreak stage to NDS\OLE DB Source"
-          TopLeft="291.249995660037,24.6999995583296" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Outbreak stage to NDS\Derived Column"
-          TopLeft="301.42857656187,118.529413427036" />
-        <EdgeLayout
-          Id="Package\Outbreak stage to NDS.Paths[OLE DB Source Output]"
-          TopLeft="366.449995660037,67.0999995583296">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="11.3785809018327,51.4294138687065"
-              Start="0,0"
-              End="11.3785809018327,43.9294138687065">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.7147069343533" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.7147069343533"
-                    Point2="0,25.7147069343533"
-                    Point3="4,25.7147069343533" />
-                  <mssgle:LineSegment
-                    End="7.37858090183272,25.7147069343533" />
-                  <mssgle:CubicBezierSegment
-                    Point1="7.37858090183272,25.7147069343533"
-                    Point2="11.3785809018327,25.7147069343533"
-                    Point3="11.3785809018327,29.7147069343533" />
-                  <mssgle:LineSegment
-                    End="11.3785809018327,43.9294138687065" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Outbreak stage to NDS\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Outbreak Group Stage to NDS">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="153.6,41.6"
+          Size="154,42"
           Id="Package\Outbreak Group Stage to NDS\Derived Column"
           TopLeft="137.2857143587,135.588234811506" />
         <NodeLayout
-          Size="162.4,41.6"
+          Size="162,42"
           Id="Package\Outbreak Group Stage to NDS\Derived Column 1"
           TopLeft="345.714291601765,428.235300123486" />
         <NodeLayout
-          Size="144.8,41.6"
+          Size="145,42"
           Id="Package\Outbreak Group Stage to NDS\Row Sampling"
           TopLeft="70.7142869185429,434.305885784849" />
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Outbreak Group Stage to NDS\OLE DB Source"
           TopLeft="137,36" />
         <NodeLayout
-          Size="112.8,41.6"
+          Size="113,42"
           Id="Package\Outbreak Group Stage to NDS\Lookup"
           TopLeft="152.857145460285,336.294121690275" />
         <NodeLayout
-          Size="155.2,41.6"
+          Size="155,42"
           Id="Package\Outbreak Group Stage to NDS\Data Conversion"
           TopLeft="149.142859648685,239.729414703277" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Outbreak Group Stage to NDS\OLE DB Destination"
           TopLeft="338,524.8" />
         <EdgeLayout
@@ -6302,9 +6239,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6338,9 +6273,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6374,9 +6307,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6398,9 +6329,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6444,6 +6373,57 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Outbreak Group Stage to NDS\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Outbreak stage to NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Outbreak stage to NDS\OLE DB Source"
+          TopLeft="289.107138480687,83.5823533253089" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Outbreak stage to NDS\Derived Column"
+          TopLeft="287.857147759322,176.647061300938" />
+        <EdgeLayout
+          Id="Package\Outbreak stage to NDS.Paths[OLE DB Source Output]"
+          TopLeft="364.282143120004,125.982353325309">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.6647079756288"
+              Start="0,0"
+              End="0,43.1647079756288">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.1647079756288" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Outbreak stage to NDS\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

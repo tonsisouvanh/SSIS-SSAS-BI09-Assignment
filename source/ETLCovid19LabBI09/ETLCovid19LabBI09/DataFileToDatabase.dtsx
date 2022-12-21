@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{DF1325F0-A4C6-4955-9FCE-CB695DEBA383}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{D7264977-7A2C-4B43-A63A-1EB169F94C2A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -448,7 +448,6 @@
       DTS:refId="Package\Cases Report CANADA CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{21926eb7-1a98-44e8-a347-1e06821a06ba}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -1382,7 +1381,6 @@
       DTS:refId="Package\Cases Report CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{e17d5930-bcfa-4215-bda5-80f8d2da29ce}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2320,7 +2318,6 @@
       DTS:refId="Package\ongoing_outbreaks_phu CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{0ecbc41f-9946-467c-ad02-16301bfa1919}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2778,7 +2775,6 @@
       DTS:refId="Package\PHU Group file to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{775e5cf0-7cb1-4891-a7f4-a4151023da4b}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -4208,7 +4204,6 @@
       DTS:refId="Package\vaccines_by_age_phu CSV to Database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{56742d42-bbfe-4760-996e-90a0ccb67018}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -4694,7 +4689,7 @@
                       refId="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Agegroup]"
                       codePage="1252"
                       dataType="str"
-                      length="150"
+                      length="35"
                       name="Agegroup" />
                     <externalMetadataColumn
                       refId="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[At_least_one_dose_cumulative]"
@@ -4820,27 +4815,27 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="266.666666666667,42.6666666666667"
+          Size="266.4,42.4"
           Id="Package\Cases Report CANADA CSV to Database"
           TopLeft="43.5714282916516,140.952940886903" />
         <NodeLayout
-          Size="224,42.6666666666667"
+          Size="224,42.4"
           Id="Package\Cases Report CSV to Database"
           TopLeft="60,60" />
         <NodeLayout
-          Size="273.333333333334,41.3333333333334"
+          Size="273.6,41.6"
           Id="Package\ongoing_outbreaks_phu CSV to Database"
           TopLeft="365.714290920569,58.917642768939" />
         <NodeLayout
-          Size="207.333333333334,41.3333333333334"
+          Size="207.2,41.6"
           Id="Package\PHU Group file to Database"
           TopLeft="443.571435103611,266.152939792983" />
         <NodeLayout
-          Size="237.333333333334,42.6666666666667"
+          Size="237.6,42.4"
           Id="Package\Public health unit file to Database"
           TopLeft="427.142863395263,147.623526365947" />
         <NodeLayout
-          Size="263.333333333334,41.3333333333334"
+          Size="263.2,41.6"
           Id="Package\vaccines_by_age_phu CSV to Database"
           TopLeft="81.4285717934978,267.023529465388" />
         <EdgeLayout
@@ -5012,9 +5007,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5048,9 +5041,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5108,9 +5099,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5133,17 +5122,17 @@
     design-time-name="Package\Cases Report CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="169.333333333334,41.3333333333334"
+          Size="169.6,41.6"
           Id="Package\Cases Report CSV to Database\OLE DB Destination"
           TopLeft="345.7142856413,245.026739147633" />
         <NodeLayout
-          Size="152.666666666667,41.3333333333334"
+          Size="152.8,41.6"
           Id="Package\Cases Report CSV to Database\Derived Column"
           TopLeft="353.571434592714,142.235296112443" />
         <NodeLayout
-          Size="150.666666666667,41.3333333333334"
+          Size="150.4,41.6"
           Id="Package\Cases Report CSV to Database\Flat File Source"
           TopLeft="352.727272556974,35.9037430795643" />
         <EdgeLayout
@@ -5165,9 +5154,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5189,9 +5176,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5214,7 +5199,7 @@
     design-time-name="Package\ongoing_outbreaks_phu CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination"
@@ -5246,9 +5231,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5270,9 +5253,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5297,19 +5278,19 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152.666666666667,41.3333333333334"
+          Size="152.8,41.6"
           Id="Package\PHU Group file to Database\Derived Column"
           TopLeft="303.857147589022,252.325493703059" />
         <NodeLayout
-          Size="169.333333333334,41.3333333333334"
+          Size="169.6,41.6"
           Id="Package\PHU Group file to Database\OLE DB Destination"
           TopLeft="287.857147589022,357.392160369725" />
         <NodeLayout
-          Size="139.333333333334,41.3333333333334"
+          Size="139.2,41.6"
           Id="Package\PHU Group file to Database\Excel Source"
           TopLeft="303.71429075027,91.7058825030873" />
         <NodeLayout
-          Size="155.333333333334,41.3333333333334"
+          Size="155.2,41.6"
           Id="Package\PHU Group file to Database\Data Conversion"
           TopLeft="306.571434166967,172.517649332462" />
         <EdgeLayout
@@ -5425,19 +5406,19 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152.666666666667,41.3333333333334"
+          Size="152.8,41.6"
           Id="Package\Public health unit file to Database\Derived Column"
           TopLeft="634.285724734774,235.885717932116" />
         <NodeLayout
-          Size="137.333333333334,41.3333333333334"
+          Size="137.6,41.6"
           Id="Package\Public health unit file to Database\Excel Source"
           TopLeft="613.571439020488,46.6470594777368" />
         <NodeLayout
-          Size="155.333333333334,41.3333333333334"
+          Size="155.2,41.6"
           Id="Package\Public health unit file to Database\Data Conversion"
           TopLeft="631.142856644125,153.235294289242" />
         <NodeLayout
-          Size="169.333333333334,41.3333333333334"
+          Size="169.6,41.6"
           Id="Package\Public health unit file to Database\OLE DB Destination"
           TopLeft="614.285724856415,325.000003646402" />
         <EdgeLayout
@@ -5563,7 +5544,7 @@
     design-time-name="Package\vaccines_by_age_phu CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination"
@@ -5595,9 +5576,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5619,9 +5598,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
