@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-3NFQDKO\tonsi"
   DTS:DTSID="{F1A9D7E8-770A-4335-898E-54988FF32363}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LastModifiedProductVersion="16.0.845.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{D7264977-7A2C-4B43-A63A-1EB169F94C2A}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{3E03C33E-0BDC-46B7-B222-D6A098B7A7A9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -4817,7 +4817,7 @@
         <NodeLayout
           Size="266.4,42.4"
           Id="Package\Cases Report CANADA CSV to Database"
-          TopLeft="43.5714282916516,140.952940886903" />
+          TopLeft="44.9999997445515,147.070588031524" />
         <NodeLayout
           Size="224,42.4"
           Id="Package\Cases Report CSV to Database"
@@ -4825,7 +4825,7 @@
         <NodeLayout
           Size="273.6,41.6"
           Id="Package\ongoing_outbreaks_phu CSV to Database"
-          TopLeft="365.714290920569,58.917642768939" />
+          TopLeft="324.285718786473,61.211760448172" />
         <NodeLayout
           Size="207.2,41.6"
           Id="Package\PHU Group file to Database"
@@ -4840,18 +4840,18 @@
           TopLeft="81.4285717934978,267.023529465388" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="174.452380812492,102.666666666667">
+          TopLeft="175.099999872276,102.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.2862742202364"
+              EndConnector="0,44.6705880315242"
               Start="0,0"
-              End="0,30.7862742202364">
+              End="0,37.1705880315242">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.7862742202364" />
+                    End="0,37.1705880315242" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4862,18 +4862,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="173.722222264797,183.61960755357">
+          TopLeft="174.347619102358,189.470588031524">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,83.4039219118183"
+              EndConnector="0,77.5529414338637"
               Start="0,0"
-              End="0,75.9039219118183">
+              End="0,70.0529414338637">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,75.9039219118183" />
+                    End="0,70.0529414338637" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4888,26 +4888,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="134.809526741099,-166.505886696449"
+              EndConnector="161.257146992976,-164.211769017216"
               Start="0,0"
-              End="134.809526741099,-159.005886696449">
+              End="161.257146992976,-156.711769017216">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-63.2060013977209" />
+                    End="0,-42.9527807335107" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-63.2060013977209"
-                    Point2="0,-67.2060013977209"
-                    Point3="4,-67.2060013977209" />
+                    Point1="0,-42.9527807335107"
+                    Point2="0,-46.9527807335107"
+                    Point3="4,-46.9527807335107" />
                   <mssgle:LineSegment
-                    End="130.809526741099,-67.2060013977209" />
+                    End="157.257146992976,-46.9527807335107" />
                   <mssgle:CubicBezierSegment
-                    Point1="130.809526741099,-67.2060013977209"
-                    Point2="134.809526741099,-67.2060013977209"
-                    Point3="134.809526741099,-71.2060013977209" />
+                    Point1="157.257146992976,-46.9527807335107"
+                    Point2="161.257146992976,-46.9527807335107"
+                    Point3="161.257146992976,-50.9527807335107" />
                   <mssgle:LineSegment
-                    End="134.809526741099,-159.005886696449" />
+                    End="161.257146992976,-156.711769017216" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -4918,18 +4918,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="546.206354935694,100.250976102272">
+          TopLeft="505.35238545314,102.811760448172">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.3725502636747"
+              EndConnector="40.590477942123,44.811765917775"
               Start="0,0"
-              End="0,39.8725502636747">
+              End="40.590477942123,37.311765917775">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.8725502636747" />
+                    End="0,14.0810264807767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.0810264807767"
+                    Point2="0,18.0810264807767"
+                    Point3="4,18.0810264807767" />
+                  <mssgle:LineSegment
+                    End="36.590477942123,18.0810264807767" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.590477942123,18.0810264807767"
+                    Point2="40.590477942123,18.0810264807767"
+                    Point3="40.590477942123,22.0810264807767" />
+                  <mssgle:LineSegment
+                    End="40.590477942123,37.311765917775" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5199,7 +5211,7 @@
     design-time-name="Package\ongoing_outbreaks_phu CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\ongoing_outbreaks_phu CSV to Database\OLE DB Destination"
@@ -5231,7 +5243,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5253,7 +5267,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5276,7 +5292,7 @@
     design-time-name="Package\PHU Group file to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\PHU Group file to Database\Derived Column"
@@ -5324,7 +5340,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5346,7 +5364,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5368,7 +5388,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5404,7 +5426,7 @@
     design-time-name="Package\Public health unit file to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Public health unit file to Database\Derived Column"
@@ -5452,7 +5474,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5486,7 +5510,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5508,7 +5534,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5544,7 +5572,7 @@
     design-time-name="Package\vaccines_by_age_phu CSV to Database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\vaccines_by_age_phu CSV to Database\OLE DB Destination"
@@ -5576,7 +5604,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5598,7 +5628,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

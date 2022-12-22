@@ -14,6 +14,9 @@ go
 update ongoing_outbreaks_phu
 set CreatedDate = GETDATE(), UpdatedDate = GETDATE()
 
+update ongoing_outbreaks_phu
+set CreatedDate = GETDATE(), UpdatedDate = GETDATE()
+
 use SourceCOVID19
 go
 update [public_health_unit]
@@ -47,24 +50,14 @@ select distinct GENDER from COMPILED_COVID19_CASE_DETAILS_CANADA_STAGE --age
 select distinct CASE_STATUS from COMPILED_COVID19_CASE_DETAILS_CANADA_STAGE --age
 select distinct EXPOSURE from COMPILED_COVID19_CASE_DETAILS_CANADA_STAGE --age
 
-
+use StageCOVID19
+go
 select * from CASESREPORT_STAGE --age
 select * from COMPILED_COVID19_CASE_DETAILS_CANADA_STAGE --age
 select * from PUBLIC_HEALTH_UNIT_STAGE 
 select * from PUBLIC_HEALTH_UNITS_GROUP_STAGE
-select * from VACCINES_BY_AGE_PHU_STAGE --age
+select distinct AGE_GROUP from VACCINES_BY_AGE_PHU_STAGE --age
 select * from ONGOING_OUTBREAKS_PHU_STAGE
-
-
---select distinct AGE from CASESREPORT_STAGE --age
---select distinct AGE_GROUP from COMPILED_COVID19_CASE_DETAILS_CANADA_STAGE --age
---select distinct AGE_GROUP from VACCINES_BY_AGE_PHU_STAGE
-
---select sum(cast(AT_LEAST_ONE_DOSE_CUMULATIVE as bigint)), AGE_GROUP from VACCINES_BY_AGE_PHU_STAGE
---group by AGE_GROUP
-
---select * from VACCINES_BY_AGE_PHU_STAGE where AGE_GROUP = 'Ontario_5plus'
-
 
 
 
@@ -74,16 +67,17 @@ select * from ONGOING_OUTBREAKS_PHU_STAGE
 use NDSCovid19
 go
 select * from PHU_GROUP
-select * from PHU_CITY
+select a.PHU_CITY, b.GROUP_NAME from PHU_CITY a, PHU_GROUP b where a.PHU_GROUP_ID = b.ID
 select * from PUBLIC_HEALTH_UNIT order by PHU_NAME
 select * from OUTBREAK_GROUP
-select DISTINCT AGE_GROUP from AGE_GROUP
+select * from AGE_GROUP
 select * from VACCINES_BY_AGE_PHU
 
 select * from OUTCOME
 select * from EXPOSURE
 select * from GENDER
 select * from COVID19_CASESREPORT_DETAIL
+
 
 
 --use DDS
@@ -135,14 +129,15 @@ select * from COVID19_CASESREPORT_DETAIL
 
 
 use NDSCovid19
-delete PUBLIC_HEALTH_UNIT
-delete PHU_CITY
-delete PHU_GROUP
 delete OUTBREAK_GROUP
 delete VACCINES_BY_AGE_PHU
 delete OUTCOME
 delete GENDER
 delete EXPOSURE
+delete PUBLIC_HEALTH_UNIT
+delete PHU_CITY
+delete PHU_GROUP
+delete AGE_GROUP
 
 DBCC CHECKIDENT ('PUBLIC_HEALTH_UNIT', RESEED, 0);
 GO
@@ -162,13 +157,5 @@ DBCC CHECKIDENT ('EXPOSURE', RESEED, 0);
 GO
 DBCC CHECKIDENT ('GENDER', RESEED, 0);
 GO
-
-
-UPDATE VACCINES_BY_AGE_PHU 
-SET AGEGROUP_ID = ?,
-	AT_LEAST_ONE_DOSE_CUMULATIVE = ?,
-	SECOND_DOSE_CUMULATIVE = ?,
-	FULL_VACCINATED_CUMULATIVE = ?,
-	THIRD_DOSE_CUMULATIVE = ?,
-	UPDATED_DATE = GETDATE()
-WHERE ID = ? and SOURCE_ID = 1
+DBCC CHECKIDENT ('AGE_GROUP', RESEED, 0);
+GO

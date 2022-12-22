@@ -94,10 +94,10 @@ CREATE TABLE Public_Health_Units_GROUP (
 
 use SourceCOVID19
 go
-select * from Compiled_COVID_19_Case_Details_Canada
 select * from CasesReport
+select * from Compiled_COVID_19_Case_Details_Canada
 select * from ongoing_outbreaks_phu
-select * from vaccines_by_age_phu
+select distinct Agegroup from vaccines_by_age_phu
 select * from public_health_unit
 select * from Public_Health_Units_GROUP
 

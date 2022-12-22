@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-3NFQDKO\tonsi"
   DTS:DTSID="{DF1E66D5-258C-485C-9DBB-238B71AC6A31}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LastModifiedProductVersion="16.0.845.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{C6C2480B-A370-4D23-B4A4-8BAADF1D54E0}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{3D3452D6-112D-4A69-B8B5-12D26EA3C0DA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -49,7 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;Initial Catalog=StageCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-StageToNDS-{CE326FD1-2837-4EAA-BCEB-7F96804421DD}LocalHost.StageCOVID19;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=StageCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-StageToNDS-{CE326FD1-2837-4EAA-BCEB-7F96804421DD}LocalHost.StageCOVID19;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -4193,6 +4193,7 @@ FROM        CASESREPORT_STAGE</property>
       DTS:refId="Package\Case Report Covid19"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{8D94C1E2-2DEB-4673-B751-3B6DB86FE3D3}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -4428,6 +4429,50 @@ FROM        CASESREPORT_STAGE</property>
                       lineageId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].Columns[PHU_POSTAL_CODE]"
                       name="PHU_POSTAL_CODE"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].Columns[OUTCOME_UID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].ExternalColumns[OUTCOME_UID]"
+                      length="6"
+                      lineageId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].Columns[OUTCOME_UID]"
+                      name="OUTCOME_UID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].Columns[AGE_UID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].ExternalColumns[AGE_UID]"
+                      length="6"
+                      lineageId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].Columns[AGE_UID]"
+                      name="AGE_UID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].Columns[GENDER_UID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].ExternalColumns[GENDER_UID]"
+                      length="6"
+                      lineageId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].Columns[GENDER_UID]"
+                      name="GENDER_UID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].Columns[CASEACQUISITION_INFO_UID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].ExternalColumns[CASEACQUISITION_INFO_UID]"
+                      length="6"
+                      lineageId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].Columns[CASEACQUISITION_INFO_UID]"
+                      name="CASEACQUISITION_INFO_UID"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4515,6 +4560,30 @@ FROM        CASESREPORT_STAGE</property>
                       dataType="str"
                       length="7"
                       name="PHU_POSTAL_CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].ExternalColumns[OUTCOME_UID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="OUTCOME_UID" />
+                    <externalMetadataColumn
+                      refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].ExternalColumns[AGE_UID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="AGE_UID" />
+                    <externalMetadataColumn
+                      refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].ExternalColumns[GENDER_UID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="GENDER_UID" />
+                    <externalMetadataColumn
+                      refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Output].ExternalColumns[CASEACQUISITION_INFO_UID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      name="CASEACQUISITION_INFO_UID" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -4530,6 +4599,13 @@ FROM        CASESREPORT_STAGE</property>
                       lineageId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[OUTCOME]"
                       name="OUTCOME" />
                     <outputColumn
+                      refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[OUTCOME_UID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[OUTCOME_UID]"
+                      name="OUTCOME_UID" />
+                    <outputColumn
                       refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[AGE]"
                       codePage="1252"
                       dataType="str"
@@ -4537,12 +4613,26 @@ FROM        CASESREPORT_STAGE</property>
                       lineageId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[AGE]"
                       name="AGE" />
                     <outputColumn
+                      refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[AGE_UID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[AGE_UID]"
+                      name="AGE_UID" />
+                    <outputColumn
                       refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[GENDER]"
                       codePage="1252"
                       dataType="str"
                       length="15"
                       lineageId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[GENDER]"
                       name="GENDER" />
+                    <outputColumn
+                      refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[GENDER_UID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[GENDER_UID]"
+                      name="GENDER_UID" />
                     <outputColumn
                       refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[REPORTING_PHU]"
                       codePage="1252"
@@ -4579,6 +4669,13 @@ FROM        CASESREPORT_STAGE</property>
                       length="25"
                       lineageId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[CASEACQUISITION_INFO]"
                       name="CASEACQUISITION_INFO" />
+                    <outputColumn
+                      refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[CASEACQUISITION_INFO_UID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
+                      lineageId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[CASEACQUISITION_INFO_UID]"
+                      name="CASEACQUISITION_INFO_UID" />
                     <outputColumn
                       refId="Package\Case Report Covid19\Case Report.Outputs[OLE DB Source Error Output].Columns[ACCURATEEPISODE_DT]"
                       dataType="dbDate"
@@ -11573,7 +11670,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         <NodeLayout
           Size="192.8,41.6"
           Id="Package\Age group stage to NDS"
-          TopLeft="153.571428036203,107.235291919081" />
+          TopLeft="156.428570942003,109.529409598314" />
         <NodeLayout
           Size="279.2,41.6"
           Id="Package\Case Report - Exposure, Gender, Outcome"
@@ -11596,18 +11693,30 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           TopLeft="126.571428036203,227.235291919081" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="247.321428036203,149.235291919081">
+          TopLeft="252.828570942003,151.129409598314">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,78"
+              EndConnector="-8.25714290579975,76.105882320767"
               Start="0,0"
-              End="0,70.5">
+              End="-8.25714290579975,68.605882320767">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,70.5" />
+                    End="0,34.0529411603835" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,34.0529411603835"
+                    Point2="0,38.0529411603835"
+                    Point3="-4,38.0529411603835" />
+                  <mssgle:LineSegment
+                    End="-4.25714290579975,38.0529411603835" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.25714290579975,38.0529411603835"
+                    Point2="-8.25714290579975,38.0529411603835"
+                    Point3="-8.25714290579975,42.0529411603835" />
+                  <mssgle:LineSegment
+                    End="-8.25714290579975,68.605882320767" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11649,7 +11758,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         <NodeLayout
           Size="161.6,41.6"
           Id="Package\Age group stage to NDS\Derived Column 2"
-          TopLeft="372.777777777778,121.944444444444" />
+          TopLeft="373.492063504228,131.885621054453" />
         <NodeLayout
           Size="120.8,41.6"
           Id="Package\Age group stage to NDS\Union All"
@@ -11657,11 +11766,11 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         <NodeLayout
           Size="148.8,41.6"
           Id="Package\Age group stage to NDS\Vaccine by age"
-          TopLeft="631.666666666666,39.1" />
+          TopLeft="632.380952393116,39.1" />
         <NodeLayout
           Size="112.8,41.6"
           Id="Package\Age group stage to NDS\Lookup"
-          TopLeft="370.833333333333,593.333333333333" />
+          TopLeft="372.261904786233,592.568627440255" />
         <NodeLayout
           Size="161.6,41.6"
           Id="Package\Age group stage to NDS\Derived Column 1"
@@ -11693,7 +11802,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         <NodeLayout
           Size="135.2,41.6"
           Id="Package\Age group stage to NDS\Case Report"
-          TopLeft="122.5,37.5" />
+          TopLeft="122.5,36.7352941069224" />
         <NodeLayout
           Size="156,41.6"
           Id="Package\Age group stage to NDS\Data Conversion"
@@ -11744,18 +11853,18 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Age group stage to NDS.Paths[OLE DB Source Output2]"
-          TopLeft="705.666666666666,81.1">
+          TopLeft="705.873809529891,80.7">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.566666666667"
+              EndConnector="0,50.966666666667"
               Start="0,0"
-              End="0,43.066666666667">
+              End="0,43.466666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.066666666667" />
+                    End="0,43.466666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11766,18 +11875,18 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Age group stage to NDS.Paths[OLE DB Source Output1]"
-          TopLeft="192,79.1">
+          TopLeft="192,78.3352941069224">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48.4"
+              EndConnector="0,49.1647058930777"
               Start="0,0"
-              End="0,40.9">
+              End="0,41.6647058930777">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.9" />
+                    End="0,41.6647058930777" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11788,18 +11897,18 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Age group stage to NDS.Paths[OLE DB Source Output]"
-          TopLeft="454.552777777777,80.5611111111111">
+          TopLeft="454.709920641003,80.5611111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.3833333333333"
+              EndConnector="0,51.3245099433424"
               Start="0,0"
-              End="0,33.8833333333333">
+              End="0,43.8245099433424">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.8833333333333" />
+                    End="0,43.8245099433424" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11810,37 +11919,37 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Age group stage to NDS.Paths[Lookup Error Output]"
-          TopLeft="427.333333333333,635.333333333333">
+          TopLeft="428.661904786233,634.168627440255">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="79.1666666666667,47.9999999999999"
+              EndConnector="77.9380952137672,49.1647058930777"
               Start="0,0"
-              End="79.1666666666667,40.4999999999999">
+              End="77.9380952137672,41.6647058930777">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.9999999999999" />
+                    End="0,20.5823529465388" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.9999999999999"
-                    Point2="0,23.9999999999999"
-                    Point3="4,23.9999999999999" />
+                    Point1="0,20.5823529465388"
+                    Point2="0,24.5823529465388"
+                    Point3="4,24.5823529465388" />
                   <mssgle:LineSegment
-                    End="75.1666666666667,23.9999999999999" />
+                    End="73.9380952137672,24.5823529465388" />
                   <mssgle:CubicBezierSegment
-                    Point1="75.1666666666667,23.9999999999999"
-                    Point2="79.1666666666667,23.9999999999999"
-                    Point3="79.1666666666667,27.9999999999999" />
+                    Point1="73.9380952137672,24.5823529465388"
+                    Point2="77.9380952137672,24.5823529465388"
+                    Point3="77.9380952137672,28.5823529465388" />
                   <mssgle:LineSegment
-                    End="79.1666666666667,40.4999999999999" />
+                    End="77.9380952137672,41.6647058930777" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-6.28305338541666,28.9999999999999,91.7327734375,11.609375"
+              BoundingBox="-6.8973391118664,29.5823529465388,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -11880,18 +11989,18 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Age group stage to NDS.Paths[Derived Column Output3]"
-          TopLeft="425.25,548.666666666667">
+          TopLeft="425.96428572645,548.266666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.6666666666667"
+              EndConnector="0,44.3019607735883"
               Start="0,0"
-              End="0,37.1666666666667">
+              End="0,36.8019607735883">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.1666666666667" />
+                    End="0,36.8019607735883" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11936,30 +12045,30 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Age group stage to NDS.Paths[Derived Column Output1]"
-          TopLeft="453.777777777778,163.944444444444">
+          TopLeft="454.292063504228,173.485621054453">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-31.6111111111113,102.722222222223"
+              EndConnector="-32.225396837561,93.1810456122136"
               Start="0,0"
-              End="-31.6111111111113,95.2222222222227">
+              End="-32.225396837561,85.6810456122136">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.3611111111113" />
+                    End="0,42.5905228061068" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47.3611111111113"
-                    Point2="0,51.3611111111113"
-                    Point3="-4,51.3611111111113" />
+                    Point1="0,42.5905228061068"
+                    Point2="0,46.5905228061068"
+                    Point3="-4,46.5905228061068" />
                   <mssgle:LineSegment
-                    End="-27.6111111111113,51.3611111111113" />
+                    End="-28.225396837561,46.5905228061068" />
                   <mssgle:CubicBezierSegment
-                    Point1="-27.6111111111113,51.3611111111113"
-                    Point2="-31.6111111111113,51.3611111111113"
-                    Point3="-31.6111111111113,55.3611111111113" />
+                    Point1="-28.225396837561,46.5905228061068"
+                    Point2="-32.225396837561,46.5905228061068"
+                    Point3="-32.225396837561,50.5905228061068" />
                   <mssgle:LineSegment
-                    End="-31.6111111111113,95.2222222222227" />
+                    End="-32.225396837561,85.6810456122136" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12191,7 +12300,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12225,7 +12336,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12259,7 +12372,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12281,7 +12396,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12315,7 +12432,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12349,7 +12468,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12455,7 +12576,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12477,7 +12600,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12511,7 +12636,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12545,7 +12672,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12567,7 +12696,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12589,7 +12720,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12617,7 +12750,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12651,7 +12786,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12685,7 +12822,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12834,84 +12973,62 @@ WHERE ID = ? and SOURCE_ID = 1</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="172.8,41.6"
-          Id="Package\Case Report Covid19\Lookup Case Report"
-          TopLeft="263.938775372922,589.9495807849" />
+          Size="159.2,41.6"
+          Id="Package\Case Report Covid19\Lookup Exposure"
+          TopLeft="178.571431612482,492.726048584711" />
         <NodeLayout
-          Size="135.2,41.6"
-          Id="Package\Case Report Covid19\Case Report"
-          TopLeft="274,94" />
+          Size="158.4,41.6"
+          Id="Package\Case Report Covid19\Lookup Outcome"
+          TopLeft="375.714292112662,407.078988560014" />
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Case Report Covid19\Derived Column"
           TopLeft="274,177" />
         <NodeLayout
-          Size="134.4,41.6"
-          Id="Package\Case Report Covid19\Lookup Age"
-          TopLeft="194.428569920209,328.705880862206" />
+          Size="172.8,41.6"
+          Id="Package\Case Report Covid19\Lookup Case Report"
+          TopLeft="263.938775372922,589.9495807849" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Case Report Covid19\Data Conversion"
+          TopLeft="269,254" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Case Report Covid19\Lookup Gender"
+          TopLeft="186.428574603431,407.258826671752" />
         <NodeLayout
           Size="136,41.6"
           Id="Package\Case Report Covid19\Lookup PHU"
           TopLeft="367.714287173991,323.99999963536" />
         <NodeLayout
-          Size="156,41.6"
-          Id="Package\Case Report Covid19\Data Conversion"
-          TopLeft="269,254" />
-        <EdgeLayout
-          Id="Package\Case Report Covid19.Paths[OLE DB Source Output]"
-          TopLeft="341.6,135.6">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.19999999999999,41.4"
-              Start="0,0"
-              End="9.19999999999999,33.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.7" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.7"
-                    Point2="0,20.7"
-                    Point3="4,20.7" />
-                  <mssgle:LineSegment
-                    End="5.19999999999999,20.7" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.19999999999999,20.7"
-                    Point2="9.19999999999999,20.7"
-                    Point3="9.19999999999999,24.7" />
-                  <mssgle:LineSegment
-                    End="9.19999999999999,33.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="134.4,41.6"
+          Id="Package\Case Report Covid19\Lookup Age"
+          TopLeft="194.428569920209,328.705880862206" />
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\Case Report Covid19\Case Report"
+          TopLeft="279.714285811599,78.7058821384469" />
         <EdgeLayout
           Id="Package\Case Report Covid19.Paths[Lookup Match Output]"
           TopLeft="367.714287173991,347.152940248783">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-38.8857172537823,0"
+              EndConnector="-38.885717253782,0"
               Start="0,0"
-              End="-31.3857172537823,0">
+              End="-31.385717253782,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-31.3857172537823,0" />
+                    End="-31.385717253782,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-63.8842453456412,5,96.3827734375,11.609375"
+              BoundingBox="-63.884245345641,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -12934,7 +13051,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12943,127 +13062,57 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="88.7142871739914,28.3999996353598"
+              EndConnector="88.714287173991,28.39999963536"
               Start="0,0"
-              End="88.7142871739914,20.8999996353598">
+              End="88.714287173991,20.89999963536">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.1999998176799" />
+                    End="0,10.19999981768" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.1999998176799"
-                    Point2="0,14.1999998176799"
-                    Point3="4,14.1999998176799" />
+                    Point1="0,10.19999981768"
+                    Point2="0,14.19999981768"
+                    Point3="4,14.19999981768" />
                   <mssgle:LineSegment
-                    End="84.7142871739914,14.1999998176799" />
+                    End="84.714287173991,14.19999981768" />
                   <mssgle:CubicBezierSegment
-                    Point1="84.7142871739914,14.1999998176799"
-                    Point2="88.7142871739914,14.1999998176799"
-                    Point3="88.7142871739914,18.1999998176799" />
+                    Point1="84.714287173991,14.19999981768"
+                    Point2="88.714287173991,14.19999981768"
+                    Point3="88.714287173991,18.19999981768" />
                   <mssgle:LineSegment
-                    End="88.7142871739914,20.8999996353598" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Case Report Covid19\Lookup Gender"
-          TopLeft="186.428574603431,407.258826671752" />
-        <EdgeLayout
-          Id="Package\Case Report Covid19.Paths[Lookup Match Output1]"
-          TopLeft="261.42857226182,370.305880862206">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.9529458095458"
-              Start="0,0"
-              End="0,29.4529458095458">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.4529458095458" />
+                    End="88.714287173991,20.89999963536" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,8.92178540477289,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="158.4,41.6"
-          Id="Package\Case Report Covid19\Lookup Outcome"
-          TopLeft="375.714292112662,407.078988560014" />
         <EdgeLayout
-          Id="Package\Case Report Covid19.Paths[Lookup Match Output2]"
-          TopLeft="336.028574603431,427.968907615883">
+          Id="Package\Case Report Covid19.Paths[OLE DB Source Output]"
+          TopLeft="349.0571429058,120.305882138447">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="39.6857175092308,0"
+              EndConnector="0,56.6941178615531"
               Start="0,0"
-              End="32.1857175092308,0">
+              End="0,49.1941178615531">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="32.1857175092308,0" />
+                    End="0,49.1941178615531" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-32.0985279641346,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="159.2,41.6"
-          Id="Package\Case Report Covid19\Lookup Exposure"
-          TopLeft="178.571431612482,492.726048584711" />
-        <EdgeLayout
-          Id="Package\Case Report Covid19.Paths[Lookup Match Output3]"
-          TopLeft="454.914292112662,448.678988560014">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-196.74286050018,44.0470600246971"
-              Start="0,0"
-              End="-196.74286050018,36.5470600246971">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.0235300123485" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.0235300123485"
-                    Point2="0,22.0235300123485"
-                    Point3="-4,22.0235300123485" />
-                  <mssgle:LineSegment
-                    End="-192.74286050018,22.0235300123485" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-192.74286050018,22.0235300123485"
-                    Point2="-196.74286050018,22.0235300123485"
-                    Point3="-196.74286050018,26.0235300123485" />
-                  <mssgle:LineSegment
-                    End="-196.74286050018,36.5470600246971" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-146.56281696884,27.0235300123485,96.3827734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -13103,16 +13152,100 @@ WHERE ID = ? and SOURCE_ID = 1</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Case Report Covid19.Paths[Lookup Match Output3]"
+          TopLeft="454.914292112662,448.678988560014">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-196.74286050018,44.0470600246971"
+              Start="0,0"
+              End="-196.74286050018,36.5470600246971">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.0235300123485" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.0235300123485"
+                    Point2="0,22.0235300123485"
+                    Point3="-4,22.0235300123485" />
+                  <mssgle:LineSegment
+                    End="-192.74286050018,22.0235300123485" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-192.74286050018,22.0235300123485"
+                    Point2="-196.74286050018,22.0235300123485"
+                    Point3="-196.74286050018,26.0235300123485" />
+                  <mssgle:LineSegment
+                    End="-196.74286050018,36.5470600246971" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-146.56281696884,27.0235300123485,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Case Report Covid19.Paths[Lookup Match Output2]"
+          TopLeft="336.028574603431,427.968907615883">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="39.6857175092308,0"
+              Start="0,0"
+              End="32.1857175092308,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32.1857175092308,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-32.0985279641346,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Case Report Covid19.Paths[Lookup Match Output1]"
+          TopLeft="261.42857226182,370.305880862206">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.9529458095458"
+              Start="0,0"
+              End="0,29.4529458095458">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.4529458095458" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,8.92178540477289,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Case Report Covid19\Lookup Case Report">
+    design-time-name="Package\Case Report Covid19\Lookup Exposure">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -13122,7 +13255,122 @@ WHERE ID = ? and SOURCE_ID = 1</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Case Report Covid19\Lookup Outcome">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Case Report Covid19\Lookup Case Report">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Case Report Covid19\Lookup Gender">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Case Report Covid19\Lookup PHU">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Case Report Covid19\Lookup Age">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -13142,313 +13390,201 @@ WHERE ID = ? and SOURCE_ID = 1</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Case Report Covid19\Lookup Age">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Case Report Covid19\Lookup PHU">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome">
     <LayoutInfo>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="133.6,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Case Status"
-          TopLeft="184.197802197802,63.5714285714286" />
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Lookup 1"
-          TopLeft="468.586813186814,343.373626373626" />
-        <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\OLE DB Destination"
-          TopLeft="171.483516483517,431.285714285715" />
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 1"
-          TopLeft="170.109890109891,362.164835164835" />
-        <NodeLayout
-          Size="128.8,41.6"
+          Size="129,42"
           Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\GENDER"
           TopLeft="446.026373626374,60" />
         <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Lookup"
-          TopLeft="192.912087912088,290.021978021978" />
+          Size="106,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Sort 2"
+          TopLeft="484.615384615385,274.571428571428" />
         <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 1 1"
-          TopLeft="440.4,421.670329670329" />
-        <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\OLE DB Destination 1"
-          TopLeft="431.059340659341,494.637362637362" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column"
-          TopLeft="180.989010989011,135.736263736264" />
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 2"
-          TopLeft="439.74065934066,148.428571428571" />
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Lookup 1 1"
-          TopLeft="685.000000000001,288.758241758241" />
-        <NodeLayout
-          Size="121.6,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Exposure"
-          TopLeft="659.362637362638,62.3076923076923" />
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 1 1 1"
-          TopLeft="649.659340659341,378.20879120879" />
-        <NodeLayout
-          Size="169.6,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\OLE DB Destination 1 1"
-          TopLeft="663.626373626375,486.714285714286" />
-        <NodeLayout
-          Size="161.6,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 2 1"
-          TopLeft="662.307692307693,140.736263736264" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Data Conversion"
-          TopLeft="451.538461538461,208.725274725275" />
-        <NodeLayout
-          Size="164.8,41.6"
+          Size="165,42"
           Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Data Conversion 1"
           TopLeft="173.956043956044,195.193406593407" />
         <NodeLayout
-          Size="164.8,41.6"
+          Size="170,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\OLE DB Destination 1 1"
+          TopLeft="663.626373626375,486.714285714286" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Lookup"
+          TopLeft="192.912087912088,290.021978021978" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 1"
+          TopLeft="170.109890109891,362.164835164835" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 2"
+          TopLeft="439.74065934066,148.428571428571" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column"
+          TopLeft="180.989010989011,135.736263736264" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Lookup 1 1"
+          TopLeft="685.000000000001,288.758241758241" />
+        <NodeLayout
+          Size="106,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Sort 1"
+          TopLeft="59,233" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Data Conversion"
+          TopLeft="451.538461538461,208.725274725275" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\OLE DB Destination"
+          TopLeft="171.483516483517,431.285714285715" />
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Sort"
+          TopLeft="905,260" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Exposure"
+          TopLeft="659.362637362638,62.3076923076923" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 1 1 1"
+          TopLeft="649.659340659341,378.20879120879" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 2 1"
+          TopLeft="662.307692307693,140.736263736264" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Lookup 1"
+          TopLeft="468.586813186814,343.373626373626" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\OLE DB Destination 1"
+          TopLeft="431.059340659341,494.637362637362" />
+        <NodeLayout
+          Size="165,42"
           Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Data Conversion 2"
           TopLeft="657.032967032967,203.654945054945" />
         <NodeLayout
-          Size="106.4,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Sort 2"
-          TopLeft="484.615384615385,274.571428571428" />
+          Size="134,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Case Status"
+          TopLeft="184.197802197802,63.5714285714286" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 1 1"
+          TopLeft="440.4,421.670329670329" />
         <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Lookup Error Output]"
-          TopLeft="250.110989010989,331.621978021978">
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output2]"
+          TopLeft="905,286.4">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.542857142857"
+              EndConnector="-107.199999999999,23.158241758241"
               Start="0,0"
-              End="0,23.042857142857">
+              End="-99.699999999999,23.158241758241">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.042857142857" />
+                    End="-41.2622222222219,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-41.2622222222219,0"
+                    Point2="-45.2622222222219,0"
+                    Point3="-45.2622222222219,4" />
+                  <mssgle:LineSegment
+                    End="-45.2622222222219,19.158241758241" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-45.2622222222219,19.158241758241"
+                    Point2="-45.2622222222219,23.158241758241"
+                    Point3="-49.2622222222219,23.158241758241" />
+                  <mssgle:LineSegment
+                    End="-99.699999999999,23.158241758241" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-45.86638671875,5.71674107142849,91.7327734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output]"
-          TopLeft="518.529670329671,463.270329670329">
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output1]"
+          TopLeft="165.4,253.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.3670329670337"
+              EndConnector="27.512087912088,57.021978021978"
               Start="0,0"
-              End="0,23.8670329670337">
+              End="20.012087912088,57.021978021978">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.8670329670337" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output1]"
-          TopLeft="253.596703296704,403.764835164835">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,27.5208791208797"
-              Start="0,0"
-              End="0,20.0208791208797">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.0208791208797" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[OLE DB Source Output1]"
-          TopLeft="510.526373626374,102">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="10.214285714286,46.4285714285714"
-              Start="0,0"
-              End="10.214285714286,38.9285714285714">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.2142857142857" />
+                    End="9.756043956044,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.2142857142857"
-                    Point2="0,23.2142857142857"
-                    Point3="4,23.2142857142857" />
+                    Point1="9.756043956044,0"
+                    Point2="13.756043956044,0"
+                    Point3="13.756043956044,4" />
                   <mssgle:LineSegment
-                    End="6.21428571428601,23.2142857142857" />
+                    End="13.756043956044,53.021978021978" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.21428571428601,23.2142857142857"
-                    Point2="10.214285714286,23.2142857142857"
-                    Point3="10.214285714286,27.2142857142857" />
+                    Point1="13.756043956044,53.021978021978"
+                    Point2="13.756043956044,57.021978021978"
+                    Point3="17.756043956044,57.021978021978" />
                   <mssgle:LineSegment
-                    End="10.214285714286,38.9285714285714" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[OLE DB Source Output]"
-          TopLeft="254.193406593407,105.171428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.5648351648352"
-              Start="0,0"
-              End="0,23.0648351648352">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.0648351648352" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Lookup Error Output2]"
-          TopLeft="523.093406593407,384.973626373626">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36.696703296703"
-              Start="0,0"
-              End="0,29.196703296703">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.196703296703" />
+                    End="20.012087912088,57.021978021978" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-45.86638671875,8.7936641483515,91.7327734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output3]"
-          TopLeft="730.459340659341,419.80879120879">
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output]"
+          TopLeft="537.815384615385,316.171428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="17.9670329670338,66.9054945054957"
+              EndConnector="-12.828571428571,27.2021978021971"
               Start="0,0"
-              End="17.9670329670338,59.4054945054957">
+              End="-12.828571428571,19.7021978021971">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.4527472527479" />
+                    End="0,9.60109890109854" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,29.4527472527479"
-                    Point2="0,33.4527472527479"
-                    Point3="4,33.4527472527479" />
+                    Point1="0,9.60109890109854"
+                    Point2="0,13.6010989010985"
+                    Point3="-4,13.6010989010985" />
                   <mssgle:LineSegment
-                    End="13.9670329670338,33.4527472527479" />
+                    End="-8.82857142857097,13.6010989010985" />
                   <mssgle:CubicBezierSegment
-                    Point1="13.9670329670338,33.4527472527479"
-                    Point2="17.9670329670338,33.4527472527479"
-                    Point3="17.9670329670338,37.4527472527479" />
+                    Point1="-8.82857142857097,13.6010989010985"
+                    Point2="-12.828571428571,13.6010989010985"
+                    Point3="-12.828571428571,17.6010989010985" />
                   <mssgle:LineSegment
-                    End="17.9670329670338,59.4054945054957" />
+                    End="-12.828571428571,19.7021978021971" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13482,7 +13618,93 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[OLE DB Source Output1]"
+          TopLeft="510.526373626374,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.214285714286,46.4285714285714"
+              Start="0,0"
+              End="10.214285714286,38.9285714285714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.2142857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.2142857142857"
+                    Point2="0,23.2142857142857"
+                    Point3="4,23.2142857142857" />
+                  <mssgle:LineSegment
+                    End="6.21428571428601,23.2142857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.21428571428601,23.2142857142857"
+                    Point2="10.214285714286,23.2142857142857"
+                    Point3="10.214285714286,27.2142857142857" />
+                  <mssgle:LineSegment
+                    End="10.214285714286,38.9285714285714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[OLE DB Source Output]"
+          TopLeft="254.193406593407,105.171428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.5648351648352"
+              Start="0,0"
+              End="0,23.0648351648352">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.0648351648352" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Lookup Error Output2]"
+          TopLeft="523.093406593407,384.973626373626">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.696703296703"
+              Start="0,0"
+              End="0,29.196703296703">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.196703296703" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.86638671875,8.7936641483515,91.7327734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13522,6 +13744,30 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Lookup Error Output]"
+          TopLeft="250.110989010989,331.621978021978">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.542857142857"
+              Start="0,0"
+              End="0,23.042857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.042857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.86638671875,5.7167410714285,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output5]"
           TopLeft="439.74065934066,169.228571428571">
           <EdgeLayout.Curve>
@@ -13552,7 +13798,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13586,7 +13834,45 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output3]"
+          TopLeft="730.459340659341,419.80879120879">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.9670329670338,66.9054945054957"
+              Start="0,0"
+              End="17.9670329670338,59.4054945054957">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.4527472527479" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.4527472527479"
+                    Point2="0,33.4527472527479"
+                    Point3="4,33.4527472527479" />
+                  <mssgle:LineSegment
+                    End="13.9670329670338,33.4527472527479" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.9670329670338,33.4527472527479"
+                    Point2="17.9670329670338,33.4527472527479"
+                    Point3="17.9670329670338,37.4527472527479" />
+                  <mssgle:LineSegment
+                    End="17.9670329670338,59.4054945054957" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13620,7 +13906,93 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output1]"
+          TopLeft="253.596703296704,403.764835164835">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.5208791208797"
+              Start="0,0"
+              End="0,20.0208791208797">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.0208791208797" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output]"
+          TopLeft="518.529670329671,463.270329670329">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.3670329670337"
+              Start="0,0"
+              End="0,23.8670329670337">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.8670329670337" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Data Conversion Output2]"
+          TopLeft="821.832967032967,230.054945054945">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="83.167032967033,50.745054945055"
+              Start="0,0"
+              End="75.667032967033,50.745054945055">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="31.1149694749695,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.1149694749695,0"
+                    Point2="35.1149694749695,0"
+                    Point3="35.1149694749695,4" />
+                  <mssgle:LineSegment
+                    End="35.1149694749695,46.745054945055" />
+                  <mssgle:CubicBezierSegment
+                    Point1="35.1149694749695,46.745054945055"
+                    Point2="35.1149694749695,50.745054945055"
+                    Point3="39.1149694749695,50.745054945055" />
+                  <mssgle:LineSegment
+                    End="75.667032967033,50.745054945055" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13654,47 +14026,11 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output]"
-          TopLeft="537.815384615385,316.171428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-12.828571428571,27.2021978021971"
-              Start="0,0"
-              End="-12.828571428571,19.7021978021971">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,9.60109890109854" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.60109890109854"
-                    Point2="0,13.6010989010985"
-                    Point3="-4,13.6010989010985" />
-                  <mssgle:LineSegment
-                    End="-8.82857142857097,13.6010989010985" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-8.82857142857097,13.6010989010985"
-                    Point2="-12.828571428571,13.6010989010985"
-                    Point3="-12.828571428571,17.6010989010985" />
-                  <mssgle:LineSegment
-                    End="-12.828571428571,19.7021978021971" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="106.4,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Sort 1"
-          TopLeft="59,233" />
         <EdgeLayout
           Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Data Conversion Output]"
           TopLeft="173.956043956044,210.5">
@@ -13720,113 +14056,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output1]"
-          TopLeft="165.4,253.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="27.512087912088,57.021978021978"
-              Start="0,0"
-              End="20.012087912088,57.021978021978">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="9.756043956044,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="9.756043956044,0"
-                    Point2="13.756043956044,0"
-                    Point3="13.756043956044,4" />
-                  <mssgle:LineSegment
-                    End="13.756043956044,53.021978021978" />
-                  <mssgle:CubicBezierSegment
-                    Point1="13.756043956044,53.021978021978"
-                    Point2="13.756043956044,57.021978021978"
-                    Point3="17.756043956044,57.021978021978" />
-                  <mssgle:LineSegment
-                    End="20.012087912088,57.021978021978" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Sort"
-          TopLeft="905,260" />
-        <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Data Conversion Output2]"
-          TopLeft="821.832967032967,230.054945054945">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="83.167032967033,50.745054945055"
-              Start="0,0"
-              End="75.667032967033,50.745054945055">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="31.1149694749695,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="31.1149694749695,0"
-                    Point2="35.1149694749695,0"
-                    Point3="35.1149694749695,4" />
-                  <mssgle:LineSegment
-                    End="35.1149694749695,46.745054945055" />
-                  <mssgle:CubicBezierSegment
-                    Point1="35.1149694749695,46.745054945055"
-                    Point2="35.1149694749695,50.745054945055"
-                    Point3="39.1149694749695,50.745054945055" />
-                  <mssgle:LineSegment
-                    End="75.667032967033,50.745054945055" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output2]"
-          TopLeft="905,286.4">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-107.199999999999,23.158241758241"
-              Start="0,0"
-              End="-99.699999999999,23.158241758241">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-41.2622222222219,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-41.2622222222219,0"
-                    Point2="-45.2622222222219,0"
-                    Point3="-45.2622222222219,4" />
-                  <mssgle:LineSegment
-                    End="-45.2622222222219,19.158241758241" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-45.2622222222219,19.158241758241"
-                    Point2="-45.2622222222219,23.158241758241"
-                    Point3="-49.2622222222219,23.158241758241" />
-                  <mssgle:LineSegment
-                    End="-99.699999999999,23.158241758241" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14143,7 +14375,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14273,7 +14507,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14307,7 +14543,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14329,7 +14567,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -14351,7 +14591,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -14436,75 +14678,6 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Case Report Covid19\Lookup Gender">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Case Report Covid19\Lookup Outcome">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Case Report Covid19\Lookup Exposure">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-3NFQDKO\tonsi"
   DTS:DTSID="{8E9A847B-DC5F-458C-B933-7D37986AAB84}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.948.0"
+  DTS:LastModifiedProductVersion="16.0.845.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{02604A0C-3E2E-4782-9F23-96C00C34D142}">
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{2FC49C13-8DEF-46B5-B99E-04C374F3530B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -29,6 +29,18 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.NDSCovid19 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{382A86EF-6F06-4709-B911-EBBEB3AFFC62}"
+      DTS:ObjectName="LocalHost.NDSCovid19 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=NDSCovid19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{382A86EF-6F06-4709-B911-EBBEB3AFFC62}LocalHost.NDSCovid19;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.StageCOVID19]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{CE326FD1-2837-4EAA-BCEB-7F96804421DD}"
@@ -37,7 +49,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=.;Initial Catalog=StageCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-StageToNDS-{CE326FD1-2837-4EAA-BCEB-7F96804421DD}LocalHost.StageCOVID19;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=StageCOVID19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-StageToNDS-{CE326FD1-2837-4EAA-BCEB-7F96804421DD}LocalHost.StageCOVID19;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -47,8 +59,7 @@
       DTS:refId="Package\Age group stage to NDS"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{B9A80F0D-31E8-4533-9DEA-D549841F544A}"
+      DTS:DTSID="{e7625972-c1bc-49ae-a9f7-7d23ee5ba3c4}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Age group stage to NDS"
@@ -294,15 +305,6 @@
                   refId="Package\Age group stage to NDS\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Age group stage to NDS\Derived Column.Inputs[Derived Column Input].Columns[AGE]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="35"
-                      cachedName="AGE"
-                      lineageId="Package\Age group stage to NDS\Case Report.Outputs[OLE DB Source Output].Columns[AGE]" />
-                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -315,26 +317,25 @@
                   synchronousInputId="Package\Age group stage to NDS\Derived Column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Age group stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[CorrectedAG]"
-                      dataType="wstr"
+                      refId="Package\Age group stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]"
+                      dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="12"
-                      lineageId="Package\Age group stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[CorrectedAG]"
-                      name="CorrectedAG"
+                      lineageId="Package\Age group stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]"
+                      name="SOURCE_ID"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(#{Package\Age group stage to NDS\Case Report.Outputs[OLE DB Source Output].Columns[AGE]} == "30s") ? "30s" : (#{Package\Age group stage to NDS\Case Report.Outputs[OLE DB Source Output].Columns[AGE]} == "60s") ? "60s" : (#{Package\Age group stage to NDS\Case Report.Outputs[OLE DB Source Output].Columns[AGE]} == "70s") ? "70s" : (#{Package\Age group stage to NDS\Case Report.Outputs[OLE DB Source Output].Columns[AGE]} == "80s" || #{Package\Age group stage to NDS\Case Report.Outputs[OLE DB Source Output].Columns[AGE]} == "90+") ? "80s" : (#{Package\Age group stage to NDS\Case Report.Outputs[OLE DB Source Output].Columns[AGE]} == "40s") ? "40s" : (#{Package\Age group stage to NDS\Case Report.Outputs[OLE DB Source Output].Columns[AGE]} == "20s") ? "20s" : (#{Package\Age group stage to NDS\Case Report.Outputs[OLE DB Source Output].Columns[AGE]} == "50s") ? "50s" : (#{Package\Age group stage to NDS\Case Report.Outputs[OLE DB Source Output].Columns[AGE]} == "&lt;20") ? "0s" : "Not Reported"</property>
+                          name="Expression">1</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(AGE == "30s") ? "30s" : (AGE == "60s") ? "60s" : (AGE == "70s") ? "70s" : (AGE == "80s" || AGE == "90+") ? "80s" : (AGE == "40s") ? "40s" : (AGE == "20s") ? "20s" : (AGE == "50s") ? "50s" : (AGE == "&lt;20") ? "0s" : "Not Reported"</property>
+                          name="FriendlyExpression">1</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -377,15 +378,6 @@
                   refId="Package\Age group stage to NDS\Derived Column 1.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Age group stage to NDS\Derived Column 1.Inputs[Derived Column Input].Columns[AGE_GROUP]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="35"
-                      cachedName="AGE_GROUP"
-                      lineageId="Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]" />
-                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -398,26 +390,47 @@
                   synchronousInputId="Package\Age group stage to NDS\Derived Column 1.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Age group stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[Derived Column 1]"
-                      dataType="wstr"
+                      refId="Package\Age group stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[CDate]"
+                      dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      length="12"
-                      lineageId="Package\Age group stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[Derived Column 1]"
-                      name="Derived Column 1"
+                      lineageId="Package\Age group stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[CDate]"
+                      name="CDate"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(#{Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "30-39yrs") ? "30s" : (#{Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "60-69yrs") ? "60s" : (#{Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "70-79yrs") ? "70s" : (#{Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "80+") ? "80s" : (#{Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "40-49yrs") ? "40s" : (#{Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "50-59yrs") ? "50s" : (#{Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "05-11yrs" || #{Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "12-17yrs") ? "0s" : (#{Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "Undisclosed_or_missing") ? "Not Reported" : (#{Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "Adults_18plus") ? "18+" : (#{Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "Ontario_5plus") ? "5+" : (#{Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "Ontario_12plus") ? "12+" : (#{Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "18-29yrs") ? "18-29" : "Not Reported"</property>
+                          name="Expression">[GETDATE]()</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(AGE_GROUP == "30-39yrs") ? "30s" : (AGE_GROUP == "60-69yrs") ? "60s" : (AGE_GROUP == "70-79yrs") ? "70s" : (AGE_GROUP == "80+") ? "80s" : (AGE_GROUP == "40-49yrs") ? "40s" : (AGE_GROUP == "50-59yrs") ? "50s" : (AGE_GROUP == "05-11yrs" || AGE_GROUP == "12-17yrs") ? "0s" : (AGE_GROUP == "Undisclosed_or_missing") ? "Not Reported" : (AGE_GROUP == "Adults_18plus") ? "18+" : (AGE_GROUP == "Ontario_5plus") ? "5+" : (AGE_GROUP == "Ontario_12plus") ? "12+" : (AGE_GROUP == "18-29yrs") ? "18-29" : "Not Reported"</property>
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Age group stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[UDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Age group stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[UDate]"
+                      name="UDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -449,83 +462,649 @@
               </outputs>
             </component>
             <component
-              refId="Package\Age group stage to NDS\Derived Column 2"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column 2"
-              usesDispositions="true">
+              refId="Package\Age group stage to NDS\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT     ID, AGE_GROUP
+FROM        AGE_GROUP
+WHERE SOURCE_ID = 1</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT     ID, AGE_GROUP
+FROM        AGE_GROUP
+WHERE SOURCE_ID = 1) [refTable]
+where [refTable].[AGE_GROUP] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="AGE_GROUP" dataType="DT_STR" length="35" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Age group stage to NDS\Sort.Outputs[Sort Output].Columns[CorrectedAgeGroup]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Age group stage to NDS\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDSCovid19]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDSCovid19]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
               <inputs>
                 <input
-                  refId="Package\Age group stage to NDS\Derived Column 2.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
+                  refId="Package\Age group stage to NDS\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Age group stage to NDS\Derived Column 2.Inputs[Derived Column Input].Columns[AGE_GROUP]"
+                      refId="Package\Age group stage to NDS\Lookup.Inputs[Lookup Input].Columns[CorrectedAgeGroup]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="35"
-                      cachedName="AGE_GROUP"
-                      lineageId="Package\Age group stage to NDS\Case report Canada.Outputs[OLE DB Source Output].Columns[AGE_GROUP]" />
+                      cachedName="CorrectedAgeGroup"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Age group stage to NDS\Sort.Outputs[Sort Output].Columns[CorrectedAgeGroup]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">AGE_GROUP</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Age group stage to NDS\Derived Column 2.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
+                  refId="Package\Age group stage to NDS\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="RedirectRow"
                   exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Age group stage to NDS\Derived Column 2.Inputs[Derived Column Input]">
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Age group stage to NDS\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Age group stage to NDS\Derived Column 2.Outputs[Derived Column Output].Columns[CorrectedAG]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="12"
-                      lineageId="Package\Age group stage to NDS\Derived Column 2.Outputs[Derived Column Output].Columns[CorrectedAG]"
-                      name="CorrectedAG"
+                      refId="Package\Age group stage to NDS\Lookup.Outputs[Lookup Match Output].Columns[IDSK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Age group stage to NDS\Lookup.Outputs[Lookup Match Output].Columns[IDSK]"
+                      name="IDSK"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
-                          containsID="true"
                           dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(#{Package\Age group stage to NDS\Case report Canada.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "30-39") ? "30s" : (#{Package\Age group stage to NDS\Case report Canada.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "60-69") ? "60s" : (#{Package\Age group stage to NDS\Case report Canada.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "70-79") ? "70s" : (#{Package\Age group stage to NDS\Case report Canada.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "80+") ? "80s" : (#{Package\Age group stage to NDS\Case report Canada.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "40-49") ? "40s" : (#{Package\Age group stage to NDS\Case report Canada.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "20-29") ? "20s" : (#{Package\Age group stage to NDS\Case report Canada.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "50-59") ? "50s" : (#{Package\Age group stage to NDS\Case report Canada.Outputs[OLE DB Source Output].Columns[AGE_GROUP]} == "&lt;20") ? "0s" : "Not Reported"</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(AGE_GROUP == "30-39") ? "30s" : (AGE_GROUP == "60-69") ? "60s" : (AGE_GROUP == "70-79") ? "70s" : (AGE_GROUP == "80+") ? "80s" : (AGE_GROUP == "40-49") ? "40s" : (AGE_GROUP == "20-29") ? "20s" : (AGE_GROUP == "50-59") ? "50s" : (AGE_GROUP == "&lt;20") ? "0s" : "Not Reported"</property>
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">ID</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Age group stage to NDS\Derived Column 2.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
+                  refId="Package\Age group stage to NDS\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Age group stage to NDS\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Age group stage to NDS\Lookup.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Age group stage to NDS\Derived Column 2.Inputs[Derived Column Input]">
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Age group stage to NDS\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Age group stage to NDS\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Age group stage to NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Age group stage to NDS\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Age group stage to NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Age group stage to NDS\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Age group stage to NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Age group stage to NDS\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Age group stage to NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Age group stage to NDS\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[AGE_GROUP]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Age group stage to NDS\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDSCovid19]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDSCovid19]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOURCE_ID]"
+                      cachedDataType="i4"
+                      cachedName="SOURCE_ID"
+                      externalMetadataColumnId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_ID]"
+                      lineageId="Package\Age group stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]" />
+                    <inputColumn
+                      refId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CorrectedAgeGroup]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="CorrectedAgeGroup"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGE_GROUP]"
+                      lineageId="Package\Age group stage to NDS\Sort.Outputs[Sort Output].Columns[CorrectedAgeGroup]" />
+                    <inputColumn
+                      refId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CDate"
+                      externalMetadataColumnId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CREATED_DATE]"
+                      lineageId="Package\Age group stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[CDate]" />
+                    <inputColumn
+                      refId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="UDate"
+                      externalMetadataColumnId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPDATED_DATE]"
+                      lineageId="Package\Age group stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[UDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGE_GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="AGE_GROUP" />
+                    <externalMetadataColumn
+                      refId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AGEGROUP_IDNK]"
+                      dataType="i4"
+                      name="AGEGROUP_IDNK" />
+                    <externalMetadataColumn
+                      refId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CREATED_DATE]"
+                      dataType="dbTimeStamp"
+                      name="CREATED_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPDATED_DATE]"
+                      dataType="dbTimeStamp"
+                      name="UPDATED_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_ID]"
+                      dataType="i4"
+                      name="SOURCE_ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Age group stage to NDS\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age group stage to NDS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Age group stage to NDS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Age group stage to NDS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Age group stage to NDS\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Age group stage to NDS\Row Sampling"
+              componentClassID="Microsoft.RowSampling"
+              contactInfo="Row Sampling;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Randomly samples a specific number of rows from an input data flow. For example, use it randomly select products to feature on your Web site."
+              name="Row Sampling">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of rows in the sample."
+                  expressionType="Notify"
+                  name="SamplingValue">10</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the seed for the random number generator."
+                  name="SamplingSeed">0</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Age group stage to NDS\Row Sampling.Inputs[Row Sampling Input 1]"
+                  name="Row Sampling Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Age group stage to NDS\Row Sampling.Inputs[Row Sampling Input 1].Columns[CorrectedAgeGroup]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="CorrectedAgeGroup"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Age group stage to NDS\Sort.Outputs[Sort Output].Columns[CorrectedAgeGroup]" />
+                    <inputColumn
+                      refId="Package\Age group stage to NDS\Row Sampling.Inputs[Row Sampling Input 1].Columns[SOURCE_ID]"
+                      cachedDataType="i4"
+                      cachedName="SOURCE_ID"
+                      lineageId="Package\Age group stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]" />
+                    <inputColumn
+                      refId="Package\Age group stage to NDS\Row Sampling.Inputs[Row Sampling Input 1].Columns[IDSK]"
+                      cachedDataType="i4"
+                      cachedName="IDSK"
+                      lineageId="Package\Age group stage to NDS\Lookup.Outputs[Lookup Match Output].Columns[IDSK]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Selected Output]"
+                  name="Sampling Selected Output">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output for rows in the sample"
+                      name="Selected">true</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[CorrectedAgeGroup]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      lineageId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[CorrectedAgeGroup]"
+                      name="CorrectedAgeGroup">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Age group stage to NDS\Sort.Outputs[Sort Output].Columns[CorrectedAgeGroup]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[SOURCE_ID]"
+                      dataType="i4"
+                      lineageId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[SOURCE_ID]"
+                      name="SOURCE_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Age group stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[IDSK]"
+                      dataType="i4"
+                      lineageId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[IDSK]"
+                      name="IDSK">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Age group stage to NDS\Lookup.Outputs[Lookup Match Output].Columns[IDSK]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Unselected Output]"
+                  name="Sampling Unselected Output">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output for rows in the sample"
+                      name="Selected">false</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[CorrectedAgeGroup]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      lineageId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[CorrectedAgeGroup]"
+                      name="CorrectedAgeGroup">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Age group stage to NDS\Sort.Outputs[Sort Output].Columns[CorrectedAgeGroup]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[SOURCE_ID]"
+                      dataType="i4"
+                      lineageId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[SOURCE_ID]"
+                      name="SOURCE_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Age group stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[IDSK]"
+                      dataType="i4"
+                      lineageId="Package\Age group stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[IDSK]"
+                      name="IDSK">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Age group stage to NDS\Lookup.Outputs[Lookup Match Output].Columns[IDSK]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Age group stage to NDS\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Age group stage to NDS\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Age group stage to NDS\Sort.Inputs[Sort Input].Columns[CorrectedAgeGroup]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="CorrectedAgeGroup"
+                      lineageId="Package\Age group stage to NDS\Union All.Outputs[Union All Output 1].Columns[CorrectedAgeGroup]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Age group stage to NDS\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age group stage to NDS\Sort.Outputs[Sort Output].Columns[CorrectedAgeGroup]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      lineageId="Package\Age group stage to NDS\Sort.Outputs[Sort Output].Columns[CorrectedAgeGroup]"
+                      name="CorrectedAgeGroup"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Age group stage to NDS\Union All.Outputs[Union All Output 1].Columns[CorrectedAgeGroup]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Age group stage to NDS\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Age group stage to NDS\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Age group stage to NDS\Union All.Inputs[Union All Input 1].Columns[AGE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="AGE"
+                      lineageId="Package\Age group stage to NDS\Case Report.Outputs[OLE DB Source Output].Columns[AGE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Age group stage to NDS\Union All.Outputs[Union All Output 1].Columns[CorrectedAgeGroup]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Age group stage to NDS\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Age group stage to NDS\Union All.Inputs[Union All Input 2].Columns[AGE_GROUP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="AGE_GROUP"
+                      lineageId="Package\Age group stage to NDS\Case report Canada.Outputs[OLE DB Source Output].Columns[AGE_GROUP]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Age group stage to NDS\Union All.Outputs[Union All Output 1].Columns[CorrectedAgeGroup]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Age group stage to NDS\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Age group stage to NDS\Union All.Inputs[Union All Input 3].Columns[AGE_GROUP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="AGE_GROUP"
+                      lineageId="Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output].Columns[AGE_GROUP]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Age group stage to NDS\Union All.Outputs[Union All Output 1].Columns[CorrectedAgeGroup]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Age group stage to NDS\Union All.Inputs[Union All Input 4]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 4">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Age group stage to NDS\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Age group stage to NDS\Union All.Outputs[Union All Output 1].Columns[CorrectedAgeGroup]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      lineageId="Package\Age group stage to NDS\Union All.Outputs[Union All Output 1].Columns[CorrectedAgeGroup]"
+                      name="CorrectedAgeGroup" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -646,20 +1225,50 @@
           </components>
           <paths>
             <path
-              refId="Package\Age group stage to NDS.Paths[OLE DB Source Output]"
-              endId="Package\Age group stage to NDS\Derived Column 2.Inputs[Derived Column Input]"
-              name="OLE DB Source Output"
-              startId="Package\Age group stage to NDS\Case report Canada.Outputs[OLE DB Source Output]" />
+              refId="Package\Age group stage to NDS.Paths[Derived Column Output]"
+              endId="Package\Age group stage to NDS\Lookup.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Age group stage to NDS\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Age group stage to NDS.Paths[OLE DB Source Output1]"
-              endId="Package\Age group stage to NDS\Derived Column.Inputs[Derived Column Input]"
+              refId="Package\Age group stage to NDS.Paths[Derived Column Output1]"
+              endId="Package\Age group stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Age group stage to NDS\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Age group stage to NDS.Paths[Lookup Error Output]"
+              endId="Package\Age group stage to NDS\Derived Column 1.Inputs[Derived Column Input]"
+              name="Lookup Error Output"
+              startId="Package\Age group stage to NDS\Lookup.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Age group stage to NDS.Paths[Lookup Match Output]"
+              endId="Package\Age group stage to NDS\Row Sampling.Inputs[Row Sampling Input 1]"
+              name="Lookup Match Output"
+              startId="Package\Age group stage to NDS\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Age group stage to NDS.Paths[OLE DB Source Output]"
+              endId="Package\Age group stage to NDS\Union All.Inputs[Union All Input 1]"
               name="OLE DB Source Output"
               startId="Package\Age group stage to NDS\Case Report.Outputs[OLE DB Source Output]" />
             <path
+              refId="Package\Age group stage to NDS.Paths[OLE DB Source Output1]"
+              endId="Package\Age group stage to NDS\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Source Output"
+              startId="Package\Age group stage to NDS\Case report Canada.Outputs[OLE DB Source Output]" />
+            <path
               refId="Package\Age group stage to NDS.Paths[OLE DB Source Output2]"
-              endId="Package\Age group stage to NDS\Derived Column 1.Inputs[Derived Column Input]"
+              endId="Package\Age group stage to NDS\Union All.Inputs[Union All Input 3]"
               name="OLE DB Source Output"
               startId="Package\Age group stage to NDS\Vaccine by age.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Age group stage to NDS.Paths[Sort Output]"
+              endId="Package\Age group stage to NDS\Derived Column.Inputs[Derived Column Input]"
+              name="Sort Output"
+              startId="Package\Age group stage to NDS\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Age group stage to NDS.Paths[Union All Output 1]"
+              endId="Package\Age group stage to NDS\Sort.Inputs[Sort Input]"
+              name="Union All Output 1"
+              startId="Package\Age group stage to NDS\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -668,7 +1277,6 @@
       DTS:refId="Package\Outbreak Group Stage to NDS"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{A8C25EB0-D91B-4985-9DC0-BC434E2894D3}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -679,110 +1287,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Outbreak Group Stage to NDS\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Outbreak Group Stage to NDS\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Data Conversion.Inputs[Data Conversion Input].Columns[GROUP_IDNK]"
-                      cachedDataType="wstr"
-                      cachedLength="35"
-                      cachedName="GROUP_IDNK"
-                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[GROUP_IDNK]" />
-                    <inputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Data Conversion.Inputs[Data Conversion Input].Columns[TOKEN_OUTBREAKGROUP_NAME]"
-                      cachedDataType="wstr"
-                      cachedLength="35"
-                      cachedName="TOKEN_OUTBREAKGROUP_NAME"
-                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[TOKEN_OUTBREAKGROUP_NAME]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Outbreak Group Stage to NDS\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedGROUP_IDNK]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedGROUP_IDNK]"
-                      name="ConvertedGROUP_IDNK"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[GROUP_IDNK]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedTOKEN_OUTBREAKGROUP_NAME]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="35"
-                      lineageId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedTOKEN_OUTBREAKGROUP_NAME]"
-                      name="ConvertedTOKEN_OUTBREAKGROUP_NAME"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[TOKEN_OUTBREAKGROUP_NAME]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Outbreak Group Stage to NDS\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Outbreak Group Stage to NDS\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
@@ -795,15 +1299,6 @@
                   refId="Package\Outbreak Group Stage to NDS\Derived Column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Derived Column.Inputs[Derived Column Input].Columns[OUTBREAK_GROUP]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="35"
-                      cachedName="OUTBREAK_GROUP"
-                      lineageId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP]" />
-                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -835,52 +1330,6 @@
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
                           name="FriendlyExpression">1</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[GROUP_IDNK]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="35"
-                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[GROUP_IDNK]"
-                      name="GROUP_IDNK"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[TOKEN](#{Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP]}," ",1)</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">TOKEN(OUTBREAK_GROUP," ",1)</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[TOKEN_OUTBREAKGROUP_NAME]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      length="35"
-                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[TOKEN_OUTBREAKGROUP_NAME]"
-                      name="TOKEN_OUTBREAKGROUP_NAME"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">[TOKEN](#{Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP]}," ",2)</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">TOKEN(OUTBREAK_GROUP," ",2)</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -935,12 +1384,12 @@
                   synchronousInputId="Package\Outbreak Group Stage to NDS\Derived Column 1.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[CREATED_DATE]"
+                      refId="Package\Outbreak Group Stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[Cdate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[CREATED_DATE]"
-                      name="CREATED_DATE"
+                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[Cdate]"
+                      name="Cdate"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -957,12 +1406,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[UPDATED_DATE]"
+                      refId="Package\Outbreak Group Stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[Udate]"
                       dataType="dbTimeStamp"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[UPDATED_DATE]"
-                      name="UPDATED_DATE"
+                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[Udate]"
+                      name="Udate"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1020,17 +1469,17 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT ID, OUTBREAK_GROUP, OUTBREAK_GROUP_IDNK
-FROM     OUTBREAK_GROUP
-WHERE  (SOURCE_ID = 1)</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT     ID, OUTBREAK_GROUP, OUTBREAK_GROUP_IDNK
+FROM        OUTBREAK_GROUP
+WHERE SOURCE_ID = 1</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT ID, OUTBREAK_GROUP, OUTBREAK_GROUP_IDNK
-FROM     OUTBREAK_GROUP
-WHERE  (SOURCE_ID = 1)) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT     ID, OUTBREAK_GROUP, OUTBREAK_GROUP_IDNK
+FROM        OUTBREAK_GROUP
+WHERE SOURCE_ID = 1) [refTable]
 where [refTable].[OUTBREAK_GROUP_IDNK] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -1067,7 +1516,7 @@ where [refTable].[OUTBREAK_GROUP_IDNK] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedGROUP_IDNK]};</property>
+                  name="ParameterMap">#{Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP_UID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1091,10 +1540,10 @@ where [refTable].[OUTBREAK_GROUP_IDNK] = ?</property>
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Lookup.Inputs[Lookup Input].Columns[ConvertedGROUP_IDNK]"
+                      refId="Package\Outbreak Group Stage to NDS\Lookup.Inputs[Lookup Input].Columns[OUTBREAK_GROUP_UID]"
                       cachedDataType="i4"
-                      cachedName="ConvertedGROUP_IDNK"
-                      lineageId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedGROUP_IDNK]">
+                      cachedName="OUTBREAK_GROUP_UID"
+                      lineageId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP_UID]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -1120,11 +1569,11 @@ where [refTable].[OUTBREAK_GROUP_IDNK] = ?</property>
                   synchronousInputId="Package\Outbreak Group Stage to NDS\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Lookup.Outputs[Lookup Match Output].Columns[OutbreakGroupIDSK]"
+                      refId="Package\Outbreak Group Stage to NDS\Lookup.Outputs[Lookup Match Output].Columns[IDSK]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Outbreak Group Stage to NDS\Lookup.Outputs[Lookup Match Output].Columns[OutbreakGroupIDSK]"
-                      name="OutbreakGroupIDSK"
+                      lineageId="Package\Outbreak Group Stage to NDS\Lookup.Outputs[Lookup Match Output].Columns[IDSK]"
+                      name="IDSK"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -1161,6 +1610,124 @@ where [refTable].[OUTBREAK_GROUP_IDNK] = ?</property>
                       refId="Package\Outbreak Group Stage to NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\Outbreak Group Stage to NDS\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Outbreak Group Stage to NDS\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">update OUTBREAK_GROUP
+set UPDATED_DATE = getdate(), OUTBREAK_GROUP = ?
+where ID = ? and SOURCE_ID = 1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Outbreak Group Stage to NDS\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.NDSCovid19]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.NDSCovid19]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Outbreak Group Stage to NDS\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Outbreak Group Stage to NDS\OLE DB Command.Inputs[OLE DB Command Input].Columns[OUTBREAK_GROUP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="OUTBREAK_GROUP"
+                      externalMetadataColumnId="Package\Outbreak Group Stage to NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP]" />
+                    <inputColumn
+                      refId="Package\Outbreak Group Stage to NDS\OLE DB Command.Inputs[OLE DB Command Input].Columns[IDSK]"
+                      cachedDataType="i4"
+                      cachedName="IDSK"
+                      externalMetadataColumnId="Package\Outbreak Group Stage to NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Outbreak Group Stage to NDS\Lookup.Outputs[Lookup Match Output].Columns[IDSK]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Outbreak Group Stage to NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Outbreak Group Stage to NDS\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="i4"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Outbreak Group Stage to NDS\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Outbreak Group Stage to NDS\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Outbreak Group Stage to NDS\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Outbreak Group Stage to NDS\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Outbreak Group Stage to NDS\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Outbreak Group Stage to NDS\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Outbreak Group Stage to NDS\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Outbreak Group Stage to NDS\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1241,37 +1808,37 @@ where [refTable].[OUTBREAK_GROUP_IDNK] = ?</property>
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OUTBREAK_GROUP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="OUTBREAK_GROUP"
+                      externalMetadataColumnId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OUTBREAK_GROUP]"
+                      lineageId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP]" />
+                    <inputColumn
                       refId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOURCE_ID]"
                       cachedDataType="i4"
                       cachedName="SOURCE_ID"
                       externalMetadataColumnId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_ID]"
                       lineageId="Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]" />
                     <inputColumn
-                      refId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CREATED_DATE]"
+                      refId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Udate]"
                       cachedDataType="dbTimeStamp"
-                      cachedName="CREATED_DATE"
-                      externalMetadataColumnId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CREATED_DATE]"
-                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[CREATED_DATE]" />
-                    <inputColumn
-                      refId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[UPDATED_DATE]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="UPDATED_DATE"
+                      cachedName="Udate"
                       externalMetadataColumnId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPDATED_DATE]"
-                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[UPDATED_DATE]" />
+                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[Udate]" />
                     <inputColumn
-                      refId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConvertedGROUP_IDNK]"
+                      refId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Cdate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Cdate"
+                      externalMetadataColumnId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CREATED_DATE]"
+                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column 1.Outputs[Derived Column Output].Columns[Cdate]" />
+                    <inputColumn
+                      refId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OUTBREAK_GROUP_UID]"
                       cachedDataType="i4"
-                      cachedName="ConvertedGROUP_IDNK"
+                      cachedName="OUTBREAK_GROUP_UID"
                       externalMetadataColumnId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OUTBREAK_GROUP_IDNK]"
-                      lineageId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedGROUP_IDNK]" />
-                    <inputColumn
-                      refId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ConvertedTOKEN_OUTBREAKGROUP_NAME]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="35"
-                      cachedName="ConvertedTOKEN_OUTBREAKGROUP_NAME"
-                      externalMetadataColumnId="Package\Outbreak Group Stage to NDS\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OUTBREAK_GROUP]"
-                      lineageId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedTOKEN_OUTBREAKGROUP_NAME]" />
+                      lineageId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP_UID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1354,8 +1921,7 @@ where [refTable].[OUTBREAK_GROUP_IDNK] = ?</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT    DISTINCT    OUTBREAK_GROUP
-FROM            ONGOING_OUTBREAKS_PHU_STAGE</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select DISTINCT OUTBREAK_GROUP, OUTBREAK_GROUP_UID from ONGOING_OUTBREAKS_PHU_STAGE</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1402,6 +1968,15 @@ FROM            ONGOING_OUTBREAKS_PHU_STAGE</property>
                       lineageId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP]"
                       name="OUTBREAK_GROUP"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP_UID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OUTBREAK_GROUP_UID]"
+                      lineageId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP_UID]"
+                      name="OUTBREAK_GROUP_UID"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1411,6 +1986,10 @@ FROM            ONGOING_OUTBREAKS_PHU_STAGE</property>
                       dataType="str"
                       length="35"
                       name="OUTBREAK_GROUP" />
+                    <externalMetadataColumn
+                      refId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OUTBREAK_GROUP_UID]"
+                      dataType="i4"
+                      name="OUTBREAK_GROUP_UID" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1425,6 +2004,11 @@ FROM            ONGOING_OUTBREAKS_PHU_STAGE</property>
                       length="35"
                       lineageId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OUTBREAK_GROUP]"
                       name="OUTBREAK_GROUP" />
+                    <outputColumn
+                      refId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OUTBREAK_GROUP_UID]"
+                      dataType="i4"
+                      lineageId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OUTBREAK_GROUP_UID]"
+                      name="OUTBREAK_GROUP_UID" />
                     <outputColumn
                       refId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1442,235 +2026,11 @@ FROM            ONGOING_OUTBREAKS_PHU_STAGE</property>
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Outbreak Group Stage to NDS\Row Sampling"
-              componentClassID="Microsoft.RowSampling"
-              contactInfo="Row Sampling;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Randomly samples a specific number of rows from an input data flow. For example, use it randomly select products to feature on your Web site."
-              name="Row Sampling">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the number of rows in the sample."
-                  expressionType="Notify"
-                  name="SamplingValue">10</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the seed for the random number generator."
-                  name="SamplingSeed">0</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Outbreak Group Stage to NDS\Row Sampling.Inputs[Row Sampling Input 1]"
-                  name="Row Sampling Input 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Inputs[Row Sampling Input 1].Columns[OUTBREAK_GROUP]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="35"
-                      cachedName="OUTBREAK_GROUP"
-                      lineageId="Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP]" />
-                    <inputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Inputs[Row Sampling Input 1].Columns[SOURCE_ID]"
-                      cachedDataType="i4"
-                      cachedName="SOURCE_ID"
-                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]" />
-                    <inputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Inputs[Row Sampling Input 1].Columns[GROUP_IDNK]"
-                      cachedDataType="wstr"
-                      cachedLength="35"
-                      cachedName="GROUP_IDNK"
-                      lineageId="Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[GROUP_IDNK]" />
-                    <inputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Inputs[Row Sampling Input 1].Columns[ConvertedGROUP_IDNK]"
-                      cachedDataType="i4"
-                      cachedName="ConvertedGROUP_IDNK"
-                      lineageId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedGROUP_IDNK]" />
-                    <inputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Inputs[Row Sampling Input 1].Columns[OutbreakGroupIDSK]"
-                      cachedDataType="i4"
-                      cachedName="OutbreakGroupIDSK"
-                      lineageId="Package\Outbreak Group Stage to NDS\Lookup.Outputs[Lookup Match Output].Columns[OutbreakGroupIDSK]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Selected Output]"
-                  name="Sampling Selected Output">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      description="Output for rows in the sample"
-                      name="Selected">true</property>
-                  </properties>
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[OUTBREAK_GROUP]"
-                      codePage="1252"
-                      dataType="str"
-                      length="35"
-                      lineageId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[OUTBREAK_GROUP]"
-                      name="OUTBREAK_GROUP">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[SOURCE_ID]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[SOURCE_ID]"
-                      name="SOURCE_ID">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[GROUP_IDNK]"
-                      dataType="wstr"
-                      length="35"
-                      lineageId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[GROUP_IDNK]"
-                      name="GROUP_IDNK">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[GROUP_IDNK]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[ConvertedGROUP_IDNK]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[ConvertedGROUP_IDNK]"
-                      name="ConvertedGROUP_IDNK">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedGROUP_IDNK]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[OutbreakGroupIDSK]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Selected Output].Columns[OutbreakGroupIDSK]"
-                      name="OutbreakGroupIDSK">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Outbreak Group Stage to NDS\Lookup.Outputs[Lookup Match Output].Columns[OutbreakGroupIDSK]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Unselected Output]"
-                  name="Sampling Unselected Output">
-                  <properties>
-                    <property
-                      dataType="System.Boolean"
-                      description="Output for rows in the sample"
-                      name="Selected">false</property>
-                  </properties>
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[OUTBREAK_GROUP]"
-                      codePage="1252"
-                      dataType="str"
-                      length="35"
-                      lineageId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[OUTBREAK_GROUP]"
-                      name="OUTBREAK_GROUP">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Outbreak Group Stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[SOURCE_ID]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[SOURCE_ID]"
-                      name="SOURCE_ID">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[GROUP_IDNK]"
-                      dataType="wstr"
-                      length="35"
-                      lineageId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[GROUP_IDNK]"
-                      name="GROUP_IDNK">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[GROUP_IDNK]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[ConvertedGROUP_IDNK]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[ConvertedGROUP_IDNK]"
-                      name="ConvertedGROUP_IDNK">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[ConvertedGROUP_IDNK]}</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[OutbreakGroupIDSK]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak Group Stage to NDS\Row Sampling.Outputs[Sampling Unselected Output].Columns[OutbreakGroupIDSK]"
-                      name="OutbreakGroupIDSK">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Input column lineage ID"
-                          name="InputColumnLineageID">#{Package\Outbreak Group Stage to NDS\Lookup.Outputs[Lookup Match Output].Columns[OutbreakGroupIDSK]}</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
-              refId="Package\Outbreak Group Stage to NDS.Paths[Data Conversion Output]"
-              endId="Package\Outbreak Group Stage to NDS\Lookup.Inputs[Lookup Input]"
-              name="Data Conversion Output"
-              startId="Package\Outbreak Group Stage to NDS\Data Conversion.Outputs[Data Conversion Output]" />
-            <path
               refId="Package\Outbreak Group Stage to NDS.Paths[Derived Column Output]"
-              endId="Package\Outbreak Group Stage to NDS\Data Conversion.Inputs[Data Conversion Input]"
+              endId="Package\Outbreak Group Stage to NDS\Lookup.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Outbreak Group Stage to NDS\Derived Column.Outputs[Derived Column Output]" />
             <path
@@ -1685,7 +2045,7 @@ FROM            ONGOING_OUTBREAKS_PHU_STAGE</property>
               startId="Package\Outbreak Group Stage to NDS\Lookup.Outputs[Lookup Error Output]" />
             <path
               refId="Package\Outbreak Group Stage to NDS.Paths[Lookup Match Output]"
-              endId="Package\Outbreak Group Stage to NDS\Row Sampling.Inputs[Row Sampling Input 1]"
+              endId="Package\Outbreak Group Stage to NDS\OLE DB Command.Inputs[OLE DB Command Input]"
               name="Lookup Match Output"
               startId="Package\Outbreak Group Stage to NDS\Lookup.Outputs[Lookup Match Output]" />
             <path
@@ -1698,274 +2058,9 @@ FROM            ONGOING_OUTBREAKS_PHU_STAGE</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Outbreak stage to NDS"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{9FD2FBCF-61AF-45E7-BBC5-CF075047250E}"
-      DTS:ExecutableType="Microsoft.Pipeline"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Outbreak stage to NDS"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Outbreak stage to NDS\Derived Column"
-              componentClassID="Microsoft.DerivedColumn"
-              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
-              name="Derived Column"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Outbreak stage to NDS\Derived Column.Inputs[Derived Column Input]"
-                  description="Input to the Derived Column Transformation"
-                  name="Derived Column Input">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Outbreak stage to NDS\Derived Column.Outputs[Derived Column Output]"
-                  description="Default Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  name="Derived Column Output"
-                  synchronousInputId="Package\Outbreak stage to NDS\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Outbreak stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Outbreak stage to NDS\Derived Column.Outputs[Derived Column Output].Columns[SOURCE_ID]"
-                      name="SOURCE_ID"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">1</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">1</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Outbreak stage to NDS\Derived Column.Outputs[Derived Column Error Output]"
-                  description="Error Output of the Derived Column Transformation"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Derived Column Error Output"
-                  synchronousInputId="Package\Outbreak stage to NDS\Derived Column.Inputs[Derived Column Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Outbreak stage to NDS\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak stage to NDS\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Outbreak stage to NDS\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak stage to NDS\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Outbreak stage to NDS\OLE DB Source"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="OLE DB Source"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[ONGOING_OUTBREAKS_PHU_STAGE]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">0</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Outbreak stage to NDS\OLE DB Source.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LocalHost.StageCOVID19]"
-                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.StageCOVID19]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATE]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATE]"
-                      lineageId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[DATE]"
-                      name="DATE"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_NUM]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PHU_NUM]"
-                      lineageId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[PHU_NUM]"
-                      name="PHU_NUM"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OUTBREAK_GROUP]"
-                      length="35"
-                      lineageId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[OUTBREAK_GROUP]"
-                      name="OUTBREAK_GROUP"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[NUMBER_ONGOING_OUTBREAKS]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NUMBER_ONGOING_OUTBREAKS]"
-                      lineageId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].Columns[NUMBER_ONGOING_OUTBREAKS]"
-                      name="NUMBER_ONGOING_OUTBREAKS"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DATE]"
-                      dataType="dbDate"
-                      name="DATE" />
-                    <externalMetadataColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PHU_NUM]"
-                      dataType="i4"
-                      name="PHU_NUM" />
-                    <externalMetadataColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OUTBREAK_GROUP]"
-                      codePage="1252"
-                      dataType="str"
-                      length="35"
-                      name="OUTBREAK_GROUP" />
-                    <externalMetadataColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NUMBER_ONGOING_OUTBREAKS]"
-                      dataType="i4"
-                      name="NUMBER_ONGOING_OUTBREAKS" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATE]"
-                      dataType="dbDate"
-                      lineageId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DATE]"
-                      name="DATE" />
-                    <outputColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PHU_NUM]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PHU_NUM]"
-                      name="PHU_NUM" />
-                    <outputColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OUTBREAK_GROUP]"
-                      codePage="1252"
-                      dataType="str"
-                      length="35"
-                      lineageId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OUTBREAK_GROUP]"
-                      name="OUTBREAK_GROUP" />
-                    <outputColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NUMBER_ONGOING_OUTBREAKS]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NUMBER_ONGOING_OUTBREAKS]"
-                      name="NUMBER_ONGOING_OUTBREAKS" />
-                    <outputColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Outbreak stage to NDS.Paths[OLE DB Source Output]"
-              endId="Package\Outbreak stage to NDS\Derived Column.Inputs[Derived Column Input]"
-              name="OLE DB Source Output"
-              startId="Package\Outbreak stage to NDS\OLE DB Source.Outputs[OLE DB Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\PHU City stage to PHU City NDS"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{1f027311-10c4-4309-ad7a-3694380acc8b}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2159,14 +2254,14 @@ FROM            ONGOING_OUTBREAKS_PHU_STAGE</property>
                   expressionType="Notify"
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        ID, PHU_CITY
-FROM            PHU_CITY</property>
+FROM            PHU_CITY WHERE SOURCE_ID = 1</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (SELECT        ID, PHU_CITY
-FROM            PHU_CITY) [refTable]
+FROM            PHU_CITY WHERE SOURCE_ID = 1) [refTable]
 where [refTable].[PHU_CITY] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -3030,7 +3125,6 @@ FROM            PUBLIC_HEALTH_UNITS_GROUP_STAGE</property>
       DTS:refId="Package\PHU Group stage to PHU Group NDS"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{5135FCD9-169E-4563-82D6-B808242AE99A}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -3826,7 +3920,6 @@ FROM            PUBLIC_HEALTH_UNITS_GROUP_STAGE</property>
       DTS:refId="Package\PHU stage to PHU NDS"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{382ef531-cf12-4715-a498-f5bab171b9ed}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -5862,6 +5955,14 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Outbreak Group Stage to NDS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{43FFCE47-4C76-40BD-878A-ECFFE6E3AFD3}"
+      DTS:From="Package\Outbreak Group Stage to NDS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Age group stage to NDS" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -5876,43 +5977,35 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="192,42"
-          Id="Package\Age group stage to NDS"
-          TopLeft="466.428579371803,114.529412697756" />
-        <NodeLayout
-          Size="220,42"
+          Size="220,41.6"
           Id="Package\Outbreak Group Stage to NDS"
-          TopLeft="43.4126983856667,384.098039287184" />
+          TopLeft="64.1269844527146,384.098039287184" />
         <NodeLayout
-          Size="187,42"
-          Id="Package\Outbreak stage to NDS"
-          TopLeft="424.999993667007,312.083331066867" />
-        <NodeLayout
-          Size="229,42"
+          Size="228.8,41.6"
           Id="Package\PHU City stage to PHU City NDS"
-          TopLeft="36.428577498514,182.117646779981" />
+          TopLeft="57.8571492920118,182.117646779981" />
         <NodeLayout
-          Size="251,42"
+          Size="251.2,41.6"
           Id="Package\PHU Group stage to PHU Group NDS"
-          TopLeft="26.8571433315473,96.8823543139395" />
+          TopLeft="46.6190484299954,69.8627460918624" />
         <NodeLayout
-          Size="188,42"
+          Size="188,41.6"
           Id="Package\PHU stage to PHU NDS"
-          TopLeft="64.8571433315473,286.411772298978" />
+          TopLeft="85.5714293985952,286.411772298978" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="151.642860415031,138.88235431394">
+          TopLeft="172.238098861004,111.462746091862">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.2352924660415"
+              EndConnector="0,70.6549006881186"
               Start="0,0"
-              End="0,35.7352924660415">
+              End="0,63.1549006881186">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.7352924660415" />
+                    End="0,63.1549006881186" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5923,18 +6016,18 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="154.892860415031,224.117646779981">
+          TopLeft="175.914289345304,223.717646779981">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,62.294125518997"
+              EndConnector="0,62.694125518997"
               Start="0,0"
-              End="0,54.794125518997">
+              End="0,55.194125518997">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.794125518997" />
+                    End="0,55.194125518997" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5945,7 +6038,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="156.134920858607,328.011772298978">
+          TopLeft="176.849206925655,328.011772298978">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -5965,371 +6058,212 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <AnnotationLayout
-          Text=""
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="29,40"
-          Id="7bc099ef-fc1b-4e7a-944f-c37597b68962"
-          TopLeft="382.142863650711,541.411772298978" />
-      </GraphLayout>
-    </LayoutInfo>
-  </Package>
-  <TaskHost
-    design-time-name="Package\Age group stage to NDS">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Age group stage to NDS\Derived Column 1"
-          TopLeft="624.166666666666,131.666666666667" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Age group stage to NDS\Derived Column 2"
-          TopLeft="372.777777777778,121.944444444444" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Age group stage to NDS\Derived Column"
-          TopLeft="117.5,127.5" />
-        <NodeLayout
-          Size="171.2,41.6"
-          Id="Package\Age group stage to NDS\Case report Canada"
-          TopLeft="369.527777777778,38.9611111111111" />
-        <NodeLayout
-          Size="135.2,41.6"
-          Id="Package\Age group stage to NDS\Case Report"
-          TopLeft="122.5,37.5" />
-        <NodeLayout
-          Size="148.8,41.6"
-          Id="Package\Age group stage to NDS\Vaccine by age"
-          TopLeft="611.666666666666,40.7666666666667" />
+          Size="192,41.6"
+          Id="Package\Age group stage to NDS"
+          TopLeft="392.85714954746,75.7058834146876" />
         <EdgeLayout
-          Id="Package\Age group stage to NDS.Paths[OLE DB Source Output2]"
-          TopLeft="686.066666666666,82.3666666666667">
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="252.317461373044,384.098039287184">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="19.3000000000001,49.3"
+              EndConnector="236.539688174417,-266.792155872496"
               Start="0,0"
-              End="19.3000000000001,41.8">
+              End="236.539688174417,-259.292155872496">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.65" />
+                    End="0,-10.3432275651663" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.65"
-                    Point2="0,24.65"
-                    Point3="4,24.65" />
+                    Point1="0,-10.3432275651663"
+                    Point2="0,-14.3432275651663"
+                    Point3="4,-14.3432275651663" />
                   <mssgle:LineSegment
-                    End="15.3000000000001,24.65" />
+                    End="232.539688174417,-14.3432275651663" />
                   <mssgle:CubicBezierSegment
-                    Point1="15.3000000000001,24.65"
-                    Point2="19.3000000000001,24.65"
-                    Point3="19.3000000000001,28.65" />
+                    Point1="232.539688174417,-14.3432275651663"
+                    Point2="236.539688174417,-14.3432275651663"
+                    Point3="236.539688174417,-18.3432275651663" />
                   <mssgle:LineSegment
-                    End="19.3000000000001,41.8" />
+                    End="236.539688174417,-259.292155872496" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Age group stage to NDS.Paths[OLE DB Source Output1]"
-          TopLeft="192,79.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48.4"
-              Start="0,0"
-              End="0,40.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Age group stage to NDS.Paths[OLE DB Source Output]"
-          TopLeft="454.552777777777,80.5611111111111">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.3833333333333"
-              Start="0,0"
-              End="0,33.8833333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.8833333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Age group stage to NDS\Case report Canada">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Age group stage to NDS\Case Report">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Age group stage to NDS\Vaccine by age">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
+  </Package>
   <TaskHost
     design-time-name="Package\Outbreak Group Stage to NDS">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="154,42"
-          Id="Package\Outbreak Group Stage to NDS\Derived Column"
-          TopLeft="137.2857143587,135.588234811506" />
-        <NodeLayout
-          Size="162,42"
-          Id="Package\Outbreak Group Stage to NDS\Derived Column 1"
-          TopLeft="345.714291601765,428.235300123486" />
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Outbreak Group Stage to NDS\Row Sampling"
-          TopLeft="70.7142869185429,434.305885784849" />
-        <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Outbreak Group Stage to NDS\OLE DB Source"
           TopLeft="137,36" />
         <NodeLayout
-          Size="113,42"
-          Id="Package\Outbreak Group Stage to NDS\Lookup"
-          TopLeft="152.857145460285,336.294121690275" />
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Outbreak Group Stage to NDS\Data Conversion"
-          TopLeft="149.142859648685,239.729414703277" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Outbreak Group Stage to NDS\OLE DB Destination"
-          TopLeft="338,524.8" />
-        <EdgeLayout
-          Id="Package\Outbreak Group Stage to NDS.Paths[Lookup Match Output]"
-          TopLeft="191.790478793618,377.894121690275">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-48.676191875075,56.4117640945737"
-              Start="0,0"
-              End="-48.676191875075,48.9117640945737">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.0380910707909" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.0380910707909"
-                    Point2="0,23.0380910707909"
-                    Point3="-4,23.0380910707909" />
-                  <mssgle:LineSegment
-                    End="-44.676191875075,23.0380910707909" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-44.676191875075,23.0380910707909"
-                    Point2="-48.676191875075,23.0380910707909"
-                    Point3="-48.676191875075,27.0380910707909" />
-                  <mssgle:LineSegment
-                    End="-48.676191875075,48.9117640945737" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-72.5294826562875,28.0380910707909,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Outbreak Group Stage to NDS.Paths[Lookup Error Output]"
-          TopLeft="209.257145460285,377.894121690275">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="217.657146141481,50.3411784332105"
-              Start="0,0"
-              End="217.657146141481,42.8411784332105">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.1705892166052" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.1705892166052"
-                    Point2="0,25.1705892166052"
-                    Point3="4,25.1705892166052" />
-                  <mssgle:LineSegment
-                    End="213.657146141481,25.1705892166052" />
-                  <mssgle:CubicBezierSegment
-                    Point1="213.657146141481,25.1705892166052"
-                    Point2="217.657146141481,25.1705892166052"
-                    Point3="217.657146141481,29.1705892166052" />
-                  <mssgle:LineSegment
-                    End="217.657146141481,42.8411784332105" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="62.9621863519905,30.1705892166052,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Outbreak Group Stage to NDS.Paths[Derived Column Output1]"
-          TopLeft="425.057145800883,469.835300123486">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,54.964699876514"
-              Start="0,0"
-              End="0,47.464699876514">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.464699876514" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Outbreak Group Stage to NDS.Paths[Derived Column Output]"
-          TopLeft="214.0857143587,177.188234811506">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="12.657145289985,62.541179891771"
-              Start="0,0"
-              End="12.657145289985,55.041179891771">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,27.2705899458855" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,27.2705899458855"
-                    Point2="0,31.2705899458855"
-                    Point3="4,31.2705899458855" />
-                  <mssgle:LineSegment
-                    End="8.65714528998501,31.2705899458855" />
-                  <mssgle:CubicBezierSegment
-                    Point1="8.65714528998501,31.2705899458855"
-                    Point2="12.657145289985,31.2705899458855"
-                    Point3="12.657145289985,35.2705899458855" />
-                  <mssgle:LineSegment
-                    End="12.657145289985,55.041179891771" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Outbreak Group Stage to NDS.Paths[Data Conversion Output]"
-          TopLeft="226.742859648685,281.329414703277">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-17.4857141884,54.964706986998"
-              Start="0,0"
-              End="-17.4857141884,47.464706986998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.482353493499" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.482353493499"
-                    Point2="0,27.482353493499"
-                    Point3="-4,27.482353493499" />
-                  <mssgle:LineSegment
-                    End="-13.4857141884,27.482353493499" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.4857141884,27.482353493499"
-                    Point2="-17.4857141884,27.482353493499"
-                    Point3="-17.4857141884,31.482353493499" />
-                  <mssgle:LineSegment
-                    End="-17.4857141884,47.464706986998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="152.8,41.6"
+          Id="Package\Outbreak Group Stage to NDS\Derived Column"
+          TopLeft="137,146" />
         <EdgeLayout
           Id="Package\Outbreak Group Stage to NDS.Paths[OLE DB Source Output]"
-          TopLeft="213.14285717935,77.6">
+          TopLeft="212.8,77.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.9882348115056"
+              EndConnector="0,68.4000000000001"
               Start="0,0"
-              End="0,50.4882348115056">
+              End="0,60.9000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.4882348115056" />
+                    End="0,60.9000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Outbreak Group Stage to NDS\Lookup"
+          TopLeft="150,248.9" />
+        <EdgeLayout
+          Id="Package\Outbreak Group Stage to NDS.Paths[Derived Column Output]"
+          TopLeft="209.9,187.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.2999999999999"
+              Start="0,0"
+              End="0,53.7999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.7999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Outbreak Group Stage to NDS\Derived Column 1"
+          TopLeft="315.714285714286,348.085714285714" />
+        <EdgeLayout
+          Id="Package\Outbreak Group Stage to NDS.Paths[Lookup Error Output]"
+          TopLeft="223.866666666667,290.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="173.047619047619,57.5857142857144"
+              Start="0,0"
+              End="173.047619047619,50.0857142857144">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5175224775225" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5175224775225"
+                    Point2="0,23.5175224775225"
+                    Point3="4,23.5175224775225" />
+                  <mssgle:LineSegment
+                    End="169.047619047619,23.5175224775225" />
+                  <mssgle:CubicBezierSegment
+                    Point1="169.047619047619,23.5175224775225"
+                    Point2="173.047619047619,23.5175224775225"
+                    Point3="173.047619047619,27.5175224775225" />
+                  <mssgle:LineSegment
+                    End="173.047619047619,50.0857142857144" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="40.6574228050595,28.5175224775225,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Outbreak Group Stage to NDS\OLE DB Destination"
+          TopLeft="314.5,464.8" />
+        <EdgeLayout
+          Id="Package\Outbreak Group Stage to NDS.Paths[Derived Column Output1]"
+          TopLeft="398.307142857143,389.685714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,75.1142857142856"
+              Start="0,0"
+              End="0,67.6142857142856">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.6142857142856" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Outbreak Group Stage to NDS\OLE DB Command"
+          TopLeft="23.6428571428571,359.242857142857" />
+        <EdgeLayout
+          Id="Package\Outbreak Group Stage to NDS.Paths[Lookup Match Output]"
+          TopLeft="188.933333333333,290.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-82.8904761904762,68.7428571428572"
+              Start="0,0"
+              End="-82.8904761904762,61.2428571428572">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.074005994006" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.074005994006"
+                    Point2="0,28.074005994006"
+                    Point3="-4,28.074005994006" />
+                  <mssgle:LineSegment
+                    End="-78.8904761904762,28.074005994006" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78.8904761904762,28.074005994006"
+                    Point2="-82.8904761904762,28.074005994006"
+                    Point3="-82.8904761904762,32.074005994006" />
+                  <mssgle:LineSegment
+                    End="-82.8904761904762,61.2428571428572" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-89.6366248139881,33.074005994006,96.3827734375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6337,93 +6271,6 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Outbreak Group Stage to NDS\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Outbreak Group Stage to NDS\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Outbreak Group Stage to NDS\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Outbreak stage to NDS">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Outbreak stage to NDS\OLE DB Source"
-          TopLeft="289.107138480687,83.5823533253089" />
-        <NodeLayout
-          Size="153,42"
-          Id="Package\Outbreak stage to NDS\Derived Column"
-          TopLeft="287.857147759322,176.647061300938" />
-        <EdgeLayout
-          Id="Package\Outbreak stage to NDS.Paths[OLE DB Source Output]"
-          TopLeft="364.282143120004,125.982353325309">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.6647079756288"
-              Start="0,0"
-              End="0,43.1647079756288">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.1647079756288" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Outbreak stage to NDS\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6487,9 +6334,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6631,9 +6476,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6655,9 +6498,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6677,7 +6518,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6687,7 +6528,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6700,7 +6541,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6710,7 +6551,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6850,9 +6691,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6874,9 +6713,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6898,9 +6735,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6925,7 +6760,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -6935,7 +6770,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7007,9 +6842,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7050,37 +6883,37 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PHU stage to PHU NDS.Paths[Lookup Error Output]"
-          TopLeft="468,344">
+          TopLeft="467.866666666667,343.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="212.5,88"
+              EndConnector="212.733333333333,88.3999999999999"
               Start="0,0"
-              End="212.5,80.5">
+              End="212.733333333333,80.8999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9371727748691" />
+                    End="0,32.1018181818181" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.9371727748691"
-                    Point2="0,35.9371727748691"
-                    Point3="4,35.9371727748691" />
+                    Point1="0,32.1018181818181"
+                    Point2="0,36.1018181818181"
+                    Point3="4,36.1018181818181" />
                   <mssgle:LineSegment
-                    End="208.5,35.9371727748691" />
+                    End="208.733333333333,36.1018181818181" />
                   <mssgle:CubicBezierSegment
-                    Point1="208.5,35.9371727748691"
-                    Point2="212.5,35.9371727748691"
-                    Point3="212.5,39.9371727748691" />
+                    Point1="208.733333333333,36.1018181818181"
+                    Point2="212.733333333333,36.1018181818181"
+                    Point3="212.733333333333,40.1018181818181" />
                   <mssgle:LineSegment
-                    End="212.5,80.5" />
+                    End="212.733333333333,80.8999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="60.38361328125,40.9371727748691,91.7327734375,11.609375"
+              BoundingBox="60.5002799479167,41.1018181818181,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -7115,33 +6948,29 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\PHU stage to PHU NDS.Paths[Derived Column Output1]"
-          TopLeft="683,474">
+          TopLeft="683.1,473.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,24"
+              EndConnector="0,24.4"
               Start="0,0"
-              End="0,16.5">
+              End="0,16.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.5" />
+                    End="0,16.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7175,9 +7004,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7228,7 +7055,7 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -7238,10 +7065,428 @@ FROM            PUBLIC_HEALTH_UNIT_STAGE</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Outbreak Group Stage to NDS\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Outbreak Group Stage to NDS\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Age group stage to NDS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\Age group stage to NDS\Vaccine by age"
+          TopLeft="634.688644700808,41.4076923076923" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Age group stage to NDS\Case report Canada"
+          TopLeft="369.527777777778,38.9611111111111" />
+        <NodeLayout
+          Size="135.2,41.6"
+          Id="Package\Age group stage to NDS\Case Report"
+          TopLeft="122.5,36.7352941069224" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\Age group stage to NDS\Union All"
+          TopLeft="362.307692307692,205.384615384615" />
+        <EdgeLayout
+          Id="Package\Age group stage to NDS.Paths[OLE DB Source Output]"
+          TopLeft="190.1,78.3352941069224">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="204.207692307692,127.049321277693"
+              Start="0,0"
+              End="204.207692307692,119.549321277693">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.8582530071911" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,78.8582530071911"
+                    Point2="0,82.8582530071911"
+                    Point3="4,82.8582530071911" />
+                  <mssgle:LineSegment
+                    End="200.207692307692,82.8582530071911" />
+                  <mssgle:CubicBezierSegment
+                    Point1="200.207692307692,82.8582530071911"
+                    Point2="204.207692307692,82.8582530071911"
+                    Point3="204.207692307692,86.8582530071911" />
+                  <mssgle:LineSegment
+                    End="204.207692307692,119.549321277693" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Age group stage to NDS.Paths[OLE DB Source Output1]"
+          TopLeft="455.127777777778,80.5611111111111">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-32.8200854700856,124.823504273504"
+              Start="0,0"
+              End="-32.8200854700856,117.323504273504">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.4117521367521" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,58.4117521367521"
+                    Point2="0,62.4117521367521"
+                    Point3="-4,62.4117521367521" />
+                  <mssgle:LineSegment
+                    End="-28.8200854700856,62.4117521367521" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-28.8200854700856,62.4117521367521"
+                    Point2="-32.8200854700856,62.4117521367521"
+                    Point3="-32.8200854700856,66.4117521367521" />
+                  <mssgle:LineSegment
+                    End="-32.8200854700856,117.323504273504" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Age group stage to NDS.Paths[OLE DB Source Output2]"
+          TopLeft="709.088644700808,83.0076923076923">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-258.780952393116,122.376923076923"
+              Start="0,0"
+              End="-258.780952393116,114.876923076923">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,75.8110367892976" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,75.8110367892976"
+                    Point2="0,79.8110367892976"
+                    Point3="-4,79.8110367892976" />
+                  <mssgle:LineSegment
+                    End="-254.780952393116,79.8110367892976" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-254.780952393116,79.8110367892976"
+                    Point2="-258.780952393116,79.8110367892976"
+                    Point3="-258.780952393116,83.8110367892976" />
+                  <mssgle:LineSegment
+                    End="-258.780952393116,114.876923076923" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Age group stage to NDS\Sort"
+          TopLeft="371.538461538462,302.307692307692" />
+        <EdgeLayout
+          Id="Package\Age group stage to NDS.Paths[Union All Output 1]"
+          TopLeft="421.323076923077,246.984615384615">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.323076923077"
+              Start="0,0"
+              End="0,47.823076923077">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.823076923077" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Age group stage to NDS\Derived Column"
+          TopLeft="345.384615384615,394.615384615385" />
+        <EdgeLayout
+          Id="Package\Age group stage to NDS.Paths[Sort Output]"
+          TopLeft="421.061538461539,343.907692307692">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.7076923076922"
+              Start="0,0"
+              End="0,43.2076923076922">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.2076923076922" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Age group stage to NDS\Lookup"
+          TopLeft="346.25641025641,497.230769230769" />
+        <EdgeLayout
+          Id="Package\Age group stage to NDS.Paths[Derived Column Output]"
+          TopLeft="421.784615384615,436.215384615385">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19.1282051282051,61.0153846153847"
+              Start="0,0"
+              End="-19.1282051282051,53.5153846153847">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5076923076924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.5076923076924"
+                    Point2="0,30.5076923076924"
+                    Point3="-4,30.5076923076924" />
+                  <mssgle:LineSegment
+                    End="-15.1282051282051,30.5076923076924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15.1282051282051,30.5076923076924"
+                    Point2="-19.1282051282051,30.5076923076924"
+                    Point3="-19.1282051282051,34.5076923076924" />
+                  <mssgle:LineSegment
+                    End="-19.1282051282051,53.5153846153847" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Age group stage to NDS\Derived Column 1"
+          TopLeft="478.615384615385,607.846153846154" />
+        <EdgeLayout
+          Id="Package\Age group stage to NDS.Paths[Lookup Error Output]"
+          TopLeft="402.65641025641,538.830769230769">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="157.158974358974,69.0153846153845"
+              Start="0,0"
+              End="157.158974358974,61.5153846153845">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5076923076923" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.5076923076923"
+                    Point2="0,34.5076923076923"
+                    Point3="4,34.5076923076923" />
+                  <mssgle:LineSegment
+                    End="153.158974358974,34.5076923076923" />
+                  <mssgle:CubicBezierSegment
+                    Point1="153.158974358974,34.5076923076923"
+                    Point2="157.158974358974,34.5076923076923"
+                    Point3="157.158974358974,38.5076923076923" />
+                  <mssgle:LineSegment
+                    End="157.158974358974,61.5153846153845" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="32.7131004607371,39.5076923076923,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Age group stage to NDS\OLE DB Destination"
+          TopLeft="476.230769230769,694.230769230769" />
+        <EdgeLayout
+          Id="Package\Age group stage to NDS.Paths[Derived Column Output1]"
+          TopLeft="560.623076923077,649.446153846154">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.7846153846154"
+              Start="0,0"
+              End="0,37.2846153846154">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.2846153846154" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Age group stage to NDS\Row Sampling"
+          TopLeft="150,562.933333333333" />
+        <EdgeLayout
+          Id="Package\Age group stage to NDS.Paths[Lookup Match Output]"
+          TopLeft="385.189743589744,538.830769230769">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-162.789743589744,24.1025641025641"
+              Start="0,0"
+              End="-162.789743589744,16.6025641025641">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,5.84328492020799" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,5.84328492020799"
+                    Point2="0,9.84328492020799"
+                    Point3="-4,9.84328492020799" />
+                  <mssgle:LineSegment
+                    End="-158.789743589744,9.84328492020799" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-158.789743589744,9.84328492020799"
+                    Point2="-162.789743589744,9.84328492020799"
+                    Point3="-162.789743589744,13.843284920208" />
+                  <mssgle:LineSegment
+                    End="-162.789743589744,16.6025641025641" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-129.586258513622,14.843284920208,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Age group stage to NDS\Vaccine by age">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Age group stage to NDS\Case report Canada">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Age group stage to NDS\Case Report">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Age group stage to NDS\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Age group stage to NDS\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
