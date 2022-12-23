@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SourceToStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="71"
-  DTS:VersionGUID="{A0474E19-D2E4-4596-8C7B-B13C2C04B5C4}">
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{39D5A9A2-CC2E-4860-A300-04EC65A98D10}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -7366,7 +7366,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from dbo.vaccines_by_age_phu
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select distinct * from dbo.vaccines_by_age_phu
 Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and UpdatedDate &lt;= ?)</property>
                     <property
                       dataType="System.String"
@@ -7900,7 +7900,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Case Report Canada\Data Flow Task"
-          TopLeft="57.4571457157329,250.117651520303" />
+          TopLeft="57.4571457157329,250.882357413381" />
         <NodeLayout
           Size="161.6,41.6"
           Id="Package\Case Report Canada\Execute SQL Task"
@@ -7979,14 +7979,14 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.164706986998"
+              EndConnector="0,37.9294128800755"
               Start="0,0"
-              End="0,29.664706986998">
+              End="0,30.4294128800755">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.664706986998" />
+                    End="0,30.4294128800755" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7997,18 +7997,18 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Case Report Canada.PrecedenceConstraints[Constraint 3]"
-          TopLeft="132.600002809933,291.717651520303">
+          TopLeft="132.600002809933,292.482357413381">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.517648238542"
+              EndConnector="0,41.7529423454644"
               Start="0,0"
-              End="0,35.017648238542">
+              End="0,34.2529423454644">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.017648238542" />
+                    End="0,34.2529423454644" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8444,7 +8444,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <NodeLayout
           Size="150.4,41.6"
           Id="Package\Vaccine by age phu\Data Flow Task"
-          TopLeft="58.1714314421829,250.117651520303" />
+          TopLeft="58.8857171686327,250.882357413381" />
         <NodeLayout
           Size="161.6,41.6"
           Id="Package\Vaccine by age phu\Execute SQL Task"
@@ -8531,18 +8531,18 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Vaccine by age phu.PrecedenceConstraints[Constraint 2]"
-          TopLeft="131.971431527332,212.952944533305">
+          TopLeft="132.328574390557,212.952944533305">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,37.1647069869977"
+              EndConnector="0,37.9294128800756"
               Start="0,0"
-              End="0,29.6647069869977">
+              End="0,30.4294128800756">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.6647069869977" />
+                    End="0,30.4294128800756" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8553,18 +8553,18 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Vaccine by age phu.PrecedenceConstraints[Constraint 3]"
-          TopLeft="133.157145673158,291.717651520303">
+          TopLeft="133.314288536383,292.482357413381">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.5176482385418"
+              EndConnector="0,41.7529423454644"
               Start="0,0"
-              End="0,35.0176482385418">
+              End="0,34.2529423454644">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.0176482385418" />
+                    End="0,34.2529423454644" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8577,7 +8577,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="252.8,431.2"
-          Size="252.8,473.6"
+          Size="252.8,474.4"
           Id="Package\Vaccine by age phu"
           TopLeft="808.265319887126,23.7058826854073" />
         <EdgeLayout
@@ -8586,14 +8586,14 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="58.9619047578501,0"
+              EndConnector="58.96190475785,0"
               Start="0,0"
-              End="51.4619047578501,0">
+              End="51.46190475785,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="51.4619047578501,0" />
+                    End="51.46190475785,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8604,7 +8604,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="731.541498620795,261.852941525024">
+          TopLeft="731.541498620795,262.052941525024">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8626,30 +8626,30 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="934.665319887126,497.305882685407">
+          TopLeft="934.665319887126,498.105882685407">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-703.678923609514,89.8061703665447"
+              EndConnector="-703.678923609514,89.0061703665447"
               Start="0,0"
-              End="-703.678923609514,82.3061703665447">
+              End="-703.678923609514,81.5061703665447">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.9030851832723" />
+                    End="0,40.5030851832724" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,40.9030851832723"
-                    Point2="0,44.9030851832723"
-                    Point3="-4,44.9030851832723" />
+                    Point1="0,40.5030851832724"
+                    Point2="0,44.5030851832724"
+                    Point3="-4,44.5030851832724" />
                   <mssgle:LineSegment
-                    End="-699.678923609514,44.9030851832723" />
+                    End="-699.678923609514,44.5030851832724" />
                   <mssgle:CubicBezierSegment
-                    Point1="-699.678923609514,44.9030851832723"
-                    Point2="-703.678923609514,44.9030851832723"
-                    Point3="-703.678923609514,48.9030851832723" />
+                    Point1="-699.678923609514,44.5030851832724"
+                    Point2="-703.678923609514,44.5030851832724"
+                    Point3="-703.678923609514,48.5030851832724" />
                   <mssgle:LineSegment
-                    End="-703.678923609514,82.3061703665447" />
+                    End="-703.678923609514,81.5061703665447" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8725,21 +8725,21 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <NodeLayout
           Size="152.8,41.6"
           Id="Package\Case Report\Data Flow Task\Derived Column"
-          TopLeft="306.428576647019,143.000002005521" />
+          TopLeft="308.428576647019,144.000002005521" />
         <EdgeLayout
           Id="Package\Case Report\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="382.828576732168,89.0117653708143">
+          TopLeft="383.828576732168,89.0117653708144">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.9882366347067"
+              EndConnector="0,54.9882366347066"
               Start="0,0"
-              End="0,46.4882366347067">
+              End="0,47.4882366347066">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.4882366347067" />
+                    End="0,47.4882366347066" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8750,18 +8750,18 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Case Report\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="382.728576604444,184.600002005521">
+          TopLeft="383.528576604444,185.600002005521">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,53.9882366347067"
+              EndConnector="0,52.988236634707"
               Start="0,0"
-              End="0,46.4882366347067">
+              End="0,45.488236634707">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.4882366347067" />
+                    End="0,45.488236634707" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8824,7 +8824,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Case Report Canada\Data Flow Task\Derived Column"
-          TopLeft="470,130.666666666667" />
+          TopLeft="471,129.666666666667" />
         <NodeLayout
           Size="171.2,41.6"
           Id="Package\Case Report Canada\Data Flow Task\OLE DB Destination"
@@ -8839,18 +8839,18 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
           TopLeft="466,246" />
         <EdgeLayout
           Id="Package\Case Report Canada\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="547.2,172.266666666667">
+          TopLeft="547.7,171.266666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,73.7333333333333"
+              EndConnector="0,74.733333333333"
               Start="0,0"
-              End="0,66.2333333333333">
+              End="0,67.233333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,66.2333333333333" />
+                    End="0,67.233333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8895,18 +8895,18 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Case Report Canada\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="545.771431229309,65.600002552481">
+          TopLeft="546.271431229309,65.600002552481">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,65.0666641141857"
+              EndConnector="0,64.066664114186"
               Start="0,0"
-              End="0,57.5666641141857">
+              End="0,56.566664114186">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.5666641141857" />
+                    End="0,56.566664114186" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
