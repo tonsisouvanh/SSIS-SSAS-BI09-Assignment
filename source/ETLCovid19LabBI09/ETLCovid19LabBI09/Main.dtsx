@@ -11,12 +11,29 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{37FEF9EC-085A-44B4-9376-EC527F05F00B}">
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{E126EEC0-17AB-488D-B8A0-7A0616E44CD2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\NDSToDDS"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{F68CDDFD-E54C-461B-8410-6DB2868611EE}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="NDSToDDS"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>NDSToDDS.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Souce to Stage"
       DTS:CreationName="Microsoft.ExecutePackageTask"
@@ -61,6 +78,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\Stage to NDS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0DE0A516-E4BB-4CB2-B60C-097A89587092}"
+      DTS:From="Package\Stage to NDS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\NDSToDDS" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -73,13 +98,13 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Souce to Stage"
           TopLeft="218,147" />
         <NodeLayout
-          Size="142,42"
+          Size="142.4,41.6"
           Id="Package\Stage to NDS"
           TopLeft="212,263" />
         <EdgeLayout
@@ -108,6 +133,32 @@
                     Point3="-10,41" />
                   <mssgle:LineSegment
                     End="-10,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\NDSToDDS"
+          TopLeft="195.71428904728,364.000005104963" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="285.05714452364,304.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.4000051049625"
+              Start="0,0"
+              End="0,51.9000051049625">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.9000051049625" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

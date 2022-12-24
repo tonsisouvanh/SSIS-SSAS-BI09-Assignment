@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="SourceToStage"
   DTS:PackageType="5"
-  DTS:VersionBuild="75"
-  DTS:VersionGUID="{39D5A9A2-CC2E-4860-A300-04EC65A98D10}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{A54E70B6-9BA2-46DA-B00E-2336D0B3CB80}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -8709,7 +8709,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
     design-time-name="Package\Case Report\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="161.6,41.6"
           Id="Package\Case Report\Data Flow Task\Script Component"
@@ -8745,7 +8745,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8767,7 +8769,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8789,7 +8793,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8820,7 +8826,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
     design-time-name="Package\Case Report Canada\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Case Report Canada\Data Flow Task\Derived Column"
@@ -8856,7 +8862,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8890,7 +8898,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8912,7 +8922,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8943,7 +8955,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
     design-time-name="Package\Ongoing out break\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="166.4,41.6"
           Id="Package\Ongoing out break\Data Flow Task\Ongoing out break"
@@ -8979,7 +8991,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9013,7 +9027,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9035,7 +9051,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9066,7 +9084,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
     design-time-name="Package\Public Health Unit\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\Public Health Unit\Data Flow Task\OLE DB Destination"
@@ -9106,7 +9124,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9137,7 +9157,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
     design-time-name="Package\Public Health Unit Group\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="129.6,41.6"
           Id="Package\Public Health Unit Group\Data Flow Task\PHU Group"
@@ -9177,7 +9197,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-9.723520348283,38.778432128641,30.2089453125,9.4462890625"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9208,7 +9230,7 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
     design-time-name="Package\Vaccine by age phu\Data Flow Task">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="169.6,41.6"
           Id="Package\Vaccine by age phu\Data Flow Task\Vaccine by age phu"
@@ -9244,7 +9266,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9266,7 +9290,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9288,7 +9314,9 @@ Where (CreatedDate &gt; ? and CreatedDate &lt;= ?) or (UpdatedDate &gt; ? and Up
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

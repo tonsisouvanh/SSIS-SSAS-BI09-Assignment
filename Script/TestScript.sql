@@ -80,50 +80,20 @@ select getdate()
 
 
 --use DDS
---go
---select * from Dim_ThanhPho 
---select * from Dim_LoaiCuaHang
---select * from Dim_CuaHang 
---select * from Dim_LoaiSanPham
---select * from Dim_SanPham
---select * from Dim_KhachHang where MaKHNK = '008V' and IDNguon = 1
---select * from Dim_KhachHang where IDNguon = 1
---select * from Fact_DoanhThu
---select * from Dim_NgayTrongThang
---select * from Dim_ThangTrongNam
+use DDSCovid19 select * from Dim_PHUCity
+use DDSCovid19 select * from Dim_PHU
 
 
 
-----Drop
---use DDS
---delete Fact_DoanhThu
---delete Dim_CuaHang
---delete Dim_KhachHang
---delete Dim_LoaiCuaHang
---delete Dim_SanPham
---delete Dim_LoaiSanPham
---delete Dim_NgayTrongThang
---delete Dim_ThangTrongNam
---delete Dim_ThanhPho
---delete TestDDS
---DBCC CHECKIDENT ('[Fact_DoanhThu]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[Dim_CuaHang]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[Dim_KhachHang]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[Dim_LoaiCuaHang]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[Dim_SanPham]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[Dim_LoaiSanPham]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[Dim_NgayTrongThang]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[Dim_ThangTrongNam]', RESEED, 0);
---GO
---DBCC CHECKIDENT ('[Dim_ThanhPho]', RESEED, 0);
---GO
+
+--DDS
+use DDSCovid19 delete Dim_PHU
+use DDSCovid19 delete Dim_PHUCity
+
+DBCC CHECKIDENT ('Dim_PHU', RESEED, 0);
+GO
+DBCC CHECKIDENT ('Dim_PHUCity', RESEED, 0);
+GO
 
 
 

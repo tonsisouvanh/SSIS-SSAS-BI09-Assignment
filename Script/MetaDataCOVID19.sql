@@ -35,6 +35,23 @@ values('Public_Health_Units_GROUP_Ontario',null,null)
 insert into DataFlow(Name,LSET,CET)
 values('vaccines_by_age_phu_Ontario',null,null)
 
+
+CREATE TABLE [dbo].[DDS_DataFlow](
+	ID int IDENTITY(1,1) NOT NULL,
+	Name nvarchar(50) NULL,
+	UpdatedDate datetime NULL,
+	primary key(ID)
+)
+
+insert into [DDS_DataFlow](Name,UpdatedDate)
+values('PHU City',null)
+insert into [DDS_DataFlow](Name,UpdatedDate)
+values('PHU',null)
+insert into [DDS_DataFlow](Name,UpdatedDate)
+values('PHU',null)
+
+
+
 --update DataFlow
 --set Name = '' where ID = 1
 --update DataFlow
@@ -50,6 +67,7 @@ values('vaccines_by_age_phu_Ontario',null,null)
 
 
 select * from DataFlow
+select * from DDS_DataFlow
 
 use master
 go

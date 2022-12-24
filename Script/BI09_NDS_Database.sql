@@ -241,3 +241,7 @@ VALUES('Ontario',getdate(),getdate())
 
 use master
 go
+
+
+use NDSCovid19
+go
