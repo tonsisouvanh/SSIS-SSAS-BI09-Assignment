@@ -367,9 +367,6 @@ INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20201
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20201230, '2020-12-30', 30, 12, 4, 2020);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20201231, '2020-12-31', 31, 12, 4, 2020);
 
-
-
-
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210101, '2021-01-01', 1, 1, 1, 2021);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210102, '2021-01-02', 2, 1, 1, 2021);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210103, '2021-01-03', 3, 1, 1, 2021);
@@ -401,6 +398,7 @@ INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210129, '2021-01-29', 29, 1, 1, 2021);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210130, '2021-01-30', 30, 1, 1, 2021);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210131, '2021-01-31', 31, 1, 1, 2021);
+
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210201, '2021-02-01', 1, 2, 1, 2021);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210202, '2021-02-02', 2, 2, 1, 2021);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210203, '2021-02-03', 3, 2, 1, 2021);
@@ -429,7 +427,7 @@ INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210226, '2021-02-26', 26, 2, 1, 2021);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210227, '2021-02-27', 27, 2, 1, 2021);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210228, '2021-02-28', 28, 2, 1, 2021);
-INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210229, '2021-02-29', 29, 2, 1, 2021);
+
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210301, '2021-03-01', 1, 3, 1, 2021);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210302, '2021-03-02', 2, 3, 1, 2021);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20210303, '2021-03-03', 3, 3, 1, 2021);

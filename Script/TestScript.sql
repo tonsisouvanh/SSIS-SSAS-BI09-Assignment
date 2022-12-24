@@ -37,7 +37,7 @@ select getdate()
 
 
 
--- SELECT STAGE
+-- @@@@@@@@@@@@@ STAGE @@@@@@@@@@@@@
 use StageCOVID19
 go
 select distinct GENDER from CASESREPORT_STAGE --age
@@ -60,7 +60,8 @@ use StageCOVID19  select * from ONGOING_OUTBREAKS_PHU_STAGE
 
 
 
--- SELECT NDS
+-- @@@@@@@@@@@@@ NDSCovid19 @@@@@@@@@@@@@
+-- SELECT
 use NDSCovid19 select * from PHU_GROUP
 use NDSCovid19 select * from PHU_CITY
 --select a.PHU_CITY, b.GROUP_NAME from PHU_CITY a, PHU_GROUP b where a.PHU_GROUP_ID = b.ID
@@ -75,29 +76,7 @@ use NDSCovid19 select * from COVID19_CASESREPORT_DETAIL
 use NDSCovid19 select * from ONGOING_OUTBREAKS_PHU
 
 
-
-select getdate()
-
-
---use DDS
-use DDSCovid19 select * from Dim_PHUCity
-use DDSCovid19 select * from Dim_PHU
-
-
-
-
---DDS
-use DDSCovid19 delete Dim_PHU
-use DDSCovid19 delete Dim_PHUCity
-
-DBCC CHECKIDENT ('Dim_PHU', RESEED, 0);
-GO
-DBCC CHECKIDENT ('Dim_PHUCity', RESEED, 0);
-GO
-
-
-
---use NDSCovid19
+--DELETE
 use NDSCovid19 delete COVID19_CASESREPORT_DETAIL
 use NDSCovid19 delete ONGOING_OUTBREAKS_PHU
 use NDSCovid19 delete OUTBREAK_GROUP
@@ -134,3 +113,55 @@ GO
 DBCC CHECKIDENT ('COVID19_CASESREPORT_DETAIL', RESEED, 0);
 GO
 
+
+
+
+-- @@@@@@@@@@@@@ DDS @@@@@@@@@@@@@
+-- SELECT DDS
+use DDSCovid19 select * from Dim_PHUCity
+use DDSCovid19 select * from Dim_PHU
+use DDSCovid19 select * from Dim_OngoingOutbreak order by OutbreakName, ongoingoutbreakdate, numberongoingoutbreak
+use DDSCovid19 select * from Dim_Date
+
+
+
+-- DELETE
+use DDSCovid19 delete Dim_PHU
+use DDSCovid19 delete Dim_PHUCity
+use DDSCovid19 delete Dim_OngoingOutbreak
+
+
+DBCC CHECKIDENT ('Dim_PHU', RESEED, 0);
+GO
+DBCC CHECKIDENT ('Dim_PHUCity', RESEED, 0);
+GO
+DBCC CHECKIDENT ('Dim_OngoingOutbreak', RESEED, 0);
+GO
+
+
+
+
+
+
+
+-- QUERY
+use NDSCovid19
+go
+
+select * from COVID19_CASESREPORT_DETAIL where OUTBREAKRELATED = 'Yes'
+
+select * from OUTCOME
+
+select  PHU_ID,AGEGROUP_ID,OUTCOME_ID,EXPOSURE_ID,GENDER_ID,YEAR(CASEREPORTED),count(*) as caseNO from COVID19_CASESREPORT_DETAIL
+where OUTCOME_ID = 1
+group by PHU_ID, OUTCOME_ID,AGEGROUP_ID,EXPOSURE_ID,GENDER_ID,YEAR(CASEREPORTED)
+order by YEAR(CASEREPORTED) asc
+
+
+select a.*, b.OUTBREAK_GROUP, b.OUTBREAK_GROUP_IDNK from ONGOING_OUTBREAKS_PHU a inner join OUTBREAK_GROUP b
+on a.ONGOING_OUTBREAKS_PHU_ID = b.ID
+
+
+select distinct b.OUTBREAK_GROUP,b.OUTBREAK_GROUP_IDNK,a.ONGOING_OUTBREAK_DATE from ONGOING_OUTBREAKS_PHU a inner join OUTBREAK_GROUP b
+on a.ONGOING_OUTBREAKS_PHU_ID = b.ID
+order by b.OUTBREAK_GROUP,b.OUTBREAK_GROUP_IDNK,a.ONGOING_OUTBREAK_DATE

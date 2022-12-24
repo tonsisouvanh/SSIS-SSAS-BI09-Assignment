@@ -11,6 +11,24 @@ GO
 USE DDSCovid19
 GO
 
+CREATE TABLE Dim_Level(
+	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	Level VARCHAR(50)
+)
+GO
+
+INSERT INTO Dim_Level(Level)
+VALUES(N'')
+
+CREATE TABLE Dim_OngoingOutbreak(
+	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	OutbreakID INT,
+	OutbreakName VARCHAR(50),
+	OngoingOutbreakDate DATE,
+	NumberOngoingOutbreak INT,
+	SourceID INT,
+	Status BIT,
+)
 
 
 CREATE TABLE Dim_PHUCity(
@@ -19,7 +37,6 @@ CREATE TABLE Dim_PHUCity(
 	PhuGroupName VARCHAR(50) NULL,
 	SourceID INT NULL,
 	Status BIT,
-
 )
 
 
@@ -41,6 +58,17 @@ ALTER TABLE Dim_PHU
 ADD CONSTRAINT FK_DimPhu_DimPhuCity
 FOREIGN KEY (PhuCityID) REFERENCES Dim_PHUCity(ID);
 
+
+CREATE TABLE [dbo].[Dim_Date](
+	--ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	[DateID] INT PRIMARY KEY NOT NULL,
+	[FullDate] DATE NOT NULL,
+	[Day] INT NULL,
+	[Month] INT NULL,
+	[Quarter] INT NULL,
+	[Year] INT NULL,
+)
+GO
 
 --CREATE TABLE Dim_QuarterInYear(
 --	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
@@ -80,16 +108,7 @@ FOREIGN KEY (PhuCityID) REFERENCES Dim_PHUCity(ID);
 --FOREIGN KEY (MonthInQuarterID) REFERENCES Dim_MonthInQuarter(ID);
 
 
-CREATE TABLE [dbo].[Dim_Date](
-	--ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-	[DateID] INT PRIMARY KEY NOT NULL,
-	[FullDate] DATE NOT NULL,
-	[Day] INT NULL,
-	[Month] INT NULL,
-	[Quarter] INT NULL,
-	[Year] INT NULL,
-)
-GO
+
 
 
 use DDSCovid19

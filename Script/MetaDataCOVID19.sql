@@ -48,22 +48,8 @@ values('PHU City',null)
 insert into [DDS_DataFlow](Name,UpdatedDate)
 values('PHU',null)
 insert into [DDS_DataFlow](Name,UpdatedDate)
-values('PHU',null)
+values('Ongoing Outbreak PHU',null)
 
-
-
---update DataFlow
---set Name = '' where ID = 1
---update DataFlow
---set Name = '' where ID = 2
---update DataFlow
---set Name = '' where ID = 3
---update DataFlow
---set Name = '' where ID = 4
---update DataFlow
---set Name = '' where ID = 5
---update DataFlow
---set Name = '' where ID = 6
 
 
 select * from DataFlow
