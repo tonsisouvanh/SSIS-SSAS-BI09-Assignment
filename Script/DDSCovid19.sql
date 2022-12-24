@@ -18,7 +18,11 @@ CREATE TABLE Dim_Level(
 GO
 
 INSERT INTO Dim_Level(Level)
-VALUES(N'')
+VALUES(N'Low')
+INSERT INTO Dim_Level(Level)
+VALUES(N'Average')
+INSERT INTO Dim_Level(Level)
+VALUES(N'Serious')
 
 CREATE TABLE Dim_OngoingOutbreak(
 	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
@@ -30,6 +34,13 @@ CREATE TABLE Dim_OngoingOutbreak(
 	Status BIT,
 )
 
+
+CREATE TABLE Dim_AgeGroup(
+	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	AgeGroup VARCHAR(35) NULL,
+	SourceID INT NULL,
+	Status BIT,
+)
 
 CREATE TABLE Dim_PHUCity(
 	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
@@ -118,6 +129,29 @@ CREATE TABLE Dim_GENDER(
 
 
 
+-- Fact
+CREATE TABLE Fact_Vaccination(
+	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	DateID INT , --FK
+	PhuID INT, --FK
+	AgeGroup VARCHAR(35),
+
+	At_least_one_dose_cumulative INT,
+	Second_dose_cumulative INT,
+	Third_dose_cumulative INT,
+	Fully_vaccinated_cumulative INT,
+
+	SourceID INT ,
+	Status BIT,
+)
+
+ALTER TABLE Fact_Vaccination
+ADD CONSTRAINT FK_FactVaccination_DimDate
+FOREIGN KEY (DateID) REFERENCES Dim_Date(DateID);
+
+ALTER TABLE Fact_Vaccination
+ADD CONSTRAINT FK_FactVaccination_DimPHU
+FOREIGN KEY (PhuID) REFERENCES Dim_PHU(ID);
 
 
 use DDSCovid19

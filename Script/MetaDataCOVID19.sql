@@ -49,7 +49,16 @@ insert into [DDS_DataFlow](Name,UpdatedDate)
 values('PHU',null)
 insert into [DDS_DataFlow](Name,UpdatedDate)
 values('Ongoing Outbreak PHU',null)
-
+insert into [DDS_DataFlow](Name,UpdatedDate)
+values('Age Group',null)
+insert into [DDS_DataFlow](Name,UpdatedDate)
+values('Gender',null)
+insert into [DDS_DataFlow](Name,UpdatedDate)
+values('Outcome',null)
+insert into [DDS_DataFlow](Name,UpdatedDate)
+values('Exposure',null)
+insert into [DDS_DataFlow](Name,UpdatedDate)
+values('Vaccine by age PHU',null)
 
 
 select * from DataFlow

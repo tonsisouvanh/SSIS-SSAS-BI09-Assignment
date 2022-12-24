@@ -60,7 +60,7 @@ use StageCOVID19  select * from ONGOING_OUTBREAKS_PHU_STAGE
 
 
 
--- @@@@@@@@@@@@@ NDSCovid19 @@@@@@@@@@@@@
+-- @@@@@@@@@@@@@ NDS Covid19 @@@@@@@@@@@@@
 -- SELECT
 use NDSCovid19 select * from PHU_GROUP
 use NDSCovid19 select * from PHU_CITY
@@ -121,15 +121,22 @@ GO
 use DDSCovid19 select * from Dim_PHUCity
 use DDSCovid19 select * from Dim_PHU
 use DDSCovid19 select * from Dim_OngoingOutbreak order by OutbreakName, ongoingoutbreakdate, numberongoingoutbreak
+use DDSCovid19 select * from Dim_AgeGroup
+use DDSCovid19 select * from Fact_Vaccination
 use DDSCovid19 select * from Dim_Date
 use DDSCovid19 select * from Dim_Gender
 
 
+
+
 -- DELETE
+use DDSCovid19 delete Fact_Vaccination
 use DDSCovid19 delete Dim_PHU
 use DDSCovid19 delete Dim_PHUCity
 use DDSCovid19 delete Dim_OngoingOutbreak
-use DDSCovid19 delete Dim_Gender
+use DDSCovid19 delete Dim_AgeGroup
+
+
 
 DBCC CHECKIDENT ('Dim_PHU', RESEED, 0);
 GO
@@ -137,7 +144,9 @@ DBCC CHECKIDENT ('Dim_PHUCity', RESEED, 0);
 GO
 DBCC CHECKIDENT ('Dim_OngoingOutbreak', RESEED, 0);
 GO
-DBCC CHECKIDENT ('Dim_Gender', RESEED, 0);
+DBCC CHECKIDENT ('Dim_AgeGroup', RESEED, 0);
+GO
+DBCC CHECKIDENT ('Fact_Vaccination', RESEED, 0);
 GO
 
 
@@ -168,4 +177,20 @@ select distinct b.OUTBREAK_GROUP,b.OUTBREAK_GROUP_IDNK,a.ONGOING_OUTBREAK_DATE f
 on a.ONGOING_OUTBREAKS_PHU_ID = b.ID
 order by b.OUTBREAK_GROUP,b.OUTBREAK_GROUP_IDNK,a.ONGOING_OUTBREAK_DATE
 
-select * from Gender where UPDATED_DATE >= getdate()
+
+use NDSCovid19
+go
+select a.INJECT_DATE, a.PHU_IDNK,
+	a.AT_LEAST_ONE_DOSE_CUMULATIVE,
+	a.SECOND_DOSE_CUMULATIVE,
+	a.THIRD_DOSE_CUMULATIVE,
+	a.FULL_VACCINATED_CUMULATIVE,
+	a.AGEGROUP_ID,
+	c.AGE_GROUP,
+	b.PHU_NAME 
+	from VACCINES_BY_AGE_PHU a inner join PUBLIC_HEALTH_UNIT b
+on a.PHU_ID = b.ID
+inner join AGE_GROUP c
+on a.AGEGROUP_ID = c.ID
+where a.UPDATED_DATE >= ?
+order by a.INJECT_DATE
