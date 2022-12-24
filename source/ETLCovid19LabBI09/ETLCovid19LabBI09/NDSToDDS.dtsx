@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{CC323146-6881-4C6F-8119-A39E0FB242AC}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{1FC5B106-440A-4D70-A9E6-6DC626AF4853}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -6771,6 +6771,69 @@ where a.UPDATED_DATE &gt;= ?</property>
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="162.4,41.6"
+          Id="Package\Ongoing Outbreak PHU\Execute SQL Task"
+          TopLeft="41.6000030653817,31.5647084455591" />
+        <NodeLayout
+          Size="188,41.6"
+          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU"
+          TopLeft="32.2999991485052,118.373115537571" />
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\Ongoing Outbreak PHU\Set UpdatedDate"
+          TopLeft="48.0285746034312,215.094122784195" />
+        <EdgeLayout
+          Id="Package\Ongoing Outbreak PHU.PrecedenceConstraints[Constraint]"
+          TopLeft="124.550001106943,73.1647084455591">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.2084070920123"
+              Start="0,0"
+              End="0,37.7084070920123">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.7084070920123" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ongoing Outbreak PHU.PrecedenceConstraints[Constraint 1]"
+          TopLeft="126.764286875968,159.973115537571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.1210072466236"
+              Start="0,0"
+              End="0,47.6210072466236">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.6210072466236" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="239.2,315.2"
+          Size="239.2,358.4"
+          Id="Package\Ongoing Outbreak PHU"
+          TopLeft="836.957147546442,118.338236953767" />
+        <NodeLayout
+          Size="162.4,41.6"
           Id="Package\PHU City\Execute SQL Task"
           TopLeft="41.6000030653817,30.8000025524814" />
         <NodeLayout
@@ -7016,69 +7079,6 @@ where a.UPDATED_DATE &gt;= ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Ongoing Outbreak PHU\Execute SQL Task"
-          TopLeft="41.6000030653817,31.5647084455591" />
-        <NodeLayout
-          Size="188,41.6"
-          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU"
-          TopLeft="32.2999991485052,118.373115537571" />
-        <NodeLayout
-          Size="158.4,41.6"
-          Id="Package\Ongoing Outbreak PHU\Set UpdatedDate"
-          TopLeft="48.0285746034312,215.094122784195" />
-        <EdgeLayout
-          Id="Package\Ongoing Outbreak PHU.PrecedenceConstraints[Constraint]"
-          TopLeft="124.550001106943,73.1647084455591">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.2084070920123"
-              Start="0,0"
-              End="0,37.7084070920123">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.7084070920123" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Ongoing Outbreak PHU.PrecedenceConstraints[Constraint 1]"
-          TopLeft="126.764286875968,159.973115537571">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55.1210072466236"
-              Start="0,0"
-              End="0,47.6210072466236">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.6210072466236" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <ContainerLayout
-          HeaderHeight="43"
-          IsExpanded="True"
-          PanelSize="239.2,315.2"
-          Size="239.2,358.4"
-          Id="Package\Ongoing Outbreak PHU"
-          TopLeft="836.957147546442,118.338236953767" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="728.857141713707,296.104413404246">
@@ -7104,6 +7104,212 @@ where a.UPDATED_DATE &gt;= ?</property>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\OLE DB Source"
+          TopLeft="235.9,5.49999999999984" />
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\Derived Column"
+          TopLeft="234.3,208.7" />
+        <NodeLayout
+          Size="97.6,41.6"
+          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\Sort"
+          TopLeft="265.714285629137,81.6218489325406" />
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\Lookup"
+          TopLeft="246.428571428572,283.571428571429" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\Data Conversion"
+          TopLeft="229.528571428571,144.184033752866" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\OLE DB Destination"
+          TopLeft="430.714285714286,368.571428571429" />
+        <EdgeLayout
+          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU.Paths[Sort Output]"
+          TopLeft="265.714285629137,102.421848932541">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-27.1571439397586,41.7621848203259"
+              Start="0,0"
+              End="-27.1571439397586,34.2621848203259">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-23.1571439397586,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-23.1571439397586,0"
+                    Point2="-27.1571439397586,0"
+                    Point3="-27.1571439397586,4" />
+                  <mssgle:LineSegment
+                    End="-27.1571439397586,34.2621848203259" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU.Paths[OLE DB Source Output]"
+          TopLeft="312.607142814568,47.0999999999998">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.5218489325408"
+              Start="0,0"
+              End="0,27.0218489325408">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.0218489325408" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU.Paths[Lookup Error Output]"
+          TopLeft="302.828571428572,325.171428571429">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="213.085714285714,43.4"
+              Start="0,0"
+              End="213.085714285714,35.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.7"
+                    Point2="0,21.7"
+                    Point3="4,21.7" />
+                  <mssgle:LineSegment
+                    End="209.085714285714,21.7" />
+                  <mssgle:CubicBezierSegment
+                    Point1="209.085714285714,21.7"
+                    Point2="213.085714285714,21.7"
+                    Point3="213.085714285714,25.7" />
+                  <mssgle:LineSegment
+                    End="213.085714285714,35.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="60.676470424107,26.7,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU.Paths[Derived Column Output]"
+          TopLeft="306.764285714286,250.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.271428571429"
+              Start="0,0"
+              End="0,25.771428571429">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.771428571429" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU.Paths[Data Conversion Output]"
+          TopLeft="308.914285714286,185.784033752866">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.9159662471335"
+              Start="0,0"
+              End="0,15.4159662471335">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.4159662471335" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\PHU City\PHU Group">
     <LayoutInfo>
@@ -7176,9 +7382,7 @@ where a.UPDATED_DATE &gt;= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7200,9 +7404,7 @@ where a.UPDATED_DATE &gt;= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7224,9 +7426,7 @@ where a.UPDATED_DATE &gt;= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7248,9 +7448,7 @@ where a.UPDATED_DATE &gt;= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7356,9 +7554,7 @@ where a.UPDATED_DATE &gt;= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7392,9 +7588,7 @@ where a.UPDATED_DATE &gt;= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7565,9 +7759,7 @@ where a.UPDATED_DATE &gt;= ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-8,18.25,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -8047,224 +8239,6 @@ where a.UPDATED_DATE &gt;= ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\OLE DB Source"
-          TopLeft="235.9,5.49999999999984" />
-        <NodeLayout
-          Size="155.2,41.6"
-          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\Data Conversion"
-          TopLeft="229.528571428571,134.242857142857" />
-        <NodeLayout
-          Size="152.8,41.6"
-          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\Derived Column"
-          TopLeft="234.3,208.7" />
-        <EdgeLayout
-          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU.Paths[Data Conversion Output]"
-          TopLeft="308.914285714286,175.842857142857">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32.8571428571427"
-              Start="0,0"
-              End="0,25.3571428571427">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.3571428571427" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="170.4,41.6"
-          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\OLE DB Destination"
-          TopLeft="430.714285714286,368.571428571429" />
-        <NodeLayout
-          Size="112.8,41.6"
-          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\Lookup"
-          TopLeft="246.428571428572,283.571428571429" />
-        <EdgeLayout
-          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU.Paths[Derived Column Output]"
-          TopLeft="306.764285714286,250.3">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.271428571429"
-              Start="0,0"
-              End="0,25.771428571429">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.771428571429" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU.Paths[Lookup Error Output]"
-          TopLeft="302.828571428572,325.171428571429">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="213.085714285714,43.4"
-              Start="0,0"
-              End="213.085714285714,35.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.7" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.7"
-                    Point2="0,21.7"
-                    Point3="4,21.7" />
-                  <mssgle:LineSegment
-                    End="209.085714285714,21.7" />
-                  <mssgle:CubicBezierSegment
-                    Point1="209.085714285714,21.7"
-                    Point2="213.085714285714,21.7"
-                    Point3="213.085714285714,25.7" />
-                  <mssgle:LineSegment
-                    End="213.085714285714,35.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="60.6764704241071,26.7,91.7327734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="97.6,41.6"
-          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\Sort"
-          TopLeft="270.714285714286,67.8571428571429" />
-        <EdgeLayout
-          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU.Paths[OLE DB Source Output]"
-          TopLeft="310.7,47.0999999999998">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-39.9857142857143,41.557142857143"
-              Start="0,0"
-              End="-32.4857142857143,41.557142857143">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.557142857143" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.557142857143"
-                    Point2="0,41.557142857143"
-                    Point3="-4,41.557142857143" />
-                  <mssgle:LineSegment
-                    End="-32.4857142857143,41.557142857143" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU.Paths[Sort Output]"
-          TopLeft="319.514285714286,109.457142857143">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-12.3857142857143,24.785714285714"
-              Start="0,0"
-              End="-12.3857142857143,17.285714285714">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,8.39285714285701" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.39285714285701"
-                    Point2="0,12.392857142857"
-                    Point3="-4,12.392857142857" />
-                  <mssgle:LineSegment
-                    End="-8.3857142857143,12.392857142857" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-8.3857142857143,12.392857142857"
-                    Point2="-12.3857142857143,12.392857142857"
-                    Point3="-12.3857142857143,16.392857142857" />
-                  <mssgle:LineSegment
-                    End="-12.3857142857143,17.285714285714" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Ongoing Outbreak PHU\Ongoing Outbreak PHU\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string"></Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

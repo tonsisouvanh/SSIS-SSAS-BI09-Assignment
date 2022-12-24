@@ -122,20 +122,22 @@ use DDSCovid19 select * from Dim_PHUCity
 use DDSCovid19 select * from Dim_PHU
 use DDSCovid19 select * from Dim_OngoingOutbreak order by OutbreakName, ongoingoutbreakdate, numberongoingoutbreak
 use DDSCovid19 select * from Dim_Date
-
+use DDSCovid19 select * from Dim_Gender
 
 
 -- DELETE
 use DDSCovid19 delete Dim_PHU
 use DDSCovid19 delete Dim_PHUCity
 use DDSCovid19 delete Dim_OngoingOutbreak
-
+use DDSCovid19 delete Dim_Gender
 
 DBCC CHECKIDENT ('Dim_PHU', RESEED, 0);
 GO
 DBCC CHECKIDENT ('Dim_PHUCity', RESEED, 0);
 GO
 DBCC CHECKIDENT ('Dim_OngoingOutbreak', RESEED, 0);
+GO
+DBCC CHECKIDENT ('Dim_Gender', RESEED, 0);
 GO
 
 
@@ -165,3 +167,5 @@ on a.ONGOING_OUTBREAKS_PHU_ID = b.ID
 select distinct b.OUTBREAK_GROUP,b.OUTBREAK_GROUP_IDNK,a.ONGOING_OUTBREAK_DATE from ONGOING_OUTBREAKS_PHU a inner join OUTBREAK_GROUP b
 on a.ONGOING_OUTBREAKS_PHU_ID = b.ID
 order by b.OUTBREAK_GROUP,b.OUTBREAK_GROUP_IDNK,a.ONGOING_OUTBREAK_DATE
+
+select * from Gender where UPDATED_DATE >= getdate()
