@@ -64,7 +64,6 @@ use StageCOVID19  select * from ONGOING_OUTBREAKS_PHU_STAGE
 -- SELECT
 use NDSCovid19 select * from PHU_GROUP
 use NDSCovid19 select * from PHU_CITY
---select a.PHU_CITY, b.GROUP_NAME from PHU_CITY a, PHU_GROUP b where a.PHU_GROUP_ID = b.ID
 use NDSCovid19 select * from PUBLIC_HEALTH_UNIT order by PHU_NAME
 use NDSCovid19 select * from OUTBREAK_GROUP
 use NDSCovid19 select * from AGE_GROUP
@@ -124,17 +123,41 @@ use DDSCovid19 select * from Dim_OngoingOutbreak order by OutbreakName, ongoingo
 use DDSCovid19 select * from Dim_AgeGroup
 use DDSCovid19 select * from Fact_Vaccination
 use DDSCovid19 select * from Dim_Date
+use DDSCovid19 select * from Dim_Gender
+use DDSCovid19 select * from Dim_Exposure
+use DDSCovid19 select * from Dim_Outcome
+use DDSCovid19 select * from Dim_Level
+use DDSCovid19 select * from Fact_Covid19_CaseReport
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
 -- DELETE
+use DDSCovid19 delete Fact_Covid19_CaseReport
 use DDSCovid19 delete Fact_Vaccination
 use DDSCovid19 delete Dim_PHU
 use DDSCovid19 delete Dim_PHUCity
 use DDSCovid19 delete Dim_OngoingOutbreak
 use DDSCovid19 delete Dim_AgeGroup
+use DDSCovid19 delete Dim_Gender
+use DDSCovid19 delete Dim_Exposure
+use DDSCovid19 delete Dim_Outcome
+
+
+
 
 
 
@@ -148,49 +171,21 @@ DBCC CHECKIDENT ('Dim_AgeGroup', RESEED, 0);
 GO
 DBCC CHECKIDENT ('Fact_Vaccination', RESEED, 0);
 GO
+DBCC CHECKIDENT ('Dim_Gender', RESEED, 0);
+GO
+DBCC CHECKIDENT ('Dim_Outcome', RESEED, 0);
+GO
+DBCC CHECKIDENT ('Dim_Exposure', RESEED, 0);
+GO
+DBCC CHECKIDENT ('Fact_Covid19_CaseReport', RESEED, 0);
+GO
 
 
 
 
 
-
-
--- QUERY
-use NDSCovid19
-go
-
-select * from COVID19_CASESREPORT_DETAIL where OUTBREAKRELATED = 'Yes'
-
-select * from OUTCOME
-
-select  PHU_ID,AGEGROUP_ID,OUTCOME_ID,EXPOSURE_ID,GENDER_ID,YEAR(CASEREPORTED),count(*) as caseNO from COVID19_CASESREPORT_DETAIL
-where OUTCOME_ID = 1
-group by PHU_ID, OUTCOME_ID,AGEGROUP_ID,EXPOSURE_ID,GENDER_ID,YEAR(CASEREPORTED)
-order by YEAR(CASEREPORTED) asc
-
-
-select a.*, b.OUTBREAK_GROUP, b.OUTBREAK_GROUP_IDNK from ONGOING_OUTBREAKS_PHU a inner join OUTBREAK_GROUP b
-on a.ONGOING_OUTBREAKS_PHU_ID = b.ID
-
-
-select distinct b.OUTBREAK_GROUP,b.OUTBREAK_GROUP_IDNK,a.ONGOING_OUTBREAK_DATE from ONGOING_OUTBREAKS_PHU a inner join OUTBREAK_GROUP b
-on a.ONGOING_OUTBREAKS_PHU_ID = b.ID
-order by b.OUTBREAK_GROUP,b.OUTBREAK_GROUP_IDNK,a.ONGOING_OUTBREAK_DATE
-
-
-use NDSCovid19
-go
-select a.INJECT_DATE, a.PHU_IDNK,
-	a.AT_LEAST_ONE_DOSE_CUMULATIVE,
-	a.SECOND_DOSE_CUMULATIVE,
-	a.THIRD_DOSE_CUMULATIVE,
-	a.FULL_VACCINATED_CUMULATIVE,
-	a.AGEGROUP_ID,
-	c.AGE_GROUP,
-	b.PHU_NAME 
-	from VACCINES_BY_AGE_PHU a inner join PUBLIC_HEALTH_UNIT b
-on a.PHU_ID = b.ID
-inner join AGE_GROUP c
-on a.AGEGROUP_ID = c.ID
-where a.UPDATED_DATE >= ?
-order by a.INJECT_DATE
+--use DDSCovid19 
+--select d.Year,d.Quarter, sum(Fatal)
+--from Fact_Covid19_CaseReport a inner join Dim_Date d on a.DateID = d.DateID
+--group by d.year,d.Quarter
+--order by d.Year,d.Quarter

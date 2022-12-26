@@ -22,7 +22,7 @@ VALUES(N'Low')
 INSERT INTO Dim_Level(Level)
 VALUES(N'Average')
 INSERT INTO Dim_Level(Level)
-VALUES(N'Serious')
+VALUES(N'High')
 
 CREATE TABLE Dim_OngoingOutbreak(
 	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
@@ -38,6 +38,27 @@ CREATE TABLE Dim_OngoingOutbreak(
 CREATE TABLE Dim_AgeGroup(
 	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
 	AgeGroup VARCHAR(35) NULL,
+	SourceID INT NULL,
+	Status BIT,
+)
+
+CREATE TABLE Dim_Gender(
+	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	Gender VARCHAR(20) NULL,
+	SourceID INT NULL,
+	Status BIT,
+)
+
+CREATE TABLE Dim_Outcome(
+	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	Outcome VARCHAR(15) NULL,
+	SourceID INT NULL,
+	Status BIT,
+)
+
+CREATE TABLE Dim_Exposure(
+	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	Exposure VARCHAR(50) NULL,
 	SourceID INT NULL,
 	Status BIT,
 )
@@ -143,6 +164,46 @@ FOREIGN KEY (DateID) REFERENCES Dim_Date(DateID);
 ALTER TABLE Fact_Vaccination
 ADD CONSTRAINT FK_FactVaccination_DimPHU
 FOREIGN KEY (PhuID) REFERENCES Dim_PHU(ID);
+
+
+CREATE TABLE Fact_Covid19_CaseReport(
+	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	PhuID INT , --FK
+	DateID INT , --FK
+	AgeGroupID INT , --FK
+	--OutcomeID INT , --FK
+	GenderID INT , --FK
+	ExposureID INT , --FK
+	OngoingOutrbeakID INT , --FK
+
+	Positive INT,
+	Fatal INT,
+	Resolved INT,
+)
+
+ALTER TABLE Fact_Covid19_CaseReport
+ADD CONSTRAINT FK_FactCovid19CaseReport_PHU
+FOREIGN KEY (PhuID) REFERENCES Dim_PHU(ID);
+
+ALTER TABLE Fact_Covid19_CaseReport
+ADD CONSTRAINT FK_FactCovid19CaseReport_DimDate
+FOREIGN KEY (DateID) REFERENCES Dim_Date(DateID);
+
+ALTER TABLE Fact_Covid19_CaseReport
+ADD CONSTRAINT FK_FactCovid19CaseReport_DimAgeGroup
+FOREIGN KEY (AgeGroupID) REFERENCES Dim_AgeGroup(ID);
+
+ALTER TABLE Fact_Covid19_CaseReport
+ADD CONSTRAINT FK_FactCovid19CaseReport_DimGender
+FOREIGN KEY (GenderID) REFERENCES Dim_Gender(ID);
+
+ALTER TABLE Fact_Covid19_CaseReport
+ADD CONSTRAINT FK_FactCovid19CaseReport_DimExposire
+FOREIGN KEY (ExposureID) REFERENCES Dim_Exposure(ID);
+
+ALTER TABLE Fact_Covid19_CaseReport
+ADD CONSTRAINT FK_FactCovid19CaseReport_DimOngoingOutrbeak
+FOREIGN KEY (OngoingOutrbeakID) REFERENCES Dim_OngoingOutbreak(ID);
 
 
 use DDSCovid19

@@ -59,10 +59,12 @@ insert into [DDS_DataFlow](Name,UpdatedDate)
 values('Exposure',null)
 insert into [DDS_DataFlow](Name,UpdatedDate)
 values('Vaccine by age PHU',null)
+insert into [DDS_DataFlow](Name,UpdatedDate)
+values('Case Report',null)
 
 
 select * from DataFlow
-select * from DDS_DataFlow
+use MetaDataCOVID19 select * from DDS_DataFlow
 
 use master
 go

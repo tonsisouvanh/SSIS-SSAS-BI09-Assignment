@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="StageToNDS"
   DTS:PackageType="5"
-  DTS:VersionBuild="107"
-  DTS:VersionGUID="{C98FCC76-FC17-42AD-858F-B708263E75D6}">
+  DTS:VersionBuild="108"
+  DTS:VersionGUID="{5A483F32-DB33-472D-BF7A-DFEAB92DE2B0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -11488,7 +11488,7 @@ where [refTable].[AGE_GROUP] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Case Report to NDS\637:invalid};</property>
+                  name="ParameterMap">#{Package\Case Report to NDS\602:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -11652,7 +11652,7 @@ where [refTable].[SPECIMENDATE] = ? and [refTable].[CASEREPORTED] = ? and [refTa
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Case Report to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_SPECIMENDATE]};#{Package\Case Report to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_CASEREPORTED_DATE]};#{Package\Case Report to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_TESTREPORTED_DATE]};#{Package\Case Report to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[DV_ACCURATEEPISODE_DT]};#{Package\Case Report to NDS\638:invalid};#{Package\Case Report to NDS\Lookup Age.Outputs[Lookup Match Output].Columns[AgeGroupIDSK]};#{Package\Case Report to NDS\Lookup Gender.Outputs[Lookup Match Output].Columns[GenderIDSK]};#{Package\Case Report to NDS\Lookup Outcome.Outputs[Lookup Match Output].Columns[OutcomeIDSK]};#{Package\Case Report to NDS\Lookup Exposure.Outputs[Lookup Match Output].Columns[ExposureIDSK]};</property>
+                  name="ParameterMap">#{Package\Case Report to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_SPECIMENDATE]};#{Package\Case Report to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_CASEREPORTED_DATE]};#{Package\Case Report to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[CV_TESTREPORTED_DATE]};#{Package\Case Report to NDS\Data Conversion.Outputs[Data Conversion Output].Columns[DV_ACCURATEEPISODE_DT]};#{Package\Case Report to NDS\603:invalid};#{Package\Case Report to NDS\Lookup Age.Outputs[Lookup Match Output].Columns[AgeGroupIDSK]};#{Package\Case Report to NDS\Lookup Gender.Outputs[Lookup Match Output].Columns[GenderIDSK]};#{Package\Case Report to NDS\Lookup Outcome.Outputs[Lookup Match Output].Columns[OutcomeIDSK]};#{Package\Case Report to NDS\Lookup Exposure.Outputs[Lookup Match Output].Columns[ExposureIDSK]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -22150,7 +22150,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         <NodeLayout
           Size="172.8,41.6"
           Id="Package\Case Report Canada to NDS 1\Lookup Case Report"
-          TopLeft="607.820512820513,712.371794871795" />
+          TopLeft="608.534798546963,711.607088978717" />
         <NodeLayout
           Size="149.6,41.6"
           Id="Package\Case Report Canada to NDS 1\Lookup Gender"
@@ -22191,61 +22191,61 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Case Report Canada to NDS 1.Paths[Lookup Match Output4]"
-          TopLeft="666.753846153846,753.971794871795">
+          TopLeft="667.468131880296,753.207088978717">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-54.3538461538463,30.6435897435897"
+              EndConnector="-55.0681318802962,31.4082956366675"
               Start="0,0"
-              End="-54.3538461538463,23.1435897435897">
+              End="-55.0681318802962,23.9082956366675">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.42611620795106" />
+                    End="0,8.7362079554193" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.42611620795106"
-                    Point2="0,12.4261162079511"
-                    Point3="-4,12.4261162079511" />
+                    Point1="0,8.7362079554193"
+                    Point2="0,12.7362079554193"
+                    Point3="-4,12.7362079554193" />
                   <mssgle:LineSegment
-                    End="-50.3538461538463,12.4261162079511" />
+                    End="-51.0681318802962,12.7362079554193" />
                   <mssgle:CubicBezierSegment
-                    Point1="-50.3538461538463,12.4261162079511"
-                    Point2="-54.3538461538463,12.4261162079511"
-                    Point3="-54.3538461538463,16.4261162079511" />
+                    Point1="-51.0681318802962,12.7362079554193"
+                    Point2="-55.0681318802962,12.7362079554193"
+                    Point3="-55.0681318802962,16.7362079554193" />
                   <mssgle:LineSegment
-                    End="-54.3538461538463,23.1435897435897" />
+                    End="-55.0681318802962,23.9082956366675" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-75.3683097956732,17.4261162079511,96.3827734375,11.609375"
+              BoundingBox="-75.7254526588981,17.7362079554193,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Case Report Canada to NDS 1.Paths[Lookup Match Output3]"
-          TopLeft="692.479487179487,650.061538461539">
+          TopLeft="692.836630042712,650.061538461539">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,62.3102564102562"
+              EndConnector="0,61.5455505171784"
               Start="0,0"
-              End="0,54.8102564102562">
+              End="0,54.0455505171784">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.8102564102562" />
+                    End="0,54.0455505171784" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,21.6004407051281,96.3827734375,11.609375"
+              BoundingBox="-48.19138671875,21.2180877585892,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -22323,37 +22323,37 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Case Report Canada to NDS 1.Paths[Lookup Error Output]"
-          TopLeft="694.220512820513,753.971794871795">
+          TopLeft="722.40146521363,753.207088978717">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="231.146153846154,28.194871794872"
+              EndConnector="202.965201453037,28.9595776879495"
               Start="0,0"
-              End="231.146153846154,20.694871794872">
+              End="202.965201453037,21.4595776879495">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.097435897436" />
+                    End="0,7.743241594563" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.097435897436"
-                    Point2="0,14.097435897436"
-                    Point3="4,14.097435897436" />
+                    Point1="0,7.743241594563"
+                    Point2="0,11.743241594563"
+                    Point3="4,11.743241594563" />
                   <mssgle:LineSegment
-                    End="227.146153846154,14.097435897436" />
+                    End="198.965201453037,11.743241594563" />
                   <mssgle:CubicBezierSegment
-                    Point1="227.146153846154,14.097435897436"
-                    Point2="231.146153846154,14.097435897436"
-                    Point3="231.146153846154,18.097435897436" />
+                    Point1="198.965201453037,11.743241594563"
+                    Point2="202.965201453037,11.743241594563"
+                    Point3="202.965201453037,15.743241594563" />
                   <mssgle:LineSegment
-                    End="231.146153846154,20.694871794872" />
+                    End="202.965201453037,21.4595776879495" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="69.706690204327,19.097435897436,91.7327734375,11.609375"
+              BoundingBox="55.6162140077687,16.743241594563,91.7327734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -23252,7 +23252,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23274,7 +23276,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23308,7 +23312,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23330,7 +23336,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -23496,7 +23504,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -24312,7 +24322,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24454,7 +24466,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24476,7 +24490,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -24669,7 +24685,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24691,7 +24709,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24713,7 +24733,9 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
