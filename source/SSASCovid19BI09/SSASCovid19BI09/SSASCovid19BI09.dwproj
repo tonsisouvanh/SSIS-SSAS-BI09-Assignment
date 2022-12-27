@@ -20,8 +20,20 @@
   </Cubes>
   <Dimensions>
     <ProjectItem>
+      <Name>Dim Ongoing Outbreak.dim</Name>
+      <FullPath>Dim Ongoing Outbreak.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Severity.dim</Name>
+      <FullPath>Dim Severity.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Dim PHU.dim</Name>
       <FullPath>Dim PHU.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Outcome.dim</Name>
+      <FullPath>Dim Outcome.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Dim Date.dim</Name>
@@ -30,10 +42,6 @@
     <ProjectItem>
       <Name>Dim Gender.dim</Name>
       <FullPath>Dim Gender.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Ongoing Outbreak.dim</Name>
-      <FullPath>Dim Ongoing Outbreak.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Dim Exposure.dim</Name>
@@ -46,8 +54,8 @@
   </Dimensions>
   <DataSources>
     <ProjectItem>
-      <Name>DDS Covid19.ds</Name>
-      <FullPath>DDS Covid19.ds</FullPath>
+      <Name>Covid19 CasesReport 2020-2022.ds</Name>
+      <FullPath>Covid19 CasesReport 2020-2022.ds</FullPath>
     </ProjectItem>
   </DataSources>
   <DataSourceViews>
@@ -62,15 +70,15 @@
       <Options>
         <ConnectionMappings>
           <ConfigurationSetting>
-            <Id>DDS Covid19</Id>
-            <Name>DDS Covid19</Name>
+            <Id>Covid19 CasesReport 2020-2022</Id>
+            <Name>Covid19 CasesReport 2020-2022</Name>
             <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=.;Integrated Security=SSPI;Initial Catalog=DDSCovid19</Value>
           </ConfigurationSetting>
         </ConnectionMappings>
         <ConnectionSecurityMappings>
           <ConfigurationSetting>
-            <Id>DDS Covid19</Id>
-            <Name>DDS Covid19</Name>
+            <Id>Covid19 CasesReport 2020-2022</Id>
+            <Name>Covid19 CasesReport 2020-2022</Name>
             <Value xsi:type="xsd:int">0</Value>
           </ConfigurationSetting>
         </ConnectionSecurityMappings>

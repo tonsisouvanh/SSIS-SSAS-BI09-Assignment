@@ -1,4 +1,4 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="9a303f1e-8186-4acc-931f-f722d6dee161" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c74f747b-6bad-425a-9d0b-4f2a529de1f5" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>Dim Ongoing Outbreak</ID>
   <Name>Dim Ongoing Outbreak</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
@@ -8,9 +8,9 @@
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
       <Value>
         <dds xmlns="">
-          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-3869" scrolltop="-7647" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="12197" y="19288" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2287" scrolltop="-5197" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="9144" y="13780" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
             <font>
-              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+              <ddsxmlobjectstreamwrapper binary="010000009001b0300100065461686f6d61" />
             </font>
             <mouseicon>
               <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
@@ -19,9 +19,9 @@
           <layoutmanager>
             <ddsxmlobj />
           </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Dim_OngoingOutbreak" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4419" height="3995" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Dim_OngoingOutbreak" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4530" height="3387" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
-              <ddsxmlobjectstreaminitwrapper binary="000e0000431100009b0f0000" />
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b21100003b0d0000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
@@ -47,11 +47,11 @@
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
-      <Value>-3869</Value>
+      <Value>-2287</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
-      <Value>-7647</Value>
+      <Value>-5197</Value>
     </Annotation>
     <Annotation>
       <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
@@ -68,51 +68,89 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="3cecabf0-9377-42dc-b704-76abdcfb760d">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="3a450ccb-c22c-4483-a0f2-c56bdda2c60f">
     <DataSourceViewID>DDS Covid19</DataSourceViewID>
   </Source>
   <UnknownMember>Visible</UnknownMember>
-  <ErrorConfiguration dwd:design-time-name="2626e67e-706f-4153-8aaa-e175268f282e">
+  <ErrorConfiguration dwd:design-time-name="d65f8163-879d-4218-bcf4-082429c6c7f7">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="7bfcba1b-1f7c-4cb2-9015-c46647eb9552">
+    <Attribute dwd:design-time-name="1e50cb8c-dbbf-4183-a90c-91d52ac37e9e">
       <ID>ID</ID>
       <Name>ID</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="d14baec0-df48-43af-9ed0-d52a98084e9c">
+        <KeyColumn dwd:design-time-name="7082174b-0027-44aa-be27-c699fa506172">
           <DataType>Integer</DataType>
           <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="1e32b738-93dc-4d4f-a3a6-d7f1b51dcc6a">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="95ddaf24-fdb7-4b4f-afa0-d87a658d1823">
             <TableID>dbo_Dim_OngoingOutbreak</TableID>
             <ColumnID>ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="2f5c5966-8c17-499d-bfd6-37c2debac8f3">
+        <AttributeRelationship dwd:design-time-name="36d24e20-893a-4551-90e7-7bfd1ce0468d">
           <AttributeID>Outbreak Name</AttributeID>
           <Name>Outbreak Name</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="2efe84ff-0c94-4a3f-bdae-9a7092299563">
+          <AttributeID>Ongoing Outbreak Date</AttributeID>
+          <Name>Ongoing Outbreak Date</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="dbe768d3-b0f7-4e6d-9f09-7d6804568d2f">
+          <AttributeID>Number Ongoing Outbreak</AttributeID>
+          <Name>Number Ongoing Outbreak</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="a60454d5-b3f1-4af3-b252-312d2e6da299">
+    <Attribute dwd:design-time-name="39ec1f4a-65d6-4756-b826-dc2e33b7cfe2">
       <ID>Outbreak Name</ID>
       <Name>Outbreak Name</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="9cf8a6c0-d9da-400e-ad95-c87d37f570ab">
+        <KeyColumn dwd:design-time-name="0e7e2677-183c-475c-ac46-4477a3959a84">
           <DataType>WChar</DataType>
           <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="f9938ca8-47f9-42bb-a9af-2d490cb329cd">
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="19125a7e-b75c-4a4e-b6f4-f8724e372e8f">
             <TableID>dbo_Dim_OngoingOutbreak</TableID>
             <ColumnID>OutbreakName</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="00c9868e-9867-48b6-a3d9-0b5d21d41b5b">
+      <ID>Ongoing Outbreak Date</ID>
+      <Name>Ongoing Outbreak Date</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="7ab57e53-b816-4b86-b0eb-90c415aeb449">
+          <DataType>Date</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="48c3448f-3e2e-4f2a-b41f-c80d98e16e5d">
+            <TableID>dbo_Dim_OngoingOutbreak</TableID>
+            <ColumnID>OngoingOutbreakDate</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="9922b168-159e-4bfc-b627-b3304af56158">
+      <ID>Number Ongoing Outbreak</ID>
+      <Name>Number Ongoing Outbreak</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1254c5a1-8e6b-4bc3-b2d2-3384d5ec4cf7">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a578fa30-2765-4a88-8d7c-eb30d2c70169">
+            <TableID>dbo_Dim_OngoingOutbreak</TableID>
+            <ColumnID>NumberOngoingOutbreak</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>

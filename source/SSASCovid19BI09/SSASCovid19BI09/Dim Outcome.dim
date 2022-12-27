@@ -1,6 +1,6 @@
-﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1c2ae916-fef3-422f-8c01-26701067940d" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
-  <ID>Dim Exposure</ID>
-  <Name>Dim Exposure</Name>
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="86e96f97-79c9-4528-89cb-8046698edad5" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Outcome</ID>
+  <Name>Dim Outcome</Name>
   <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
   <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
   <Annotations>
@@ -19,13 +19,13 @@
           <layoutmanager>
             <ddsxmlobj />
           </layoutmanager>
-          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Dim_Exposure" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="Dim_Outcome" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="2307" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
             <control>
               <ddsxmlobjectstreaminitwrapper binary="000e0000b80b000003090000" />
             </control>
             <layoutobject>
               <ddsxmlobj>
-                <property name="LogicalObject" value="dbo_Dim_Exposure" vartype="8" />
+                <property name="LogicalObject" value="dbo_Dim_Outcome" vartype="8" />
               </ddsxmlobj>
             </layoutobject>
             <shape groupshapeid="0" groupnode="0" />
@@ -68,51 +68,51 @@
   </Annotations>
   <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
   <State>Unprocessed</State>
-  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="acd91375-d7c0-4466-8c44-99fbff21268e">
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="a29e9bae-c0ef-4d00-b67d-699c0e94a91d">
     <DataSourceViewID>DDS Covid19</DataSourceViewID>
   </Source>
   <UnknownMember>Visible</UnknownMember>
-  <ErrorConfiguration dwd:design-time-name="719f4f15-adb6-44a9-bd6c-d63f00faa7d1">
+  <ErrorConfiguration dwd:design-time-name="c764c685-edd1-416d-b679-9973df9b2200">
     <KeyNotFound>ReportAndStop</KeyNotFound>
     <KeyDuplicate>ReportAndStop</KeyDuplicate>
     <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
   </ErrorConfiguration>
   <CurrentStorageMode>Molap</CurrentStorageMode>
   <Attributes>
-    <Attribute dwd:design-time-name="6ff69232-b16e-4424-827c-ed20277a34ec">
+    <Attribute dwd:design-time-name="5df5b839-349d-402d-a605-eb6a1364e176">
       <ID>ID</ID>
       <Name>ID</Name>
       <Usage>Key</Usage>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="c1c61625-eec3-4712-a406-c6657873661c">
+        <KeyColumn dwd:design-time-name="42ee56cb-c977-4f15-b3a0-cf09836afd0f">
           <DataType>Integer</DataType>
           <NullProcessing>UnknownMember</NullProcessing>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="a5aa7bf2-88e4-4b9c-b8ee-592a5026c68c">
-            <TableID>dbo_Dim_Exposure</TableID>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="f6aca714-3726-4c92-86a0-a4b5d6a0f797">
+            <TableID>dbo_Dim_Outcome</TableID>
             <ColumnID>ID</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>
       <AttributeRelationships>
-        <AttributeRelationship dwd:design-time-name="60e242dd-8168-41f0-935b-da4728797223">
-          <AttributeID>Exposure</AttributeID>
-          <Name>Exposure</Name>
+        <AttributeRelationship dwd:design-time-name="79ac2858-105a-43b2-94cb-4dc57c8bfcc8">
+          <AttributeID>Outcome</AttributeID>
+          <Name>Outcome</Name>
         </AttributeRelationship>
       </AttributeRelationships>
       <OrderBy>Key</OrderBy>
       <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
       <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
     </Attribute>
-    <Attribute dwd:design-time-name="e44d379d-c038-4cb6-b9ae-3a20611977ff">
-      <ID>Exposure</ID>
-      <Name>Exposure</Name>
+    <Attribute dwd:design-time-name="9e2a29f9-edb8-4b47-9760-e9181365834e">
+      <ID>Outcome</ID>
+      <Name>Outcome</Name>
       <KeyColumns>
-        <KeyColumn dwd:design-time-name="8487acf1-3e54-483b-a594-79bc00a30f1b">
+        <KeyColumn dwd:design-time-name="2fc096a5-1b4b-4fa2-ac76-3d6ed41c9f9a">
           <DataType>WChar</DataType>
-          <DataSize>50</DataSize>
-          <Source xsi:type="ColumnBinding" dwd:design-time-name="c857a13d-b02d-44a1-bec4-dffff2a2727d">
-            <TableID>dbo_Dim_Exposure</TableID>
-            <ColumnID>Exposure</ColumnID>
+          <DataSize>15</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b547c9d2-24c6-4ee5-bdfa-b79958724ed9">
+            <TableID>dbo_Dim_Outcome</TableID>
+            <ColumnID>Outcome</ColumnID>
           </Source>
         </KeyColumn>
       </KeyColumns>

@@ -48,6 +48,9 @@ select distinct GENDER from COMPILED_COVID19_CASE_DETAILS_CANADA_STAGE --age
 select distinct CASE_STATUS from COMPILED_COVID19_CASE_DETAILS_CANADA_STAGE --age
 select distinct EXPOSURE from COMPILED_COVID19_CASE_DETAILS_CANADA_STAGE --age
 
+select COUNT(OUTCOME) from CASESREPORT_STAGE where OUTCOME = 'Active' --age
+select COUNT( CASE_STATUS) from COMPILED_COVID19_CASE_DETAILS_CANADA_STAGE where CASE_STATUS = 'Active'--age
+
 
 use StageCOVID19  select * from CASESREPORT_STAGE --age
 use StageCOVID19  select * from COMPILED_COVID19_CASE_DETAILS_CANADA_STAGE --age
@@ -64,15 +67,22 @@ use StageCOVID19  select * from ONGOING_OUTBREAKS_PHU_STAGE
 -- SELECT
 use NDSCovid19 select * from PHU_GROUP
 use NDSCovid19 select * from PHU_CITY
-use NDSCovid19 select * from PUBLIC_HEALTH_UNIT order by PHU_NAME
+use NDSCovid19 select * from PUBLIC_HEALTH_UNIT order by ID
 use NDSCovid19 select * from OUTBREAK_GROUP
 use NDSCovid19 select * from AGE_GROUP
 use NDSCovid19 select * from VACCINES_BY_AGE_PHU --order by PHU_ID
 use NDSCovid19 select * from OUTCOME
 use NDSCovid19 select * from EXPOSURE
 use NDSCovid19 select * from GENDER
-use NDSCovid19 select * from COVID19_CASESREPORT_DETAIL
+use NDSCovid19 select * from COVID19_CASESREPORT_DETAIL order by PHU_ID
 use NDSCovid19 select * from ONGOING_OUTBREAKS_PHU
+use NDSCovid19 select * from SEVERITY
+
+--use NDSCovid19 select * from OUTCOME
+--use NDSCovid19 select * from SEVERITY
+--use NDSCovid19 select distinct OUTCOME_ID,SEVERITY_ID from COVID19_CASESREPORT_DETAIL
+
+
 
 
 --DELETE
@@ -87,6 +97,8 @@ use NDSCovid19 delete PUBLIC_HEALTH_UNIT
 use NDSCovid19 delete PHU_CITY
 use NDSCovid19 delete PHU_GROUP
 use NDSCovid19 delete AGE_GROUP
+use NDSCovid19 delete SEVERITY
+
 
 
 DBCC CHECKIDENT ('PUBLIC_HEALTH_UNIT', RESEED, 0);
@@ -111,6 +123,8 @@ DBCC CHECKIDENT ('AGE_GROUP', RESEED, 0);
 GO
 DBCC CHECKIDENT ('COVID19_CASESREPORT_DETAIL', RESEED, 0);
 GO
+DBCC CHECKIDENT ('SEVERITY', RESEED, 0);
+GO
 
 
 
@@ -121,26 +135,14 @@ use DDSCovid19 select * from Dim_PHUCity
 use DDSCovid19 select * from Dim_PHU
 use DDSCovid19 select * from Dim_OngoingOutbreak order by OutbreakName, ongoingoutbreakdate, numberongoingoutbreak
 use DDSCovid19 select * from Dim_AgeGroup
-use DDSCovid19 select * from Fact_Vaccination
 use DDSCovid19 select * from Dim_Date
 use DDSCovid19 select * from Dim_Gender
 use DDSCovid19 select * from Dim_Exposure
 use DDSCovid19 select * from Dim_Outcome
-use DDSCovid19 select * from Dim_Level
+use DDSCovid19 select * from Dim_Severity
+use DDSCovid19 select * from Fact_Vaccination
 use DDSCovid19 select * from Fact_Covid19_CaseReport
-
-
-
-
-
-
-
-
-
-
-
-
-
+use DDSCovid19 select * from Fact_CaseSeverity
 
 
 
@@ -148,6 +150,7 @@ use DDSCovid19 select * from Fact_Covid19_CaseReport
 -- DELETE
 use DDSCovid19 delete Fact_Covid19_CaseReport
 use DDSCovid19 delete Fact_Vaccination
+use DDSCovid19 delete Fact_CaseSeverity
 use DDSCovid19 delete Dim_PHU
 use DDSCovid19 delete Dim_PHUCity
 use DDSCovid19 delete Dim_OngoingOutbreak
@@ -155,8 +158,7 @@ use DDSCovid19 delete Dim_AgeGroup
 use DDSCovid19 delete Dim_Gender
 use DDSCovid19 delete Dim_Exposure
 use DDSCovid19 delete Dim_Outcome
-
-
+use DDSCovid19 delete Dim_Severity
 
 
 
@@ -179,13 +181,33 @@ DBCC CHECKIDENT ('Dim_Exposure', RESEED, 0);
 GO
 DBCC CHECKIDENT ('Fact_Covid19_CaseReport', RESEED, 0);
 GO
+DBCC CHECKIDENT ('Dim_Severity', RESEED, 0);
+GO
+DBCC CHECKIDENT ('Fact_CaseSeverity', RESEED, 0);
+GO
 
 
 
 
 
---use DDSCovid19 
---select d.Year,d.Quarter, sum(Fatal)
---from Fact_Covid19_CaseReport a inner join Dim_Date d on a.DateID = d.DateID
---group by d.year,d.Quarter
---order by d.Year,d.Quarter
+
+use NDSCovid19
+go
+
+select  
+		phu.PHU_IDNK,
+		phu.PHU_NAME,
+		sev.SeverityID,
+		--a.CASEREPORTED,
+		oc.OUTCOME,
+		count(*) as 'CaseNO'
+		from COVID19_CASESREPORT_DETAIL a inner join PUBLIC_HEALTH_UNIT phu on a.PHU_ID = phu.ID
+		inner join SEVERITY sev on a.SEVERITY_ID = sev.ID
+		inner join OUTCOME oc on a.OUTCOME_ID = oc.ID
+group by
+		sev.SeverityID,
+		phu.PHU_IDNK,
+		phu.PHU_NAME,
+		--a.CASEREPORTED,
+		oc.OUTCOME
+		order by CaseNO

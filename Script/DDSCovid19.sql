@@ -2,8 +2,8 @@
 USE MASTER
 GO
 
-drop database IF EXISTS DDSCovid19
-go
+--drop database IF EXISTS DDSCovid19
+--go
 
 CREATE DATABASE DDSCovid19
 GO
@@ -11,18 +11,12 @@ GO
 USE DDSCovid19
 GO
 
-CREATE TABLE Dim_Dim_Severity(
+CREATE TABLE Dim_Severity(
 	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
-	Severity VARCHAR(50)
+	SeverityID VARCHAR(5),
+	Severity VARCHAR(25)
 )
 GO
-
-INSERT INTO Dim_Dim_Severity(Severity)
-VALUES(N'Low')
-INSERT INTO Dim_Dim_Severity(Severity)
-VALUES(N'Average')
-INSERT INTO Dim_Dim_Severity(Severity)
-VALUES(N'High')
 
 CREATE TABLE Dim_OngoingOutbreak(
 	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
@@ -138,6 +132,7 @@ CREATE TABLE Fact_Covid19_CaseReport(
 	GenderID INT , --FK
 	ExposureID INT , --FK
 	OngoingOutrbeakID INT , --FK
+	--SeverityID INT, --FK 
 
 	Positive INT,
 	Fatal INT,
@@ -169,10 +164,40 @@ ADD CONSTRAINT FK_FactCovid19CaseReport_DimOngoingOutrbeak
 FOREIGN KEY (OngoingOutrbeakID) REFERENCES Dim_OngoingOutbreak(ID);
 
 
-use DDSCovid19
-go
+CREATE TABLE Fact_CaseSeverity(
+	ID INT PRIMARY KEY IDENTITY(1,1) NOT NULL,
+	PhuID INT , --FK
+	DateID INT , --FK
+	OutcomeID INT , --FK
+	OngoingOutrbeakID INT , --FK
+	SeverityID INT, --FK 
+
+	CaseNO INT,
+)
+
+ALTER TABLE Fact_CaseSeverity
+ADD CONSTRAINT FK_FactCaseSeverity_DimSeverity
+FOREIGN KEY (SeverityID) REFERENCES Dim_Severity(ID);
+
+ALTER TABLE Fact_CaseSeverity
+ADD CONSTRAINT FK_FactCaseSeverity_DimPHU
+FOREIGN KEY (PhuID) REFERENCES Dim_PHU(ID);
+
+ALTER TABLE Fact_CaseSeverity
+ADD CONSTRAINT FK_FactCaseSeverity_DimOutcome
+FOREIGN KEY (OutcomeID) REFERENCES Dim_Outcome(ID);
+
+ALTER TABLE Fact_CaseSeverity
+ADD CONSTRAINT FK_FactCaseSeverity_DimDate
+FOREIGN KEY (DateID) REFERENCES Dim_Date(DateID);
+
+ALTER TABLE Fact_CaseSeverity
+ADD CONSTRAINT FK_FactCaseSeverity_DimOutbreak
+FOREIGN KEY (OngoingOutrbeakID) REFERENCES Dim_OngoingOutbreak(ID);
 
 
+
+--delete Dim_Date
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20200101, '2020-01-01', 1, 1, 1, 2020);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20200102, '2020-01-02', 2, 1, 1, 2020);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20200103, '2020-01-03', 3, 1, 1, 2020);
@@ -1273,5 +1298,3 @@ INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20221
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20221229, '2022-12-29', 29, 12, 4, 2022);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20221230, '2022-12-30', 30, 12, 4, 2022);
 INSERT INTO Dim_Date (DateID, FullDate, Day, Month, Quarter, Year) VALUES (20221231, '2022-12-31', 31, 12, 4, 2022);
-
---delete Dim_Date

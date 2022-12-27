@@ -103,14 +103,14 @@ select * from Public_Health_Units_GROUP
 
 
 
-use SourceCOVID19
-go
-delete public_health_unit
-delete CasesReport
-delete Compiled_COVID_19_Case_Details_Canada
-delete ongoing_outbreaks_phu
-delete Public_Health_Units_GROUP
-delete vaccines_by_age_phu
+--use SourceCOVID19
+--go
+--delete public_health_unit
+--delete CasesReport
+--delete Compiled_COVID_19_Case_Details_Canada
+--delete ongoing_outbreaks_phu
+--delete Public_Health_Units_GROUP
+--delete vaccines_by_age_phu
 
 
 -- ========================== QUERY ================================
