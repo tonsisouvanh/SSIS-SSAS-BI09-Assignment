@@ -1,0 +1,37 @@
+select non empty [Dim PHU].[Phu Name] on columns,
+non empty [Dim Date].[Date].[Year] on rows
+from [DDS Covid19]
+where {[Measures].[Fatal],[Measures].[Positive],[Measures].[Resolved]}
+
+
+--Cau 1
+SELECT
+  non empty {
+	[Measures].[Fatal],
+	[Measures].[Positive],
+	[Measures].[Resolved]
+  } ON COLUMNS,
+ non empty crossjoin([Dim Date].[Date].[Year],[Dim PHU].[Phu Name].members) ON ROWS
+FROM [DDS Covid19]
+
+
+--Cau 2 NOT SURE!
+SELECT
+  non empty [Measures].[Case NO] ON COLUMNS,
+ non empty crossjoin({[Dim Date].[Date].[Quarter],[Dim Date].[Date].[Year]},[Dim PHU].[Phu Name].members,[Dim Severity].[Severity].members) ON ROWS
+FROM [DDS Covid19]
+
+
+--Cau 3
+SELECT non empty [Dim Date].[Date].[Year] ON COLUMNS,
+ non empty crossjoin([Dim Gender].[Gender].[Gender],[Dim Age Group].[Age Group].[Age Group]) ON ROWS
+FROM [DDS Covid19]
+where [Measures].[Fatal]
+
+
+
+--Cau 4 NOT SURE!
+SELECT non empty {[Dim Date].[Date].members}  ON COLUMNS,
+ non empty [Dim Severity].[Severity].[Severity] ON ROWS
+FROM [DDS Covid19]
+where [Measures].[Case NO]
