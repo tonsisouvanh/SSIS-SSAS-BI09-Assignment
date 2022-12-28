@@ -20,20 +20,8 @@
   </Cubes>
   <Dimensions>
     <ProjectItem>
-      <Name>Dim Ongoing Outbreak.dim</Name>
-      <FullPath>Dim Ongoing Outbreak.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Severity.dim</Name>
-      <FullPath>Dim Severity.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>Dim PHU.dim</Name>
       <FullPath>Dim PHU.dim</FullPath>
-    </ProjectItem>
-    <ProjectItem>
-      <Name>Dim Outcome.dim</Name>
-      <FullPath>Dim Outcome.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Dim Date.dim</Name>
@@ -44,12 +32,24 @@
       <FullPath>Dim Gender.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
+      <Name>Dim Ongoing Outbreak.dim</Name>
+      <FullPath>Dim Ongoing Outbreak.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
       <Name>Dim Exposure.dim</Name>
       <FullPath>Dim Exposure.dim</FullPath>
     </ProjectItem>
     <ProjectItem>
       <Name>Dim Age Group.dim</Name>
       <FullPath>Dim Age Group.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Severity.dim</Name>
+      <FullPath>Dim Severity.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Outcome.dim</Name>
+      <FullPath>Dim Outcome.dim</FullPath>
     </ProjectItem>
   </Dimensions>
   <DataSources>

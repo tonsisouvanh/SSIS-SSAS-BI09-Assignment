@@ -11,11 +11,23 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="53"
-  DTS:VersionGUID="{3D3452D6-112D-4A69-B8B5-12D26EA3C0DA}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{560182A0-2EEB-4687-9207-9766A6ADD319}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DDSCovid19]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FDCF0984-1EBB-4684-9CD6-E5C231371410}"
+      DTS:ObjectName="LocalHost.DDSCovid19">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DDSCovid19;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{FDCF0984-1EBB-4684-9CD6-E5C231371410}LocalHost.DDSCovid19;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[LocalHost.NDSCovid19]"
       DTS:CreationName="OLEDB"
@@ -2603,7 +2615,7 @@ where [refTable].[OUTCOME] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Case Report - Exposure, Gender, Outcome\407:invalid};</property>
+                  name="ParameterMap">#{Package\Case Report - Exposure, Gender, Outcome\746:invalid};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4112,34 +4124,34 @@ FROM        CASESREPORT_STAGE</property>
               startId="Package\Case Report - Exposure, Gender, Outcome\Data Conversion 1.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output4]"
-              endId="Package\Case Report - Exposure, Gender, Outcome\OLE DB Destination 1 1.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Case Report - Exposure, Gender, Outcome\Derived Column 1 1 1.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output3]"
-              endId="Package\Case Report - Exposure, Gender, Outcome\Data Conversion 1.Inputs[Data Conversion Input]"
-              name="Derived Column Output"
-              startId="Package\Case Report - Exposure, Gender, Outcome\Derived Column.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output5]"
-              endId="Package\Case Report - Exposure, Gender, Outcome\Data Conversion.Inputs[Data Conversion Input]"
-              name="Derived Column Output"
-              startId="Package\Case Report - Exposure, Gender, Outcome\Derived Column 2.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output1]"
-              endId="Package\Case Report - Exposure, Gender, Outcome\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Case Report - Exposure, Gender, Outcome\Derived Column 1 1.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output]"
               endId="Package\Case Report - Exposure, Gender, Outcome\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\Case Report - Exposure, Gender, Outcome\Derived Column 1.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output2]"
+              refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output3]"
+              endId="Package\Case Report - Exposure, Gender, Outcome\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Case Report - Exposure, Gender, Outcome\Derived Column 1 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output5]"
               endId="Package\Case Report - Exposure, Gender, Outcome\Data Conversion 2.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\Case Report - Exposure, Gender, Outcome\Derived Column 2 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output1]"
+              endId="Package\Case Report - Exposure, Gender, Outcome\Data Conversion 1.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Case Report - Exposure, Gender, Outcome\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output]"
+              endId="Package\Case Report - Exposure, Gender, Outcome\OLE DB Destination 1 1.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Case Report - Exposure, Gender, Outcome\Derived Column 1 1 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output2]"
+              endId="Package\Case Report - Exposure, Gender, Outcome\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Case Report - Exposure, Gender, Outcome\Derived Column 2.Outputs[Derived Column Output]" />
             <path
               refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Lookup Error Output]"
               endId="Package\Case Report - Exposure, Gender, Outcome\Derived Column 1 1 1.Inputs[Derived Column Input]"
@@ -4172,14 +4184,14 @@ FROM        CASESREPORT_STAGE</property>
               startId="Package\Case Report - Exposure, Gender, Outcome\CaseAcquisition info.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Sort Output1]"
-              endId="Package\Case Report - Exposure, Gender, Outcome\Lookup 1.Inputs[Lookup Input]"
-              name="Sort Output"
-              startId="Package\Case Report - Exposure, Gender, Outcome\Sort 2.Outputs[Sort Output]" />
-            <path
-              refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Sort Output]"
               endId="Package\Case Report - Exposure, Gender, Outcome\Lookup 1 1.Inputs[Lookup Input]"
               name="Sort Output"
               startId="Package\Case Report - Exposure, Gender, Outcome\Sort.Outputs[Sort Output]" />
+            <path
+              refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Sort Output]"
+              endId="Package\Case Report - Exposure, Gender, Outcome\Lookup 1.Inputs[Lookup Input]"
+              name="Sort Output"
+              startId="Package\Case Report - Exposure, Gender, Outcome\Sort 2.Outputs[Sort Output]" />
             <path
               refId="Package\Case Report - Exposure, Gender, Outcome.Paths[Sort Output2]"
               endId="Package\Case Report - Exposure, Gender, Outcome\Lookup.Inputs[Lookup Input]"
@@ -8727,34 +8739,34 @@ where [refTable].[EXPOSURE] = ?</property>
               startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Data Conversion 2.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output4]"
-              endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Data Conversion 1.Inputs[Data Conversion Input]"
-              name="Derived Column Output"
-              startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output3]"
-              endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\OLE DB Destination 1 1.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 1 1 1.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output5]"
-              endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Data Conversion.Inputs[Data Conversion Input]"
-              name="Derived Column Output"
-              startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 2.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output1]"
-              endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\OLE DB Destination.Inputs[OLE DB Destination Input]"
-              name="Derived Column Output"
-              startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 1.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output]"
               endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 1 1.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output2]"
+              refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output3]"
+              endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output5]"
               endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Data Conversion 2.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 2 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output1]"
+              endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\OLE DB Destination 1 1.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 1 1 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output]"
+              endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Data Conversion 1.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output2]"
+              endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 2.Outputs[Derived Column Output]" />
             <path
               refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Lookup Error Output]"
               endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Derived Column 1.Inputs[Derived Column Input]"
@@ -8787,14 +8799,14 @@ where [refTable].[EXPOSURE] = ?</property>
               startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Exposure.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output1]"
-              endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Lookup.Inputs[Lookup Input]"
-              name="Sort Output"
-              startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Sort 1.Outputs[Sort Output]" />
-            <path
-              refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output]"
               endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Lookup 1.Inputs[Lookup Input]"
               name="Sort Output"
               startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Sort 2.Outputs[Sort Output]" />
+            <path
+              refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output]"
+              endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Lookup.Inputs[Lookup Input]"
+              name="Sort Output"
+              startId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Sort 1.Outputs[Sort Output]" />
             <path
               refId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output2]"
               endId="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome\Lookup 1 1.Inputs[Lookup Input]"
@@ -9593,6 +9605,1139 @@ where [refTable].[EXPOSURE] = ?</property>
               endId="Package\Data Flow Task\Fuzzy Lookup.Inputs[Fuzzy Lookup Input]"
               name="OLE DB Source Output"
               startId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{952EAFA2-1F9B-4661-A2FA-0B675933F65E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[Day]"
+                      cachedDataType="i4"
+                      cachedName="Day"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[EnglishDayName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="EnglishDayName"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishDayName]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]} == 1) ? "Monday" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]} == 2) ? "Tuesday" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]} == 3) ? "Wednesday" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]} == 4) ? "Thursday" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]} == 5) ? "Friday" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]} == 6) ? "Saturday" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]} == 7) ? "Sunday" : ""</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(Day == 1) ? "Monday" : (Day == 2) ? "Tuesday" : (Day == 3) ? "Wednesday" : (Day == 4) ? "Thursday" : (Day == 5) ? "Friday" : (Day == 6) ? "Saturday" : (Day == 7) ? "Sunday" : ""</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[Month]"
+                      cachedDataType="i4"
+                      cachedName="Month"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input].Columns[EnglishMonthName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="EnglishMonthName"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishMonthName]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]} == 1) ? "January" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]} == 2) ? "February" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]} == 3) ? "March" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]} == 4) ? "April" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]} == 5) ? "May" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]} == 6) ? "June" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]} == 7) ? "July" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]} == 8) ? "August" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]} == 9) ? "September" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]} == 10) ? "October" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]} == 11) ? "November" : (#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]} == 12) ? "December" : ""</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(Month == 1) ? "January" : (Month == 2) ? "February" : (Month == 3) ? "March" : (Month == 4) ? "April" : (Month == 5) ? "May" : (Month == 6) ? "June" : (Month == 7) ? "July" : (Month == 8) ? "August" : (Month == 9) ? "September" : (Month == 10) ? "October" : (Month == 11) ? "November" : (Month == 12) ? "December" : ""</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Lookup"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[Dim_Date]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[Dim_Date]) [refTable]
+where [refTable].[FullDate] = ? and [refTable].[Day] = ? and [refTable].[Month] = ? and [refTable].[Quarter] = ? and [refTable].[Year] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="DateID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FullDate" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Day" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EnglishDayName" dataType="DT_STR" length="25" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Month" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EnglishMonthName" dataType="DT_STR" length="35" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Quarter" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullDate]};#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]};#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]};#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]};#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Lookup.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DDSCovid19]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDSCovid19]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input].Columns[FullDate]"
+                      cachedDataType="dbDate"
+                      cachedName="FullDate"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullDate]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">FullDate</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input].Columns[Day]"
+                      cachedDataType="i4"
+                      cachedName="Day"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Day</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input].Columns[Month]"
+                      cachedDataType="i4"
+                      cachedName="Month"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Month</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input].Columns[Quarter]"
+                      cachedDataType="i4"
+                      cachedName="Quarter"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Quarter</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input].Columns[Year]"
+                      cachedDataType="i4"
+                      cachedName="Year"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Year</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Match Output].Columns[DateIDSK]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Match Output].Columns[DateIDSK]"
+                      name="DateIDSK"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DateID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Lookup.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE Dim_Date
+SET EnglishDayName = ?, EnglishMonthName = ?
+WHERE DateID = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DDSCovid19]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDSCovid19]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Command.Inputs[OLE DB Command Input].Columns[EnglishDayName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="EnglishDayName"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishDayName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Command.Inputs[OLE DB Command Input].Columns[EnglishMonthName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="EnglishMonthName"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishMonthName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Command.Inputs[OLE DB Command Input].Columns[DateIDSK]"
+                      cachedDataType="i4"
+                      cachedName="DateIDSK"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Match Output].Columns[DateIDSK]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Data Flow Task 1\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_Date]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DDSCovid19]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DDSCovid19]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateID]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateID]"
+                      name="DateID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FullDate]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullDate]"
+                      name="FullDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Day]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]"
+                      name="Day"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishDayName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnglishDayName]"
+                      length="25"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishDayName]"
+                      name="EnglishDayName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]"
+                      name="Month"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishMonthName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnglishMonthName]"
+                      length="35"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishMonthName]"
+                      name="EnglishMonthName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]"
+                      name="Quarter"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]"
+                      name="Year"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DateID]"
+                      dataType="i4"
+                      name="DateID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FullDate]"
+                      dataType="dbDate"
+                      name="FullDate" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Day]"
+                      dataType="i4"
+                      name="Day" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnglishDayName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="EnglishDayName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Month]"
+                      dataType="i4"
+                      name="Month" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnglishMonthName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="EnglishMonthName" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quarter]"
+                      dataType="i4"
+                      name="Quarter" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Year]"
+                      dataType="i4"
+                      name="Year" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DateID]"
+                      name="DateID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FullDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FullDate]"
+                      name="FullDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Day]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Day]"
+                      name="Day" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnglishDayName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnglishDayName]"
+                      name="EnglishDayName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Month]"
+                      name="Month" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnglishMonthName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnglishMonthName]"
+                      name="EnglishMonthName" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quarter]"
+                      name="Quarter" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Year]"
+                      name="Year" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Row Sampling"
+              componentClassID="Microsoft.RowSampling"
+              contactInfo="Row Sampling;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Randomly samples a specific number of rows from an input data flow. For example, use it randomly select products to feature on your Web site."
+              name="Row Sampling">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of rows in the sample."
+                  expressionType="Notify"
+                  name="SamplingValue">10</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the seed for the random number generator."
+                  name="SamplingSeed">0</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Row Sampling.Inputs[Row Sampling Input 1]"
+                  name="Row Sampling Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Inputs[Row Sampling Input 1].Columns[DateID]"
+                      cachedDataType="i4"
+                      cachedName="DateID"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Inputs[Row Sampling Input 1].Columns[FullDate]"
+                      cachedDataType="dbDate"
+                      cachedName="FullDate"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullDate]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Inputs[Row Sampling Input 1].Columns[Day]"
+                      cachedDataType="i4"
+                      cachedName="Day"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Inputs[Row Sampling Input 1].Columns[EnglishDayName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="EnglishDayName"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishDayName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Inputs[Row Sampling Input 1].Columns[Month]"
+                      cachedDataType="i4"
+                      cachedName="Month"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Inputs[Row Sampling Input 1].Columns[EnglishMonthName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="EnglishMonthName"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishMonthName]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Inputs[Row Sampling Input 1].Columns[Quarter]"
+                      cachedDataType="i4"
+                      cachedName="Quarter"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Inputs[Row Sampling Input 1].Columns[Year]"
+                      cachedDataType="i4"
+                      cachedName="Year"
+                      lineageId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Inputs[Row Sampling Input 1].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Inputs[Row Sampling Input 1].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output]"
+                  name="Sampling Selected Output">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output for rows in the sample"
+                      name="Selected">true</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[DateID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[DateID]"
+                      name="DateID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[FullDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[FullDate]"
+                      name="FullDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[Day]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[Day]"
+                      name="Day">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[EnglishDayName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[EnglishDayName]"
+                      name="EnglishDayName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishDayName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[Month]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[Month]"
+                      name="Month">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[EnglishMonthName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[EnglishMonthName]"
+                      name="EnglishMonthName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishMonthName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[Quarter]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[Quarter]"
+                      name="Quarter">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[Year]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[Year]"
+                      name="Year">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[ErrorCode]"
+                      name="ErrorCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Selected Output].Columns[ErrorColumn]"
+                      name="ErrorColumn">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output]"
+                  name="Sampling Unselected Output">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Output for rows in the sample"
+                      name="Selected">false</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[DateID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[DateID]"
+                      name="DateID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[DateID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[FullDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[FullDate]"
+                      name="FullDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[FullDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[Day]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[Day]"
+                      name="Day">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Day]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[EnglishDayName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[EnglishDayName]"
+                      name="EnglishDayName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishDayName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[Month]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[Month]"
+                      name="Month">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Month]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[EnglishMonthName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[EnglishMonthName]"
+                      name="EnglishMonthName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[EnglishMonthName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[Quarter]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[Quarter]"
+                      name="Quarter">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quarter]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[Year]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[Year]"
+                      name="Year">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output].Columns[Year]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[ErrorCode]"
+                      name="ErrorCode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Row Sampling.Outputs[Sampling Unselected Output].Columns[ErrorColumn]"
+                      name="ErrorColumn">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Input column lineage ID"
+                          name="InputColumnLineageID">#{Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task 1\Lookup.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task 1\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Lookup Error Output]"
+              endId="Package\Data Flow Task 1\Row Sampling.Inputs[Row Sampling Input 1]"
+              name="Lookup Error Output"
+              startId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[Lookup Match Output]"
+              endId="Package\Data Flow Task 1\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Lookup Match Output"
+              startId="Package\Data Flow Task 1\Lookup.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task 1\Derived Column.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task 1\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -11666,29 +12811,29 @@ WHERE ID = ? and SOURCE_ID = 1</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="192.8,41.6"
+          Size="193,42"
           Id="Package\Age group stage to NDS"
           TopLeft="156.428570942003,109.529409598314" />
         <NodeLayout
-          Size="279.2,41.6"
+          Size="279,42"
           Id="Package\Case Report - Exposure, Gender, Outcome"
           TopLeft="181.571434166967,322.941181350332" />
         <NodeLayout
-          Size="176,41.6"
+          Size="176,42"
           Id="Package\Case Report Covid19"
           TopLeft="232,499" />
         <NodeLayout
-          Size="350.4,41.6"
+          Size="350,42"
           Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome"
           TopLeft="153,401" />
         <NodeLayout
-          Size="151.2,41.6"
+          Size="151,42"
           Id="Package\Data Flow Task"
           TopLeft="385,93" />
         <NodeLayout
-          Size="236,41.6"
+          Size="236,42"
           Id="Package\Vaccine by age phu stage to NDS"
           TopLeft="126.571428036203,227.235291919081" />
         <EdgeLayout
@@ -11747,6 +12892,10 @@ WHERE ID = ? and SOURCE_ID = 1</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Data Flow Task 1"
+          TopLeft="837,176" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -12306,7 +13455,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Sort Output1]"
+          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Sort Output]"
           TopLeft="497.046153846154,265.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12342,7 +13491,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Sort Output]"
+          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Sort Output1]"
           TopLeft="884.615384615385,223.476923076923">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12546,7 +13695,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output5]"
+          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output2]"
           TopLeft="398.971428571429,118.657142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12582,7 +13731,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output4]"
+          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output]"
           TopLeft="704.173626373627,354.237362637361">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12606,7 +13755,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output3]"
+          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output1]"
           TopLeft="293.01978021978,105.964835164835">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12642,7 +13791,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output2]"
+          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output5]"
           TopLeft="783.138461538463,110.964835164835">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12678,7 +13827,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output1]"
+          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output3]"
           TopLeft="477.76043956044,412.6989010989">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -12702,7 +13851,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output]"
+          Id="Package\Case Report - Exposure, Gender, Outcome.Paths[Derived Column Output4]"
           TopLeft="212.827472527473,353.193406593406">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13516,7 +14665,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output1]"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output]"
           TopLeft="165.4,253.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13552,7 +14701,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output]"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Sort Output1]"
           TopLeft="537.815384615385,316.171428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13768,7 +14917,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output5]"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output2]"
           TopLeft="439.74065934066,169.228571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13804,7 +14953,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output4]"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output]"
           TopLeft="333.789010989011,156.536263736264">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13840,7 +14989,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output3]"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output1]"
           TopLeft="730.459340659341,419.80879120879">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13876,7 +15025,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output2]"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output5]"
           TopLeft="823.907692307693,161.536263736264">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13912,7 +15061,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output1]"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output3]"
           TopLeft="253.596703296704,403.764835164835">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -13936,7 +15085,7 @@ WHERE ID = ? and SOURCE_ID = 1</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output]"
+          Id="Package\Case Report Detail Covid19 - Exposure, Gender, Outcome.Paths[Derived Column Output4]"
           TopLeft="518.529670329671,463.270329670329">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -14678,6 +15827,198 @@ WHERE ID = ? and SOURCE_ID = 1</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task 1\OLE DB Source"
+          TopLeft="216,122" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Task 1\Derived Column"
+          TopLeft="236,205" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[OLE DB Source Output]"
+          TopLeft="291,164">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22,41"
+              Start="0,0"
+              End="22,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="4,20.5" />
+                  <mssgle:LineSegment
+                    End="18,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18,20.5"
+                    Point2="22,20.5"
+                    Point3="22,24.5" />
+                  <mssgle:LineSegment
+                    End="22,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Data Flow Task 1\Lookup"
+          TopLeft="250,294" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Derived Column Output]"
+          TopLeft="309.75,247">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Data Flow Task 1\OLE DB Command"
+          TopLeft="86,429" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Lookup Match Output]"
+          TopLeft="306.5,336">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-137.5,93"
+              Start="0,0"
+              End="-137.5,85.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.5"
+                    Point2="0,46.5"
+                    Point3="-4,46.5" />
+                  <mssgle:LineSegment
+                    End="-133.5,46.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-133.5,46.5"
+                    Point2="-137.5,46.5"
+                    Point3="-137.5,50.5" />
+                  <mssgle:LineSegment
+                    End="-137.5,85.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-116.94138671875,51.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Data Flow Task 1\Row Sampling"
+          TopLeft="521,325" />
+        <EdgeLayout
+          Id="Package\Data Flow Task 1.Paths[Lookup Error Output]"
+          TopLeft="363,315">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="158,31"
+              Start="0,0"
+              End="150.5,31">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="75,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="75,0"
+                    Point2="79,0"
+                    Point3="79,4" />
+                  <mssgle:LineSegment
+                    End="79,27" />
+                  <mssgle:CubicBezierSegment
+                    Point1="79,27"
+                    Point2="79,31"
+                    Point3="83,31" />
+                  <mssgle:LineSegment
+                    End="150.5,31" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="24.2649609375,-22,109.470078125,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task 1\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Date]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -1,19 +1,19 @@
-﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b9337392-f875-405c-af14-b539585eaefa" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a79e7dc0-a3d0-47a8-93ce-a0b893628029" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
   <ID>DDS Covid19</ID>
   <MeasureGroups>
     <MeasureGroup>
-      <ID>Fact Case Severity</ID>
+      <ID>Fact Vaccination</ID>
       <Partitions>
-        <Partition dwd:design-time-name="61e1d9b5-293a-4e5a-b1d8-abaae8f23881">
-          <ID>Fact Case Severity</ID>
-          <Name>Fact Case Severity</Name>
+        <Partition dwd:design-time-name="334eb740-da30-48a6-a5fa-ff27612543a2">
+          <ID>Fact Vaccination</ID>
+          <Name>Fact Vaccination</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="12d6567d-cc77-45f6-ab99-4b7bbc82d906">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c33eba7a-c6e8-4383-853b-2e3a192dc119">
             <DataSourceViewID>DDS Covid19</DataSourceViewID>
-            <TableID>dbo_Fact_CaseSeverity</TableID>
+            <TableID>dbo_Fact_Vaccination</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>
@@ -24,14 +24,14 @@
     <MeasureGroup>
       <ID>Fact Covid19 Case Report</ID>
       <Partitions>
-        <Partition dwd:design-time-name="ee60ebb1-bfc2-4f7c-ac8b-85915f8ce719">
+        <Partition dwd:design-time-name="5cd461ab-1d26-4e62-837c-63cb6253f79c">
           <ID>Fact Covid19 Case Report</ID>
           <Name>Fact Covid19 Case Report</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="6d0ad0ff-3c4d-4cb2-abf3-629386860924">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="a7785bf0-e361-4b38-ad50-b300ebf0a447">
             <DataSourceViewID>DDS Covid19</DataSourceViewID>
             <TableID>dbo_Fact_Covid19_CaseReport</TableID>
           </Source>
@@ -42,18 +42,18 @@
       </Partitions>
     </MeasureGroup>
     <MeasureGroup>
-      <ID>Fact Vaccination</ID>
+      <ID>Fact Case Severity</ID>
       <Partitions>
-        <Partition dwd:design-time-name="3f3d258a-bbea-4b1a-b280-ce34065d931f">
-          <ID>Fact Vaccination</ID>
-          <Name>Fact Vaccination</Name>
+        <Partition dwd:design-time-name="535f42bf-d5ed-4b22-8c41-fee6b3960a88">
+          <ID>Fact Case Severity</ID>
+          <Name>Fact Case Severity</Name>
           <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
           <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
           <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
           <State>Unprocessed</State>
-          <Source xsi:type="DsvTableBinding" dwd:design-time-name="a0675e93-5107-4602-b601-091431d75193">
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="f6026a79-c4bc-40a3-9b69-acd748563edb">
             <DataSourceViewID>DDS Covid19</DataSourceViewID>
-            <TableID>dbo_Fact_Vaccination</TableID>
+            <TableID>dbo_Fact_CaseSeverity</TableID>
           </Source>
           <StorageMode>Molap</StorageMode>
           <CurrentStorageMode>Molap</CurrentStorageMode>

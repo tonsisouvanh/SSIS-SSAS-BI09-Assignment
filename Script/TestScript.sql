@@ -191,23 +191,5 @@ GO
 
 
 
-use NDSCovid19
-go
 
-select  
-		phu.PHU_IDNK,
-		phu.PHU_NAME,
-		sev.SeverityID,
-		--a.CASEREPORTED,
-		oc.OUTCOME,
-		count(*) as 'CaseNO'
-		from COVID19_CASESREPORT_DETAIL a inner join PUBLIC_HEALTH_UNIT phu on a.PHU_ID = phu.ID
-		inner join SEVERITY sev on a.SEVERITY_ID = sev.ID
-		inner join OUTCOME oc on a.OUTCOME_ID = oc.ID
-group by
-		sev.SeverityID,
-		phu.PHU_IDNK,
-		phu.PHU_NAME,
-		--a.CASEREPORTED,
-		oc.OUTCOME
-		order by CaseNO
+
