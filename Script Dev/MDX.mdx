@@ -15,10 +15,17 @@ SELECT
 FROM [DDS Covid19]
 
 
---Cau 2 NOT SURE!
+--Cau 2
 SELECT
   non empty [Measures].[Case NO] ON COLUMNS,
- non empty crossjoin({[Dim Date].[Date].[Quarter],[Dim Date].[Date].[Year]},[Dim PHU].[Phu Name].members,[Dim Severity].[Severity].members) ON ROWS
+ non empty crossjoin(
+			crossjoin(
+				[Dim Date].[Year].[Year],
+				[Dim Date].[Quarter].[Quarter]
+			),
+			[Dim PHU].[Phu Name].members,
+			[Dim Severity].[Severity].members
+			) ON ROWS
 FROM [DDS Covid19]
 
 
@@ -30,8 +37,104 @@ where [Measures].[Fatal]
 
 
 
---Cau 4 NOT SURE!
-SELECT non empty {[Dim Date].[Date].members}  ON COLUMNS,
- non empty [Dim Severity].[Severity].[Severity] ON ROWS
+--Cau 4
+SELECT 
+	NON EMPTY [Dim Severity].[Severity].[Severity]
+	ON COLUMNS,
+	NON EMPTY 
+	CROSSJOIN
+	(
+		[Dim Date].[Date ID].[Date ID],
+		[Dim Date].[English Month Name].[English Month Name],
+		[Dim Date].[Quarter].[Quarter],
+		[Dim Date].[Year].[Year]
+	)
+	ON ROWS
 FROM [DDS Covid19]
-where [Measures].[Case NO]
+WHERE [Measures].[Case NO]
+
+
+
+
+--Cau5
+SELECT 
+	NON EMPTY crossjoin([Dim Severity].[Severity].[Severity],[Dim Outcome].[Outcome].[Outcome])
+	ON COLUMNS,
+	NON EMPTY 
+	CROSSJOIN
+	(
+	[Dim PHU].[Phu Group Name].[Phu Group Name],[Dim PHU].[Phu City Name].[Phu City Name]
+	)
+	ON ROWS
+FROM [DDS Covid19]
+WHERE [Measures].[Case NO]
+
+
+SELECT 
+	NON EMPTY [Dim Date].[Year].[Year]
+	ON COLUMNS,
+	NON EMPTY 
+	[Measures].[Fact Covid19 Case Report Count]
+	ON ROWS
+FROM [DDS Covid19]
+
+
+
+SELECT 
+	NON EMPTY 
+	{
+		[Measures].[At Least One Dose Cumulative],
+		[Measures].[Second Dose Cumulative],
+		[Measures].[Third Dose Cumulative],
+		[Measures].[Fully Vaccinated Cumulative]
+	}
+	
+	ON COLUMNS,
+	NON EMPTY 
+	crossjoin(
+		[Dim Date].[Year].[Year],
+		CROSSJOIN
+		(
+			[Dim PHU].[Phu Group Name].[Phu Group Name],
+			[Dim PHU].[Phu City Name].[Phu City Name]
+		)
+	)
+	ON ROWS
+FROM [DDS Covid19]
+
+
+--Cau6
+SELECT 
+	NON EMPTY 
+		crossjoin([Dim Severity].[Severity].[Severity],[Dim Outcome].[Outcome].[Outcome])
+	ON COLUMNS,
+	NON EMPTY 
+	crossjoin(
+		[Dim Date].[Year].[Year],
+		[Dim Ongoing Outbreak].[Outbreak Name].[Outbreak Name]
+	)
+	ON ROWS
+FROM [DDS Covid19]
+WHERE [Measures].[Case NO]
+
+
+
+--addition query
+SELECT 
+	NON EMPTY 
+	{
+		[Measures].[At Least One Dose Cumulative],
+		[Measures].[Second Dose Cumulative],
+		[Measures].[Third Dose Cumulative],
+		[Measures].[Fully Vaccinated Cumulative]
+	}
+	
+	ON COLUMNS,
+	NON EMPTY 
+	crossjoin(
+		[Dim Date].[Year].[Year],
+			[Dim PHU].[Phu Name].[Phu Name],
+		[Dim Age Group].[Age Group].[Age Group]
+	)
+	ON ROWS
+FROM [DDS Covid19]
